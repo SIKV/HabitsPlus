@@ -1,12 +1,10 @@
 package com.github.sikv.habitsplus
 
-import androidx.compose.material.MaterialTheme
-import androidx.compose.runtime.Composable
-import org.jetbrains.compose.ui.tooling.preview.Preview
+import android.app.Application
 
-@Composable
-@Preview
-fun App() {
-    MaterialTheme {
+class App : Application() {
+
+    override fun onCreate() {
+        super.onCreate()
     }
 }

@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">HabitsPlus</string>
+
+    <string name="top_level_route_habits">Habits</string>
+    <string name="top_level_route_todos">Todos</string>
+    <string name="top_level_route_activity">Activity</string>
+    <string name="top_level_route_more">More</string>
 </resources>
