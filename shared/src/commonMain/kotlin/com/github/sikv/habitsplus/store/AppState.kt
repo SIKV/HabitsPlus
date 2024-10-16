@@ -1,12 +1,14 @@
 package com.github.sikv.habitsplus.store
 
+import com.github.sikv.habitsplus.feature.todos.TodoListState
+
 data class AppState(
-    val placeholder: String,
+    val todoListState: TodoListState
 ): State {
 
     companion object {
         val emptyState = AppState(
-            placeholder = "Hello, World!"
+            todoListState = TodoListState.emptyState
         )
     }
 }

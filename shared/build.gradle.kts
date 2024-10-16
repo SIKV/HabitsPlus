@@ -30,6 +30,9 @@ kotlin {
             api(libs.koin.core)
             implementation(libs.kotlinx.coroutines.core)
         }
+        androidMain.dependencies {
+            api(libs.koin.android)
+        }
     }
 }
 
