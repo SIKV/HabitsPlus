@@ -17,6 +17,8 @@
 		C562C83F2CBDA61300ABBD59 /* HabitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C562C83E2CBDA61300ABBD59 /* HabitsView.swift */; };
 		C562C8412CBDA87800ABBD59 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = C562C8402CBDA87800ABBD59 /* Localizable.xcstrings */; };
 		C562C8432CBDA98200ABBD59 /* TopLevelRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C562C8422CBDA98200ABBD59 /* TopLevelRoutes.swift */; };
+		C56BE8DC2CC2EE9F006A05B1 /* ObservableStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56BE8DB2CC2EE9F006A05B1 /* ObservableStore.swift */; };
+		C56BE8DE2CC2EF78006A05B1 /* ConnectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56BE8DD2CC2EF78006A05B1 /* ConnectedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		C562C83E2CBDA61300ABBD59 /* HabitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsView.swift; sourceTree = "<group>"; };
 		C562C8402CBDA87800ABBD59 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		C562C8422CBDA98200ABBD59 /* TopLevelRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopLevelRoutes.swift; sourceTree = "<group>"; };
+		C56BE8DB2CC2EE9F006A05B1 /* ObservableStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableStore.swift; sourceTree = "<group>"; };
+		C56BE8DD2CC2EF78006A05B1 /* ConnectedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,8 @@
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
 				7555FF8C242A565B00829871 /* Info.plist */,
 				2152FB032600AC8F00CF470E /* iOSApp.swift */,
+				C56BE8DB2CC2EE9F006A05B1 /* ObservableStore.swift */,
+				C56BE8DD2CC2EF78006A05B1 /* ConnectedView.swift */,
 				058557D7273AAEEB004C7B11 /* Preview Content */,
 				C562C8402CBDA87800ABBD59 /* Localizable.xcstrings */,
 			);
@@ -253,11 +259,13 @@
 			files = (
 				C562C83D2CBDA60100ABBD59 /* TodosView.swift in Sources */,
 				C562C83F2CBDA61300ABBD59 /* HabitsView.swift in Sources */,
+				C56BE8DC2CC2EE9F006A05B1 /* ObservableStore.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				C562C83B2CBDA5E700ABBD59 /* ActivityView.swift in Sources */,
 				C562C8432CBDA98200ABBD59 /* TopLevelRoutes.swift in Sources */,
 				C562C8392CBDA5D000ABBD59 /* MoreView.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
+				C56BE8DE2CC2EF78006A05B1 /* ConnectedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
