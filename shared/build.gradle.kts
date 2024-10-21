@@ -33,6 +33,9 @@ kotlin {
         androidMain.dependencies {
             api(libs.koin.android)
         }
+        commonTest.dependencies {
+            implementation(libs.kotlin.test)
+        }
     }
 }
 
