@@ -14,7 +14,9 @@ typealias Dispatcher = (action: Action) -> Unit
 
 typealias Reducer<S, A> = (state: S, action: A) -> S
 
-typealias Middleware = suspend (state: State, action: Action, dispatcher: Dispatcher) -> Unit
+interface Middleware {
+    suspend fun invoke(state: State, action: Action, dispatcher: Dispatcher)
+}
 
 class Store<S: State>(
     private val initialState: S,
@@ -38,7 +40,7 @@ class Store<S: State>(
 
         middlewares.forEach { middleware ->
             launch {
-                middleware(state.value, action, ::dispatch)
+                middleware.invoke(state.value, action, ::dispatch)
             }
         }
     }
