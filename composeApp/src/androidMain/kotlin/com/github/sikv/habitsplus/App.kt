@@ -2,7 +2,10 @@ package com.github.sikv.habitsplus
 
 import android.app.Application
 import com.github.sikv.habitsplus.di.appModule
+import com.github.sikv.habitsplus.di.databaseModule
 import com.github.sikv.habitsplus.di.middlewareModule
+import com.github.sikv.habitsplus.di.repositoryModule
+import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
 class App : Application() {
@@ -11,7 +14,8 @@ class App : Application() {
         super.onCreate()
 
         startKoin {
-            modules(appModule, middlewareModule)
+            androidContext(this@App)
+            modules(appModule, middlewareModule, databaseModule, repositoryModule)
         }
     }
 }

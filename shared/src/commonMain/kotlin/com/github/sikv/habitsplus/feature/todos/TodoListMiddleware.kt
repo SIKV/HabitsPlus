@@ -9,22 +9,16 @@ import kotlinx.coroutines.IO
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
 
-class TodoListMiddleware : Middleware {
+internal class TodoListMiddleware(
+    private val todosRepository: TodosRepository
+) : Middleware {
     override suspend fun invoke(state: State, action: Action, dispatcher: Dispatcher) {
         withContext(Dispatchers.IO) {
             when (action) {
                 TodoListAction.FetchAll -> {
                     dispatcher(TodoListAction.UpdateLoading(true))
-
-                    // TODO: Fetch the real data.
-                    val testTodos = listOf(
-                        Todo("Todo 1"),
-                        Todo("Todo 2"),
-                        Todo("Todo 3")
-                    )
-                    delay(3000)
-
-                    dispatcher(TodoListAction.UpdateList(testTodos))
+                    val todos = todosRepository.getAllTodos()
+                    dispatcher(TodoListAction.UpdateList(todos))
                 }
             }
         }

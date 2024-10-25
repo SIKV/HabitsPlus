@@ -1,0 +1,11 @@
+CREATE TABLE Todo(
+    title TEXT
+);
+
+insertTodo:
+INSERT INTO Todo(title)
+VALUES(?);
+
+selectAllTodos:
+SELECT Todo.*
+FROM Todo;

@@ -5,6 +5,8 @@ import org.koin.dsl.module
 
 val middlewareModule = module {
     single<TodoListMiddleware> {
-        TodoListMiddleware()
+        TodoListMiddleware(
+            todosRepository = get()
+        )
     }
 }

@@ -4,6 +4,8 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.kotlinSerialization)
+    alias(libs.plugins.sqldelight)
 }
 
 kotlin {
@@ -29,9 +31,15 @@ kotlin {
         commonMain.dependencies {
             api(libs.koin.core)
             implementation(libs.kotlinx.coroutines.core)
+            implementation(libs.kotlinx.serialization.json)
+            implementation(libs.sqlDelight.runtime)
         }
         androidMain.dependencies {
             api(libs.koin.android)
+            implementation(libs.sqlDelight.android.driver)
+        }
+        iosMain.dependencies {
+            implementation(libs.sqlDelight.native.driver)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -48,5 +56,13 @@ android {
     }
     defaultConfig {
         minSdk = libs.versions.android.minSdk.get().toInt()
+    }
+}
+
+sqldelight {
+    databases {
+        create("AppDatabase") {
+            packageName.set("com.github.sikv.habitsplus.database")
+        }
     }
 }
