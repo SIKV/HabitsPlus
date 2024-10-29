@@ -1,5 +1,6 @@
 package com.github.sikv.habitsplus.feature.todos
 
+import com.github.sikv.habitsplus.data.model.Todo
 import kotlin.test.Test
 import kotlin.test.assertEquals
 

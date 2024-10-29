@@ -1,7 +1,7 @@
-package com.github.sikv.habitsplus.feature.todos
+package com.github.sikv.habitsplus.data
 
+import com.github.sikv.habitsplus.data.model.Todo
 import com.github.sikv.habitsplus.database.Database
-import kotlin.random.Random
 
 internal class TodosRepository(
     private val database: Database
@@ -14,10 +14,7 @@ internal class TodosRepository(
     }
 
     fun getAllTodos(): List<Todo> {
-        // TODO: For testing.
-        addTodo(Todo("Todo${Random.nextInt()}"))
-
-       return database.dbQuery.selectAllTodos(::mapTodo).executeAsList()
+        return database.dbQuery.selectAllTodos(::mapTodo).executeAsList()
     }
 
     private fun mapTodo(

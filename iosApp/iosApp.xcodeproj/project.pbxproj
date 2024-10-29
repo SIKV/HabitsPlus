@@ -11,6 +11,8 @@
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
+		C504988E2CCC1C770053A80A /* AddTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C504988D2CCC1C770053A80A /* AddTodoView.swift */; };
+		C50498902CCC1E760053A80A /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = C504988F2CCC1E760053A80A /* R.swift */; };
 		C562C8392CBDA5D000ABBD59 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C562C8382CBDA5D000ABBD59 /* MoreView.swift */; };
 		C562C83B2CBDA5E700ABBD59 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C562C83A2CBDA5E700ABBD59 /* ActivityView.swift */; };
 		C562C83D2CBDA60100ABBD59 /* TodosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C562C83C2CBDA60100ABBD59 /* TodosView.swift */; };
@@ -29,6 +31,8 @@
 		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB3632DC29227652001CCB65 /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		C504988D2CCC1C770053A80A /* AddTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoView.swift; sourceTree = "<group>"; };
+		C504988F2CCC1E760053A80A /* R.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
 		C562C8382CBDA5D000ABBD59 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
 		C562C83A2CBDA5E700ABBD59 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		C562C83C2CBDA60100ABBD59 /* TodosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosView.swift; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 				C56BE8DD2CC2EF78006A05B1 /* ConnectedView.swift */,
 				058557D7273AAEEB004C7B11 /* Preview Content */,
 				C562C8402CBDA87800ABBD59 /* Localizable.xcstrings */,
+				C504988F2CCC1E760053A80A /* R.swift */,
 			);
 			path = iosApp;
 			sourceTree = "<group>";
@@ -104,6 +109,14 @@
 				AB3632DC29227652001CCB65 /* Config.xcconfig */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		C504988C2CCC1C5A0053A80A /* AddTodo */ = {
+			isa = PBXGroup;
+			children = (
+				C504988D2CCC1C770053A80A /* AddTodoView.swift */,
+			);
+			path = AddTodo;
 			sourceTree = "<group>";
 		};
 		C562C8322CBDA4A300ABBD59 /* UI */ = {
@@ -119,6 +132,7 @@
 		C562C8332CBDA4C400ABBD59 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				C504988C2CCC1C5A0053A80A /* AddTodo */,
 				C562C8372CBDA4EE00ABBD59 /* More */,
 				C562C8362CBDA4E500ABBD59 /* Activity */,
 				C562C8352CBDA4DA00ABBD59 /* Todos */,
@@ -261,10 +275,12 @@
 				C562C83F2CBDA61300ABBD59 /* HabitsView.swift in Sources */,
 				C56BE8DC2CC2EE9F006A05B1 /* ObservableStore.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
+				C504988E2CCC1C770053A80A /* AddTodoView.swift in Sources */,
 				C562C83B2CBDA5E700ABBD59 /* ActivityView.swift in Sources */,
 				C562C8432CBDA98200ABBD59 /* TopLevelRoutes.swift in Sources */,
 				C562C8392CBDA5D000ABBD59 /* MoreView.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
+				C50498902CCC1E760053A80A /* R.swift in Sources */,
 				C56BE8DE2CC2EF78006A05B1 /* ConnectedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,7 +425,7 @@
 					"$(SRCROOT)/../shared/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)",
 				);
 				INFOPLIST_FILE = iosApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -436,7 +452,7 @@
 					"$(SRCROOT)/../shared/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)",
 				);
 				INFOPLIST_FILE = iosApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

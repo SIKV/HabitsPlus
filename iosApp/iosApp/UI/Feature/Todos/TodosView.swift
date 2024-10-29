@@ -5,7 +5,6 @@ struct TodosView: ConnectedView {
     
     struct Props {
         let state: TodoListState
-        
         let onFetchAll: () -> Void
     }
     
@@ -19,17 +18,27 @@ struct TodosView: ConnectedView {
     }
     
     func body(props: Props) -> some View {
-        VStack {
-            if (props.state.isLoading) {
-                ProgressView()
-            } else {
-                List(props.state.todos, id: \.self) { todo in
-                    Text(todo.title)
+        NavigationStack {
+            VStack {
+                if (props.state.isLoading) {
+                    ProgressView()
+                } else {
+                    List(props.state.todos, id: \.self) { todo in
+                        Text(todo.title)
+                    }
                 }
             }
-        }
-        .onAppear {
-            props.onFetchAll()
+            .navigationTitle(R.str.topLevelRouteTodos.localized())
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: AddTodoView()) {
+                        Image(systemName: R.img.add.rawValue)
+                    }
+                }
+            }
+            .onAppear {
+                props.onFetchAll()
+            }
         }
     }
 }

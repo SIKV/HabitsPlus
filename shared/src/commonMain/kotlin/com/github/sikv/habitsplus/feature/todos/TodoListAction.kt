@@ -1,5 +1,6 @@
 package com.github.sikv.habitsplus.feature.todos
 
+import com.github.sikv.habitsplus.data.model.Todo
 import com.github.sikv.habitsplus.store.Action
 
 sealed class TodoListAction : Action {

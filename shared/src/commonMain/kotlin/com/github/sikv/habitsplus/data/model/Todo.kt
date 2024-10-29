@@ -1,4 +1,4 @@
-package com.github.sikv.habitsplus.feature.todos
+package com.github.sikv.habitsplus.data.model
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
