@@ -1,12 +1,12 @@
 package com.github.sikv.habitsplus.ui
 
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.BottomNavigation
-import androidx.compose.material.BottomNavigationItem
-import androidx.compose.material.Icon
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
+import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.NavigationBar
+import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -59,12 +59,12 @@ fun ComposeApp() {
 
 @Composable
 private fun Navigation(navController: NavController) {
-    BottomNavigation {
+    NavigationBar {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
         val currentDestination = navBackStackEntry?.destination
 
         topLevelRoutes.forEach { topLevelRoute ->
-            BottomNavigationItem(
+            NavigationBarItem(
                 icon = { Icon(topLevelRoute.icon, contentDescription = stringResource(topLevelRoute.name)) },
                 label = { Text(stringResource(topLevelRoute.name)) },
                 selected = currentDestination?.hierarchy?.any { it.hasRoute(topLevelRoute.route::class) } == true,
