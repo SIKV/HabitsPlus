@@ -8,4 +8,8 @@
 
     <!-- Todos -->
     <string name="todos_screen_title">Todos</string>
+    <string name="todos_screen_add_button_content_desc">Add Todo</string>
+
+    <!-- AddTodo -->
+    <string name="add_todo_screen_title">Add Todo</string>
 </resources>

@@ -12,45 +12,45 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
+import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.NavHost
-import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.github.sikv.habitsplus.ui.feature.activity.ActivityScreen
-import com.github.sikv.habitsplus.ui.feature.habits.HabitsScreen
-import com.github.sikv.habitsplus.ui.feature.more.MoreScreen
-import com.github.sikv.habitsplus.ui.feature.todos.TodosScreen
+import com.github.sikv.habitsplus.ui.feature.activity.ActivityNavHost
+import com.github.sikv.habitsplus.ui.feature.habits.HabitsNavHost
+import com.github.sikv.habitsplus.ui.feature.more.MoreNavHost
+import com.github.sikv.habitsplus.ui.feature.todos.TodosNavHost
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
 @Preview
 fun ComposeApp() {
-    val navController = rememberNavController()
+    val rootNavController = rememberNavController()
 
     MaterialTheme {
         Scaffold(
-            bottomBar = { Navigation(navController) }
+            bottomBar = { Navigation(rootNavController) }
         ) { innerPadding ->
             NavHost(
-                navController = navController,
+                navController = rootNavController,
                 startDestination = HabitsRoute,
                 modifier = Modifier
                     .padding(innerPadding)
             ) {
                 composable<HabitsRoute> {
-                    HabitsScreen()
+                    HabitsNavHost()
                 }
                 composable<TodosRoute> {
-                    TodosScreen()
+                    TodosNavHost()
                 }
                 composable<ActivityRoute> {
-                    ActivityScreen()
+                    ActivityNavHost()
                 }
                 composable<MoreRoute> {
-                    MoreScreen()
+                    MoreNavHost()
                 }
             }
         }

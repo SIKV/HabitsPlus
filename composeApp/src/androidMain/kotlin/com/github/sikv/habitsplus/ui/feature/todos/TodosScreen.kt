@@ -3,8 +3,12 @@ package com.github.sikv.habitsplus.ui.feature.todos
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MediumTopAppBar
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -24,7 +28,10 @@ import org.koin.compose.koinInject
 
 @OptIn(ExperimentalCoroutinesApi::class, ExperimentalMaterial3Api::class)
 @Composable
-fun TodosScreen(store: AppStore = koinInject()) {
+fun TodosScreen(
+    onNavigateToAddTodo: () -> Unit,
+    store: AppStore = koinInject()
+) {
     val state by store.observeState()
         .mapLatest { it.todoListState }
         .collectAsStateWithLifecycle(TodoListState.emptyState)
@@ -38,6 +45,16 @@ fun TodosScreen(store: AppStore = koinInject()) {
         topBar = {
             MediumTopAppBar(
                 title = { Text(stringResource(R.string.todos_screen_title)) },
+                actions = {
+                    IconButton(
+                        onClick = onNavigateToAddTodo,
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.Add,
+                            contentDescription = stringResource(R.string.todos_screen_add_button_content_desc)
+                        )
+                    }
+                }
             )
         }
     ) { innerPadding ->
