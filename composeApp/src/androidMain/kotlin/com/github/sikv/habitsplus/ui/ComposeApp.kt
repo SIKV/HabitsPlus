@@ -2,7 +2,6 @@ package com.github.sikv.habitsplus.ui
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
@@ -23,6 +22,7 @@ import com.github.sikv.habitsplus.ui.feature.activity.ActivityNavHost
 import com.github.sikv.habitsplus.ui.feature.habits.HabitsNavHost
 import com.github.sikv.habitsplus.ui.feature.more.MoreNavHost
 import com.github.sikv.habitsplus.ui.feature.todos.TodosNavHost
+import com.github.sikv.habitsplus.ui.theme.AppTheme
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
@@ -30,7 +30,7 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 fun ComposeApp() {
     val rootNavController = rememberNavController()
 
-    MaterialTheme {
+    AppTheme {
         Scaffold(
             bottomBar = { Navigation(rootNavController) }
         ) { innerPadding ->

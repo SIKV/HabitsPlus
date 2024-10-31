@@ -24,7 +24,11 @@ fun TodosNavHost() {
             )
         }
         composable<AddTodoRoute> {
-            AddTodoScreen()
+            AddTodoScreen(
+                onNavigateBack = {
+                    navController.popBackStack()
+                }
+            )
         }
     }
 }
