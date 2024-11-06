@@ -8,9 +8,12 @@
 
     <!-- Common -->
     <string name="back_button_content_desc">Go back</string>
+    <string name="menu_button_content_desc">Menu</string>
+    <string name="sort_button_content_desc">Sort</string>
 
     <!-- Todos -->
     <string name="todos_screen_title">Todos</string>
+    <string name="todos_screen_add_button">Add Todo</string>
     <string name="todos_screen_add_button_content_desc">Add Todo</string>
 
     <!-- AddTodo -->
