@@ -1,5 +1,6 @@
 package com.github.sikv.habitsplus.ui
 
+import androidx.compose.foundation.layout.consumeWindowInsets
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
@@ -22,7 +23,6 @@ import com.github.sikv.habitsplus.ui.feature.activity.ActivityNavHost
 import com.github.sikv.habitsplus.ui.feature.habits.HabitsNavHost
 import com.github.sikv.habitsplus.ui.feature.more.MoreNavHost
 import com.github.sikv.habitsplus.ui.feature.todos.TodosNavHost
-import com.github.sikv.habitsplus.ui.theme.AppTheme
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
@@ -30,28 +30,27 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 fun ComposeApp() {
     val rootNavController = rememberNavController()
 
-    AppTheme {
-        Scaffold(
-            bottomBar = { Navigation(rootNavController) }
-        ) { innerPadding ->
-            NavHost(
-                navController = rootNavController,
-                startDestination = HabitsRoute,
-                modifier = Modifier
-                    .padding(innerPadding)
-            ) {
-                composable<HabitsRoute> {
-                    HabitsNavHost()
-                }
-                composable<TodosRoute> {
-                    TodosNavHost()
-                }
-                composable<ActivityRoute> {
-                    ActivityNavHost()
-                }
-                composable<MoreRoute> {
-                    MoreNavHost()
-                }
+    Scaffold(
+       bottomBar = { Navigation(rootNavController) },
+    ) { innerPadding ->
+        NavHost(
+            navController = rootNavController,
+            startDestination = HabitsRoute,
+            modifier = Modifier
+                .padding(innerPadding)
+                .consumeWindowInsets(innerPadding)
+        ) {
+            composable<HabitsRoute> {
+                HabitsNavHost()
+            }
+            composable<TodosRoute> {
+                TodosNavHost()
+            }
+            composable<ActivityRoute> {
+                ActivityNavHost()
+            }
+            composable<MoreRoute> {
+                MoreNavHost()
             }
         }
     }
