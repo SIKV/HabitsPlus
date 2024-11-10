@@ -12,12 +12,13 @@ import kotlinx.coroutines.withContext
 internal class TodoListMiddleware(
     private val todosRepository: TodosRepository
 ) : AppMiddleware {
+
     override suspend fun invoke(state: AppState, action: Action, dispatcher: Dispatcher) {
         withContext(Dispatchers.IO) {
             when (action) {
-                TodoListAction.FetchAll -> {
+                is TodoListAction.FetchAll -> {
                     dispatcher(TodoListAction.UpdateLoading(true))
-                    val todos = todosRepository.getAllTodos()
+                    val todos = todosRepository.getAllTodos(action.orderBy)
                     dispatcher(TodoListAction.UpdateList(todos))
                 }
             }

@@ -8,5 +8,19 @@ sealed class AddTodoAction : Action {
         val title: String
     ) : AddTodoAction()
 
+    data class UpdateDescription(
+        val description: String
+    ) : AddTodoAction()
+
+    data class UpdateDueDate(
+        val dueDate: Long?
+    ) : AddTodoAction()
+
+    data class UpdateDueTime(
+        val dueTimeHour: Int?,
+        val dueTimeMinute: Int?,
+        val dueTimeIs24hour: Boolean?,
+    ) : AddTodoAction()
+
     data object Add : AddTodoAction()
 }

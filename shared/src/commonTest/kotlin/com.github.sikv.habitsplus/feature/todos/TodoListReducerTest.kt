@@ -20,9 +20,22 @@ class TodoListReducerTest {
     @Test
     fun reducer_updatesState_whenUpdateListAction() {
         val todos = listOf(
-            Todo("Todo 1"),
-            Todo("Todo 2"),
-            Todo("Todo 3"),
+            Todo(
+                id = 100,
+                title = "100",
+                description = null,
+                dueDateTime = 1L,
+                addedAt = 1L,
+                editedAt = null
+            ),
+            Todo(
+                id = 200,
+                title = "200",
+                description = "Description",
+                dueDateTime = 1L,
+                addedAt = 5L,
+                editedAt = 10L
+            ),
         )
 
         val state = TodoListState.emptyState

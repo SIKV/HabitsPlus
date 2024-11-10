@@ -1,7 +1,8 @@
 package com.github.sikv.habitsplus.feature.todos
 
 import com.github.sikv.habitsplus.data.model.Todo
-import com.github.sikv.habitsplus.feature.data.MockTodosRepository
+import com.github.sikv.habitsplus.data.model.TodoOrderBy
+import com.github.sikv.habitsplus.data.mock.MockTodosRepository
 import com.github.sikv.habitsplus.store.AppState
 import com.github.sikv.habitsplus.store.Dispatcher
 import kotlinx.coroutines.test.runTest
@@ -21,7 +22,7 @@ class TodoListMiddlewareTest {
         )
 
         val appState = AppState.emptyState
-        val fetchAllAction = TodoListAction.FetchAll
+        val fetchAllAction = TodoListAction.FetchAll(TodoOrderBy.TITLE_ASC)
 
         var updateLoadingActionReceived = false
         var updateLoadingActionIsLoading = false
