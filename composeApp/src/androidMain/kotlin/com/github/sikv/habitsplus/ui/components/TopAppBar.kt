@@ -1,5 +1,6 @@
 package com.github.sikv.habitsplus.ui.components
 
+import androidx.compose.foundation.layout.RowScope
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -16,7 +17,8 @@ import com.github.sikv.habitsplus.R
 fun TopAppBar(
     onNavigateBack: () -> Unit,
     title: String,
-    showBackButton: Boolean = true
+    showBackButton: Boolean = true,
+    actions: @Composable RowScope.() -> Unit = {}
 ) {
     MediumTopAppBar(
         title = { Text(title) },
@@ -30,5 +32,6 @@ fun TopAppBar(
                 }
             }
         },
+        actions = actions
     )
 }

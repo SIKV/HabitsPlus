@@ -6,6 +6,6 @@ import com.github.sikv.habitsplus.feature.addtodo.AddTodoError
 
 fun AddTodoError.localizedMessage(context: Context): String {
     return when (this) {
-        AddTodoError.Unknown -> context.getString(R.string.add_todo_error_unknown)
+        AddTodoError.EmptyTitle -> context.getString(R.string.add_todo_error_empty_title)
     }
 }

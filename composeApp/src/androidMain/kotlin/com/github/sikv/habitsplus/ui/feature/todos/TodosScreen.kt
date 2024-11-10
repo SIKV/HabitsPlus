@@ -25,6 +25,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.github.sikv.habitsplus.R
 import com.github.sikv.habitsplus.data.model.Todo
+import com.github.sikv.habitsplus.data.model.TodoOrderBy
 import com.github.sikv.habitsplus.feature.todos.TodoListAction
 import com.github.sikv.habitsplus.feature.todos.TodoListState
 import com.github.sikv.habitsplus.store.AppStore
@@ -46,7 +47,7 @@ fun TodosScreen(
 
     // Note: not recommended approach.
     LaunchedEffect(Unit) {
-        store.dispatch(TodoListAction.FetchAll)
+        store.dispatch(TodoListAction.FetchAll(TodoOrderBy.TITLE_ASC))
     }
 
     Scaffold(
