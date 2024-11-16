@@ -17,6 +17,13 @@ val addTodoReducer: Reducer<AddTodoState, AddTodoAction> = { state, action ->
             dueTimeHour = action.dueTimeHour, // TODO: Check dueTimeIs24hour field.
             dueTimeMinute = action.dueTimeMinute
         )
+        is AddTodoAction.Update -> state.copy(
+            title = action.title,
+            description = action.description,
+            dueDate = action.dueDate,
+            dueTimeHour = action.dueTimeHour, // TODO: Check dueTimeIs24hour field.
+            dueTimeMinute = action.dueTimeMinute
+        )
         else -> state
     }
 }

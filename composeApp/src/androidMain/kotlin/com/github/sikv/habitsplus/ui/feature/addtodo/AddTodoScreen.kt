@@ -82,7 +82,7 @@ fun AddTodoScreen(
                 actions = {
                     Button(
                         onClick = {
-                            store.dispatch(AddTodoAction.Add)
+                            store.dispatch(AddTodoAction.Save)
                         },
                         modifier = Modifier.padding(horizontal = MaterialTheme.spacing.medium)
                     ) {

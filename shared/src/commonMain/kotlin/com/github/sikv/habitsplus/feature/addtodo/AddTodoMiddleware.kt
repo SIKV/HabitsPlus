@@ -19,7 +19,7 @@ internal class AddTodoMiddleware(
     override suspend fun invoke(state: AppState, action: Action, dispatcher: Dispatcher) {
         withContext(Dispatchers.IO) {
             when (action) {
-                AddTodoAction.Add -> handleAddAction(state.addTodoState, dispatcher)
+                AddTodoAction.Save -> handleAddAction(state.addTodoState, dispatcher)
             }
         }
     }

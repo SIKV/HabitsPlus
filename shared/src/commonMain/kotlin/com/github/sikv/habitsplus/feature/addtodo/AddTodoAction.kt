@@ -9,7 +9,7 @@ sealed class AddTodoAction : Action {
     ) : AddTodoAction()
 
     data class UpdateDescription(
-        val description: String
+        val description: String?
     ) : AddTodoAction()
 
     data class UpdateDueDate(
@@ -22,5 +22,14 @@ sealed class AddTodoAction : Action {
         val dueTimeIs24hour: Boolean?,
     ) : AddTodoAction()
 
-    data object Add : AddTodoAction()
+    data class Update(
+        val title: String,
+        val description: String?,
+        val dueDate: Long?,
+        val dueTimeHour: Int?,
+        val dueTimeMinute: Int?,
+        val dueTimeIs24hour: Boolean?,
+    ) : AddTodoAction()
+
+    data object Save : AddTodoAction()
 }
