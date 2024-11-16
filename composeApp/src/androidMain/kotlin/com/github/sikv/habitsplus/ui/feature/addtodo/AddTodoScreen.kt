@@ -155,8 +155,8 @@ fun AddTodoScreen(
 
             TimePickerField(
                 time = formattedTime,
-                onTimeSelect = { hour, minute, is24hour ->
-                    store.dispatch(AddTodoAction.UpdateDueTime(hour, minute, is24hour))
+                onTimeSelect = { hour, minute ->
+                    store.dispatch(AddTodoAction.UpdateDueTime(hour, minute))
                 }
             )
         }

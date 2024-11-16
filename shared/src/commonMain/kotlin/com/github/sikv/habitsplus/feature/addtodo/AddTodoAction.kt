@@ -17,9 +17,8 @@ sealed class AddTodoAction : Action {
     ) : AddTodoAction()
 
     data class UpdateDueTime(
-        val dueTimeHour: Int?,
-        val dueTimeMinute: Int?,
-        val dueTimeIs24hour: Boolean?,
+        val dueTimeHour: Int?, // 24-hour clock.
+        val dueTimeMinute: Int?
     ) : AddTodoAction()
 
     data class Update(
@@ -27,8 +26,7 @@ sealed class AddTodoAction : Action {
         val description: String?,
         val dueDate: Long?,
         val dueTimeHour: Int?,
-        val dueTimeMinute: Int?,
-        val dueTimeIs24hour: Boolean?,
+        val dueTimeMinute: Int?
     ) : AddTodoAction()
 
     data object Save : AddTodoAction()
