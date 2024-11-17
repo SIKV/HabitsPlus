@@ -9,12 +9,12 @@ class TodosLocalDataSourceImpl(
     private val database: Database
 ) : TodosLocalDataSource {
 
-    override fun insertTodo(title: String, description: String?, dueDateTime: Long?, addedAt: Long) {
+    override fun insertTodo(title: String, description: String?, dueDateMs: Long?, addedAtMs: Long) {
         database.dbQuery.insertTodo(
             title = title,
             description = description,
-            due_date_time = dueDateTime,
-            added_at = addedAt
+            due_date_ms = dueDateMs,
+            added_at_ms = addedAtMs
         )
     }
 

@@ -30,7 +30,7 @@ import com.github.sikv.habitsplus.ui.theme.spacing
 @Composable
 fun TimePickerField(
     time: String,
-    onTimeSelect: (hour: Int?, minute: Int?, is24hour: Boolean?) -> Unit
+    onTimeSelect: (hour: Int?, minute: Int?) -> Unit
 ) {
     var showModal by remember { mutableStateOf(false) }
 
@@ -67,7 +67,7 @@ fun TimePickerField(
         if (time.isNotBlank()) {
             ClearFieldButton(
                 onClick = {
-                    onTimeSelect(null, null, null)
+                    onTimeSelect(null, null)
                 },
                 modifier = Modifier.padding(top = MaterialTheme.spacing.small)
             )
@@ -77,7 +77,7 @@ fun TimePickerField(
     if (showModal) {
         TimePickerModal(
             onTimeSelect = { timePickerState ->
-                onTimeSelect(timePickerState.hour, timePickerState.minute, timePickerState.is24hour)
+                onTimeSelect(timePickerState.hour, timePickerState.minute)
                 showModal = false
             },
             onDismiss = { showModal = false }

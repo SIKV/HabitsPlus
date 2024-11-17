@@ -43,9 +43,9 @@ internal class AddTodoMiddleware(
         return Todo(
             title = state.title.trim(),
             description = state.description?.trim(),
-            dueDateTime = 0L, // TODO: Set.
-            addedAt = TimeUtils.currentTimeMillis(),
-            editedAt = null,
+            dueDateMs = 0L, // TODO: Set.
+            addedAtMs = TimeUtils.currentTimeMillis(),
+            editedAtMs = null,
         )
     }
 }

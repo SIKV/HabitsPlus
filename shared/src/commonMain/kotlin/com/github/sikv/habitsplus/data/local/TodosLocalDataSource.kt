@@ -6,8 +6,8 @@ interface TodosLocalDataSource {
     fun insertTodo(
         title: String,
         description: String?,
-        dueDateTime: Long?,
-        addedAt: Long
+        dueDateMs: Long?,
+        addedAtMs: Long
     )
     fun selectAllTodos(): List<Todo>
 }

@@ -12,25 +12,25 @@ class MockTodosLocalDataSource : TodosLocalDataSource {
             id = 10,
             title = "Todo 10",
             description = null,
-            dueDateTime = 123L,
-            addedAt = 100L,
-            editedAt = null
+            dueDateMs = 123L,
+            addedAtMs = 100L,
+            editedAtMs = null
         ),
         Todo(
             id = 0,
             title = "0",
             description = "No description",
-            dueDateTime = 1L,
-            addedAt = 50L,
-            editedAt = 100L
+            dueDateMs = 1L,
+            addedAtMs = 50L,
+            editedAtMs = 100L
         ),
         Todo(
             id = 5,
             title = "Something",
             description = "Test",
-            dueDateTime = 500L,
-            addedAt = 1L,
-            editedAt = null
+            dueDateMs = 500L,
+            addedAtMs = 1L,
+            editedAtMs = null
         ),
     )
 
@@ -38,18 +38,18 @@ class MockTodosLocalDataSource : TodosLocalDataSource {
 
     private var insertTodoTitle: String? = null
     private var insertTodoDescription: String? = null
-    private var insertTodoDueDateTime: Long? = null
-    private var insertTodoAddedAt: Long? = null
+    private var insertTodoDueDateMs: Long? = null
+    private var insertTodoAddedAtMs: Long? = null
 
     private var isSelectAllTodosCalled: Boolean = false
 
-    override fun insertTodo(title: String, description: String?, dueDateTime: Long?, addedAt: Long) {
+    override fun insertTodo(title: String, description: String?, dueDateMs: Long?, addedAtMs: Long) {
         isInsertTodoCalled = true
 
         insertTodoTitle = title
         insertTodoDescription = description
-        insertTodoDueDateTime = dueDateTime
-        insertTodoAddedAt = addedAt
+        insertTodoDueDateMs = dueDateMs
+        insertTodoAddedAtMs = addedAtMs
     }
 
     override fun selectAllTodos(): List<Todo> {
@@ -57,12 +57,12 @@ class MockTodosLocalDataSource : TodosLocalDataSource {
         return testTodos
     }
 
-    fun verifyInsertTodoCalled(title: String, description: String?, dueDateTime: Long?, addedAt: Long) {
+    fun verifyInsertTodoCalled(title: String, description: String?, dueDateMs: Long?, addedAtMs: Long) {
         assertTrue(isInsertTodoCalled)
 
         assertEquals(title, insertTodoTitle)
         assertEquals(description, insertTodoDescription)
-        assertEquals(dueDateTime, insertTodoDueDateTime)
-        assertEquals(addedAt, insertTodoAddedAt)
+        assertEquals(dueDateMs, insertTodoDueDateMs)
+        assertEquals(addedAtMs, insertTodoAddedAtMs)
     }
 }

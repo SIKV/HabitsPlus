@@ -13,8 +13,8 @@ class TodosRepositoryImpl(
         todosLocalDataSource.insertTodo(
             title = todo.title,
             description = todo.description,
-            dueDateTime = todo.dueDateTime,
-            addedAt = todo.addedAt
+            dueDateMs = todo.dueDateMs,
+            addedAtMs = todo.addedAtMs
         )
     }
 
@@ -24,10 +24,10 @@ class TodosRepositoryImpl(
                 when (orderBy) {
                     TodoOrderBy.TITLE_ASC -> a.title.compareTo(b.title)
                     TodoOrderBy.TITLE_DESC -> b.title.compareTo(a.title)
-                    TodoOrderBy.DUE_DATE_ASC -> a.dueDateTime?.compareTo(b.dueDateTime ?: 0) ?: 0
-                    TodoOrderBy.DUE_DATE_DESC -> b.dueDateTime?.compareTo(a.dueDateTime ?: 0) ?: 0
-                    TodoOrderBy.ADDED_AT_ASC -> a.addedAt.compareTo(b.addedAt)
-                    TodoOrderBy.ADDED_AT_DESC -> b.addedAt.compareTo(a.addedAt)
+                    TodoOrderBy.DUE_DATE_ASC -> a.dueDateMs?.compareTo(b.dueDateMs ?: 0) ?: 0
+                    TodoOrderBy.DUE_DATE_DESC -> b.dueDateMs?.compareTo(a.dueDateMs ?: 0) ?: 0
+                    TodoOrderBy.ADDED_AT_ASC -> a.addedAtMs.compareTo(b.addedAtMs)
+                    TodoOrderBy.ADDED_AT_DESC -> b.addedAtMs.compareTo(a.addedAtMs)
                 }
             }
     }

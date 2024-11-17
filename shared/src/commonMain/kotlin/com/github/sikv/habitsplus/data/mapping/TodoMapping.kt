@@ -6,16 +6,16 @@ internal fun mapTodo(
     id: Long,
     title: String,
     description: String?,
-    dueDateTime: Long?,
-    addedAt: Long,
-    editedAt: Long?
+    dueDateMs: Long?,
+    addedAtMs: Long,
+    editedAtMs: Long?
 ): Todo {
     return Todo(
         id = id,
         title = title,
         description = description,
-        dueDateTime = dueDateTime,
-        addedAt = addedAt,
-        editedAt = editedAt
+        dueDateMs = dueDateMs,
+        addedAtMs = addedAtMs,
+        editedAtMs = editedAtMs
     )
 }

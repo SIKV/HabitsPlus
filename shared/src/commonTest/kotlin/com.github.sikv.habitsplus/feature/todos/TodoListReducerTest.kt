@@ -24,17 +24,17 @@ class TodoListReducerTest {
                 id = 100,
                 title = "100",
                 description = null,
-                dueDateTime = 1L,
-                addedAt = 1L,
-                editedAt = null
+                dueDateMs= 1L,
+                addedAtMs = 1L,
+                editedAtMs = null
             ),
             Todo(
                 id = 200,
                 title = "200",
                 description = "Description",
-                dueDateTime = 1L,
-                addedAt = 5L,
-                editedAt = 10L
+                dueDateMs = 1L,
+                addedAtMs = 5L,
+                editedAtMs = 10L
             ),
         )
 

@@ -13,7 +13,7 @@ sealed class AddTodoAction : Action {
     ) : AddTodoAction()
 
     data class UpdateDueDate(
-        val dueDate: Long?
+        val dueDateMs: Long?
     ) : AddTodoAction()
 
     data class UpdateDueTime(
@@ -24,7 +24,7 @@ sealed class AddTodoAction : Action {
     data class Update(
         val title: String,
         val description: String?,
-        val dueDate: Long?,
+        val dueDateMs: Long?,
         val dueTimeHour: Int?,
         val dueTimeMinute: Int?
     ) : AddTodoAction()

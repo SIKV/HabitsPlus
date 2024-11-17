@@ -20,9 +20,9 @@ class TodosRepositoryImplTest {
         val todo = Todo(
             title = "Test todo",
             description = "Some description",
-            dueDateTime = 90L,
-            addedAt = 10L,
-            editedAt = null
+            dueDateMs = 90L,
+            addedAtMs = 10L,
+            editedAtMs = null
         )
 
         // WHEN
@@ -32,8 +32,8 @@ class TodosRepositoryImplTest {
         mockTodosLocalDataSource.verifyInsertTodoCalled(
             title = todo.title,
             description = todo.description,
-            dueDateTime = todo.dueDateTime,
-            addedAt = todo.addedAt
+            dueDateMs = todo.dueDateMs,
+            addedAtMs = todo.addedAtMs
         )
     }
 

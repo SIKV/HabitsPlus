@@ -14,14 +14,14 @@ data class Todo(
     @SerialName("description")
     val description: String?,
 
-    @SerialName("dueDateTime")
-    val dueDateTime: Long?,
+    @SerialName("dueDateMs")
+    val dueDateMs: Long?, // in UTC milliseconds from the epoch.
 
-    @SerialName("addedAt")
-    val addedAt: Long,
+    @SerialName("addedAtMs")
+    val addedAtMs: Long, // in UTC milliseconds from the epoch.
 
-    @SerialName("editedAt")
-    val editedAt: Long?
+    @SerialName("editedAtMs")
+    val editedAtMs: Long? // in UTC milliseconds from the epoch.
 ) {
 
     companion object {

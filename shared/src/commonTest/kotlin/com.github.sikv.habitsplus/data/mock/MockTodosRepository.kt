@@ -12,17 +12,17 @@ internal class MockTodosRepository : TodosRepository {
             id = 1,
             title = "Todo 1",
             description = null,
-            dueDateTime = 123L,
-            addedAt = 100L,
-            editedAt = null
+            dueDateMs = 123L,
+            addedAtMs = 100L,
+            editedAtMs = null
         ),
         Todo(
             id = 2,
             title = "Todo 2",
             description = "Description 2",
-            dueDateTime = 1L,
-            addedAt = 50L,
-            editedAt = 100L
+            dueDateMs = 1L,
+            addedAtMs = 50L,
+            editedAtMs = 100L
         ),
     )
 

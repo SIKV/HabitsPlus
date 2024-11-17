@@ -8,10 +8,10 @@ import java.util.Locale
 
 // TODO: This is a temporary implementation.
 fun convertStateToDate(state: AddTodoState): String {
-    val dueDate = state.dueDate
-    return if (dueDate != null) {
+    val dueDateMs = state.dueDateMs
+    return if (dueDateMs != null) {
         val formatter = SimpleDateFormat("MM/dd/yyyy", Locale.getDefault())
-        return formatter.format(Date(dueDate))
+        return formatter.format(Date(dueDateMs))
     } else {
         ""
     }
