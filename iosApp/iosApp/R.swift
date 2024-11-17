@@ -16,6 +16,8 @@ class R {
         // AddTodo View
         case addTodoNavigationTitle = "AddTodoNavigationTitle"
         case addTodoTitle = "AddTodoTitle"
+        case addTodoDescription = "AddTodoDescription"
+        case addTodoDueDate = "AddTodoDueDate"
         
         func localized() -> LocalizedStringKey {
             return LocalizedStringKey(self.rawValue)

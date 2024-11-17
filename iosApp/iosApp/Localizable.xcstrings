@@ -26,6 +26,28 @@
     "Activity" : {
 
     },
+    "AddTodoDescription" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Description (optional)"
+          }
+        }
+      }
+    },
+    "AddTodoDueDate" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Due Date"
+          }
+        }
+      }
+    },
     "AddTodoNavigationTitle" : {
       "extractionState" : "manual",
       "localizations" : {

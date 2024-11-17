@@ -12,7 +12,7 @@ struct TodosView: ConnectedView {
         return Props(
             state: state.todoListState,
             onFetchAll: {
-                dispatch(TodoListAction.FetchAll())
+                dispatch(TodoListAction.FetchAll(orderBy: TodoOrderBy.titleDesc))
             }
         )
     }
