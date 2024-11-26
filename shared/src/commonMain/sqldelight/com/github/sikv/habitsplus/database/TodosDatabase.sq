@@ -1,0 +1,28 @@
+CREATE TABLE TodoEntity(
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    status INTEGER NOT NULL,
+    title TEXT NOT NULL,
+    description TEXT,
+    due_date_ms INTEGER,
+    done_at_ms INTEGER,
+    added_at_ms INTEGER NOT NULL,
+    edited_at_ms INTEGER
+);
+
+insertTodo:
+INSERT INTO TodoEntity(status, title, description, due_date_ms, added_at_ms)
+VALUES (?,?,?,?,?);
+
+updateTodo:
+UPDATE TodoEntity
+SET status=:status,
+    title=:title,
+    description=:description,
+    due_date_ms=:due_date_ms,
+    done_at_ms=:done_at_ms,
+    edited_at_ms=:edited_at_ms
+WHERE id=:id;
+
+selectAllTodos:
+SELECT TodoEntity.*
+FROM TodoEntity;

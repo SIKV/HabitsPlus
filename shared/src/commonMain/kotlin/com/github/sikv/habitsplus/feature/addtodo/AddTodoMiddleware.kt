@@ -2,12 +2,12 @@ package com.github.sikv.habitsplus.feature.addtodo
 
 import com.github.sikv.habitsplus.data.TodosRepository
 import com.github.sikv.habitsplus.data.model.Todo
+import com.github.sikv.habitsplus.data.model.TodoStatus
 import com.github.sikv.habitsplus.store.Action
 import com.github.sikv.habitsplus.store.AppMiddleware
 import com.github.sikv.habitsplus.store.AppState
 import com.github.sikv.habitsplus.store.Dispatcher
 import com.github.sikv.habitsplus.store.EmitSideEffectAction
-import com.github.sikv.habitsplus.util.TimeUtils
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
 import kotlinx.coroutines.withContext
@@ -41,11 +41,10 @@ internal class AddTodoMiddleware(
 
     private fun createTodoFromState(state: AddTodoState): Todo {
         return Todo(
+            status = TodoStatus.Todo,
             title = state.title.trim(),
             description = state.description?.trim(),
-            dueDateMs = 0L, // TODO: Set.
-            addedAtMs = TimeUtils.currentTimeMillis(),
-            editedAtMs = null,
+            dueDateMs = 0L // TODO: Set.
         )
     }
 }

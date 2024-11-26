@@ -7,7 +7,8 @@ import org.koin.dsl.module
 val repositoryModule = module {
     single<TodosRepository> {
         TodosRepositoryImpl(
-            todosLocalDataSource = get()
+            todosLocalDataSource = get(),
+            dateTimeUtils = get()
         )
     }
 }

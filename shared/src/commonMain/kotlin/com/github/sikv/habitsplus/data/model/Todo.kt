@@ -8,6 +8,9 @@ data class Todo(
     @SerialName("id")
     val id: Long = EMPTY_ID,
 
+    @SerialName("status")
+    val status: TodoStatus,
+
     @SerialName("title")
     val title: String,
 
@@ -18,10 +21,10 @@ data class Todo(
     val dueDateMs: Long?, // in UTC milliseconds from the epoch.
 
     @SerialName("addedAtMs")
-    val addedAtMs: Long, // in UTC milliseconds from the epoch.
+    val addedAtMs: Long = 0, // in UTC milliseconds from the epoch.
 
     @SerialName("editedAtMs")
-    val editedAtMs: Long? // in UTC milliseconds from the epoch.
+    val editedAtMs: Long? = 0 // in UTC milliseconds from the epoch.
 ) {
 
     companion object {

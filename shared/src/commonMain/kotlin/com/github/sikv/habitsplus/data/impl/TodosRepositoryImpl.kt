@@ -2,19 +2,36 @@ package com.github.sikv.habitsplus.data.impl
 
 import com.github.sikv.habitsplus.data.TodosRepository
 import com.github.sikv.habitsplus.data.local.TodosLocalDataSource
+import com.github.sikv.habitsplus.data.mapping.doneAtMsOrNull
+import com.github.sikv.habitsplus.data.mapping.toLong
 import com.github.sikv.habitsplus.data.model.Todo
 import com.github.sikv.habitsplus.data.model.TodoOrderBy
+import com.github.sikv.habitsplus.util.DateTimeUtils
 
 class TodosRepositoryImpl(
-    private val todosLocalDataSource: TodosLocalDataSource
+    private val todosLocalDataSource: TodosLocalDataSource,
+    private val dateTimeUtils: DateTimeUtils
 ) : TodosRepository {
 
     override fun addTodo(todo: Todo) {
         todosLocalDataSource.insertTodo(
+            status = todo.status.toLong(),
             title = todo.title,
             description = todo.description,
             dueDateMs = todo.dueDateMs,
-            addedAtMs = todo.addedAtMs
+            addedAtMs = dateTimeUtils.currentTimeMillis()
+        )
+    }
+
+    override fun updateTodo(todo: Todo): Boolean {
+        return todosLocalDataSource.updateTodo(
+            id = todo.id,
+            status = todo.status.toLong(),
+            title = todo.title,
+            description = todo.description,
+            dueDateMs = todo.dueDateMs,
+            doneAtMs = todo.status.doneAtMsOrNull(),
+            editedAtMs = dateTimeUtils.currentTimeMillis()
         )
     }
 

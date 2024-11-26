@@ -62,7 +62,7 @@ android {
 
 sqldelight {
     databases {
-        create("AppDatabase") {
+        create("TodosDatabase") {
             packageName.set("com.github.sikv.habitsplus.database")
         }
     }

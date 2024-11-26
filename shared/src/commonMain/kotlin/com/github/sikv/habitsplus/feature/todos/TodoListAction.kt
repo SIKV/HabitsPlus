@@ -17,4 +17,8 @@ sealed class TodoListAction : Action {
     data class UpdateList(
         val todos: List<Todo>
     ) : TodoListAction()
+
+    data class ToggleStatus(
+        val todo: Todo
+    ) : TodoListAction()
 }

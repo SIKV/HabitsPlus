@@ -5,7 +5,7 @@ import app.cash.sqldelight.driver.native.NativeSqliteDriver
 
 internal class IOSDatabaseDriverFactory : DatabaseDriverFactory {
 
-    override fun createDriver(): SqlDriver {
-        return NativeSqliteDriver(AppDatabase.Schema, "app.db")
+    override fun createTodosDriver(): SqlDriver {
+        return NativeSqliteDriver(TodosDatabase.Schema, "todos.db")
     }
 }

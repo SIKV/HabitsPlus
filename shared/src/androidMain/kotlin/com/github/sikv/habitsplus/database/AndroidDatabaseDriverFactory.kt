@@ -8,7 +8,7 @@ internal class AndroidDatabaseDriverFactory(
     private val context: Context
 ) : DatabaseDriverFactory  {
 
-    override fun createDriver(): SqlDriver {
-        return AndroidSqliteDriver(AppDatabase.Schema, context, "app.db")
+    override fun createTodosDriver(): SqlDriver {
+        return AndroidSqliteDriver(TodosDatabase.Schema, context, "todos.db")
     }
 }
