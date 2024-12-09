@@ -1,5 +1,5 @@
 [versions]
-agp = "8.2.2"
+agp = "8.7.3"
 android-compileSdk = "34"
 android-minSdk = "24"
 android-targetSdk = "34"
@@ -21,6 +21,7 @@ coroutines = "1.8.0"
 kotlinx-serialization = "1.7.3"
 koin = "3.5.3"
 sqlDelight = "2.0.1"
+mockmp = "2.0.0"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -58,3 +59,5 @@ compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "serialization" }
 sqldelight = { id = "app.cash.sqldelight", version.ref = "sqlDelight" }
+mockmp = { id = "org.kodein.mock.mockmp", version.ref = "mockmp" }
+devtoolsKsp = { id = "com.google.devtools.ksp", version = "2.0.21-1.0.28" }

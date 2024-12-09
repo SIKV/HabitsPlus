@@ -4,6 +4,7 @@ import com.github.sikv.habitsplus.di.appModule
 import com.github.sikv.habitsplus.di.dataSourceModule
 import com.github.sikv.habitsplus.di.databaseModule
 import com.github.sikv.habitsplus.di.middlewareModule
+import com.github.sikv.habitsplus.di.preferencesModule
 import com.github.sikv.habitsplus.di.repositoryModule
 import com.github.sikv.habitsplus.store.AppStore
 import org.koin.core.component.KoinComponent
@@ -12,7 +13,14 @@ import org.koin.core.context.startKoin
 
 fun initKoin() {
     val koinApp = startKoin {
-        modules(appModule, middlewareModule, databaseModule, dataSourceModule, repositoryModule)
+        modules(
+            appModule,
+            middlewareModule,
+            databaseModule,
+            dataSourceModule,
+            repositoryModule,
+            preferencesModule
+        )
     }.koin
 }
 

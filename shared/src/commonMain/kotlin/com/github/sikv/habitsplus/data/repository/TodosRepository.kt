@@ -1,8 +1,7 @@
-package com.github.sikv.habitsplus.data
+package com.github.sikv.habitsplus.data.repository
 
 import com.github.sikv.habitsplus.data.model.Todo
 import com.github.sikv.habitsplus.data.model.TodoOrderBy
-import com.github.sikv.habitsplus.data.model.TodoStatus
 
 internal interface TodosRepository {
 
@@ -12,5 +11,5 @@ internal interface TodosRepository {
     // Note: [editedAtMs] property should be populated in repository implementation.
     fun updateTodo(todo: Todo): Boolean
 
-    fun getAllTodos(orderBy: TodoOrderBy): List<Todo>
+    fun getAllTodos(orderBy: TodoOrderBy, showCompleted: Boolean): List<Todo>
 }

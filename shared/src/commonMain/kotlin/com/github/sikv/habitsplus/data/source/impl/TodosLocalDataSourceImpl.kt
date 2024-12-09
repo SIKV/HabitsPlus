@@ -1,11 +1,11 @@
-package com.github.sikv.habitsplus.data.local.impl
+package com.github.sikv.habitsplus.data.source.impl
 
-import com.github.sikv.habitsplus.data.local.TodosLocalDataSource
 import com.github.sikv.habitsplus.data.mapping.mapTodo
 import com.github.sikv.habitsplus.data.model.Todo
+import com.github.sikv.habitsplus.data.source.TodosLocalDataSource
 import com.github.sikv.habitsplus.database.TodosDatabaseManager
 
-class TodosLocalDataSourceImpl(
+internal class TodosLocalDataSourceImpl(
     private val database: TodosDatabaseManager
 ) : TodosLocalDataSource {
 

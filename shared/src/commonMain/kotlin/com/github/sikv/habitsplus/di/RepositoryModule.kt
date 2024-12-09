@@ -1,7 +1,7 @@
 package com.github.sikv.habitsplus.di
 
-import com.github.sikv.habitsplus.data.TodosRepository
-import com.github.sikv.habitsplus.data.impl.TodosRepositoryImpl
+import com.github.sikv.habitsplus.data.repository.TodosRepository
+import com.github.sikv.habitsplus.data.repository.impl.TodosRepositoryImpl
 import org.koin.dsl.module
 
 val repositoryModule = module {

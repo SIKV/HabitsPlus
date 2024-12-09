@@ -1,14 +1,15 @@
-package com.github.sikv.habitsplus.data.impl
+package com.github.sikv.habitsplus.data.repository.impl
 
-import com.github.sikv.habitsplus.data.TodosRepository
-import com.github.sikv.habitsplus.data.local.TodosLocalDataSource
+import com.github.sikv.habitsplus.data.repository.TodosRepository
+import com.github.sikv.habitsplus.data.source.TodosLocalDataSource
 import com.github.sikv.habitsplus.data.mapping.doneAtMsOrNull
 import com.github.sikv.habitsplus.data.mapping.toLong
 import com.github.sikv.habitsplus.data.model.Todo
 import com.github.sikv.habitsplus.data.model.TodoOrderBy
+import com.github.sikv.habitsplus.data.model.TodoStatus
 import com.github.sikv.habitsplus.util.DateTimeUtils
 
-class TodosRepositoryImpl(
+internal class TodosRepositoryImpl(
     private val todosLocalDataSource: TodosLocalDataSource,
     private val dateTimeUtils: DateTimeUtils
 ) : TodosRepository {
@@ -35,8 +36,17 @@ class TodosRepositoryImpl(
         )
     }
 
-    override fun getAllTodos(orderBy: TodoOrderBy): List<Todo> {
+    override fun getAllTodos(orderBy: TodoOrderBy, showCompleted: Boolean): List<Todo> {
         return todosLocalDataSource.selectAllTodos()
+            .filter { todo ->
+                // Show all items if [showCompleted] is true.
+                if (showCompleted) {
+                    true
+                } else {
+                    // Otherwise show only not completed.
+                    todo.status !is TodoStatus.Done
+                }
+            }
             .sortedWith { a, b ->
                 when (orderBy) {
                     TodoOrderBy.TITLE_ASC -> a.title.compareTo(b.title)

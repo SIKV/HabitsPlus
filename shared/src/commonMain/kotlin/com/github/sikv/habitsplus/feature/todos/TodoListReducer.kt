@@ -9,7 +9,10 @@ val todoListReducer: Reducer<TodoListState, TodoListAction> = { state, action ->
         )
         is TodoListAction.UpdateList -> state.copy(
             isLoading = false,
-            todos = action.todos
+            todos = action.todos,
+            orderByOptions = action.orderByOptions ?: state.orderByOptions,
+            orderBy = action.orderBy ?: state.orderBy,
+            showCompleted = action.showCompleted ?: state.showCompleted
         )
         else -> state
     }

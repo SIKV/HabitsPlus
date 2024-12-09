@@ -1,6 +1,6 @@
 package com.github.sikv.habitsplus.feature.addtodo
 
-import com.github.sikv.habitsplus.data.TodosRepository
+import com.github.sikv.habitsplus.data.repository.TodosRepository
 import com.github.sikv.habitsplus.data.model.Todo
 import com.github.sikv.habitsplus.data.model.TodoStatus
 import com.github.sikv.habitsplus.store.Action
