@@ -12,12 +12,18 @@ class R {
     }
     
     class img {
-        // Common
-        static let add = "plus.circle"
+        // Common Actions
+        static let actionAdd = "plus.circle"
+        static let actionMore = "ellipsis.circle"
+        static let actionSort = "arrow.up.arrow.down"
+        
+        static let selected = "checkmark"
         
         // Todo
         static let todoStatusTodo = "circle"
         static let todoStatusDone = "checkmark.circle.fill"
+        static let todosShowCompleted = "eye"
+        static let todosHideCompleted = "eye.slash"
     }
     
     enum str : String {
@@ -27,9 +33,22 @@ class R {
         // Common
         case titleErrorAlert = "TitleErrorAlert"
         
+        case orderByTitleAsc = "OrderByTitleAsc"
+        case orderByTitleDesc = "OrderByTitleDesc"
+        case orderByDueDateAsc = "OrderByDueDateAsc"
+        case orderByDueDateDesc = "OrderByDueDateDesc"
+        case orderByAddedAtAsc = "OrderByAddedAtAsc"
+        case orderByAddedAtDesc = "OrderByAddedAtDesc"
+        
         // Common actions
         case actionDone = "ActionDone"
         case actionOK = "ActionOK"
+        case actionMenu = "ActionMenu"
+        case actionSortBy = "ActionSortBy"
+        
+        // Todos View
+        case todosActionShowCompleted = "TodosActionShowCompleted"
+        case todosActionHideCompleted = "TodosActionHideCompleted"
         
         // AddTodo View
         case addTodoNavigationTitle = "AddTodoNavigationTitle"

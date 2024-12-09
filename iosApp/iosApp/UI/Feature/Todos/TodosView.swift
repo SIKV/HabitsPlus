@@ -7,16 +7,24 @@ struct TodosView: ConnectedView {
         let state: TodoListState
         let onFetchAll: () -> Void
         let onToggleStatus: (Todo) -> Void
+        let onUpdateOrderBy: (TodoOrderBy) -> Void
+        let onUpdateShowCompleted: (Bool) -> Void
     }
     
     func map(state: AppState, dispatch: @escaping DispatchFunction) -> Props {
         return Props(
             state: state.todoListState,
             onFetchAll: {
-                dispatch(TodoListAction.FetchAll(orderBy: TodoOrderBy.titleDesc))
+                dispatch(TodoListAction.FetchAll.shared)
             },
             onToggleStatus: { todo in
                 dispatch(TodoListAction.ToggleStatus(todo: todo))
+            },
+            onUpdateOrderBy: { orderBy in
+                dispatch(TodoListAction.UpdateOrderBy(orderBy: orderBy))
+            },
+            onUpdateShowCompleted: { showCompleted in
+                dispatch(TodoListAction.UpdateShowCompleted(showCompleted: showCompleted))
             }
         )
     }
@@ -41,8 +49,17 @@ struct TodosView: ConnectedView {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     NavigationLink(destination: AddTodoView()) {
-                        Image(systemName: R.img.add)
+                        Image(systemName: R.img.actionAdd)
                     }
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    TodosMenuView(
+                        orderByOptions: props.state.orderByOptions,
+                        orderBy: props.state.orderBy,
+                        showCompleted: props.state.showCompleted,
+                        onUpdateOrderBy: props.onUpdateOrderBy,
+                        onUpdateShowCompleted: props.onUpdateShowCompleted
+                    )
                 }
             }
             .onAppear {
