@@ -6,7 +6,7 @@ struct TodosView: ConnectedView {
     struct Props {
         let state: TodoListState
         let onFetchAll: () -> Void
-        let onToggleStatus: (Todo) -> Void
+        let onToggleStatus: (TodoModel) -> Void
         let onUpdateOrderBy: (TodoOrderBy) -> Void
         let onUpdateShowCompleted: (Bool) -> Void
     }
