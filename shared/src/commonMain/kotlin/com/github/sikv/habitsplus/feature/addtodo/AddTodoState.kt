@@ -6,7 +6,7 @@ import com.github.sikv.habitsplus.store.StoreState
 data class AddTodoState(
     val title: String,
     val description: String?,
-    val dueDateMs: Timestamp?,
+    val dueDate: Timestamp?,
     val dueTimeHour: Int?, // 24-hour clock.
     val dueTimeMinute: Int?,
 ) : StoreState {
@@ -15,7 +15,7 @@ data class AddTodoState(
         val emptyState = AddTodoState(
             title = "",
             description = null,
-            dueDateMs = null,
+            dueDate = null,
             dueTimeHour = null,
             dueTimeMinute = null
         )

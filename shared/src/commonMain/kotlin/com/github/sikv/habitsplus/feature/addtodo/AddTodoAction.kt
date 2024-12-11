@@ -1,5 +1,6 @@
 package com.github.sikv.habitsplus.feature.addtodo
 
+import com.github.sikv.habitsplus.data.model.Timestamp
 import com.github.sikv.habitsplus.store.Action
 
 sealed class AddTodoAction : Action {
@@ -13,7 +14,7 @@ sealed class AddTodoAction : Action {
     ) : AddTodoAction()
 
     data class UpdateDueDate(
-        val dueDateMs: Long?
+        val dueDate: Timestamp?
     ) : AddTodoAction()
 
     data class UpdateDueTime(
@@ -24,7 +25,7 @@ sealed class AddTodoAction : Action {
     data class Update(
         val title: String,
         val description: String?,
-        val dueDateMs: Long?,
+        val dueDate: Timestamp?,
         val dueTimeHour: Int?,
         val dueTimeMinute: Int?
     ) : AddTodoAction()

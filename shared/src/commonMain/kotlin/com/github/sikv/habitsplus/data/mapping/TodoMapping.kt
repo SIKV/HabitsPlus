@@ -1,5 +1,6 @@
 package com.github.sikv.habitsplus.data.mapping
 
+import com.github.sikv.habitsplus.data.model.Metadata
 import com.github.sikv.habitsplus.data.model.TodoModel
 import com.github.sikv.habitsplus.data.model.TodoStatus
 
@@ -43,8 +44,10 @@ internal fun mapTodo(
         status = mapTodoStatus(status, doneAtMs),
         title = title,
         description = description,
-        dueDateMs = dueDateMs,
-        addedAtMs = addedAtMs,
-        editedAtMs = editedAtMs
+        dueDate = dueDateMs,
+        metadata = Metadata(
+            addedAt = addedAtMs,
+            editedAt = editedAtMs
+        )
     )
 }

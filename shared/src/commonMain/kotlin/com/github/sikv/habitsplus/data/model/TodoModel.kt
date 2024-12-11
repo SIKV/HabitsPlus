@@ -17,12 +17,9 @@ data class TodoModel(
     @SerialName("description")
     val description: String?,
 
-    @SerialName("dueDateMs")
-    val dueDateMs: Timestamp?,
+    @SerialName("dueDate")
+    val dueDate: Timestamp?,
 
-    @SerialName("addedAtMs")
-    val addedAtMs: Timestamp = 0,
-
-    @SerialName("editedAtMs")
-    val editedAtMs: Timestamp? = 0
+    @SerialName("metadata")
+    val metadata: Metadata = Metadata()
 )

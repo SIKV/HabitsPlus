@@ -1,5 +1,6 @@
 package com.github.sikv.habitsplus.feature.todos
 
+import com.github.sikv.habitsplus.data.model.Metadata
 import com.github.sikv.habitsplus.data.model.TodoModel
 import com.github.sikv.habitsplus.data.model.TodoStatus
 import kotlin.test.Test
@@ -26,18 +27,22 @@ class TodoListReducerTest {
                 status = TodoStatus.Todo,
                 title = "100",
                 description = null,
-                dueDateMs= 1L,
-                addedAtMs = 1L,
-                editedAtMs = null
+                dueDate = 1L,
+                metadata = Metadata(
+                    addedAt = 1L,
+                    editedAt = null
+                )
             ),
             TodoModel(
                 id = 200,
                 status = TodoStatus.Todo,
                 title = "200",
                 description = "Description",
-                dueDateMs = 1L,
-                addedAtMs = 5L,
-                editedAtMs = 10L
+                dueDate = 1L,
+                metadata = Metadata(
+                    addedAt = 5L,
+                    editedAt = 10L
+                )
             ),
         )
 

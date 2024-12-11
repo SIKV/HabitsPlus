@@ -1,5 +1,6 @@
 package com.github.sikv.habitsplus.util
 
+import com.github.sikv.habitsplus.data.model.Metadata
 import com.github.sikv.habitsplus.data.model.TodoModel
 import com.github.sikv.habitsplus.data.model.TodoStatus
 
@@ -9,35 +10,43 @@ val testTodos = listOf(
         status = TodoStatus.Todo,
         title = "Todo 1",
         description = null,
-        dueDateMs = 123L,
-        addedAtMs = 100L,
-        editedAtMs = null
+        dueDate = 123L,
+        metadata = Metadata(
+            addedAt = 100L,
+            editedAt = null
+        )
     ),
     TodoModel(
         id = 2,
         status = TodoStatus.Todo,
         title = "Todo 2",
         description = "Description 2",
-        dueDateMs = 1L,
-        addedAtMs = 50L,
-        editedAtMs = 100L
+        dueDate = 1L,
+        metadata = Metadata(
+            addedAt = 50L,
+            editedAt = 100L
+        )
     ),
     TodoModel(
         id = 3,
         status = TodoStatus.Done(0),
         title = "Todo 3",
         description = "Description 3",
-        dueDateMs = 0L,
-        addedAtMs = 5L,
-        editedAtMs = 1000L
+        dueDate = 0L,
+        metadata = Metadata(
+            addedAt = 5L,
+            editedAt = 1000L
+        )
     ),
     TodoModel(
         id = 4,
         status = TodoStatus.Done(140),
         title = "Todo 4",
         description = null,
-        dueDateMs = 50L,
-        addedAtMs = 50L,
-        editedAtMs = 50L
+        dueDate = 50L,
+        metadata = Metadata(
+            addedAt = 50L,
+            editedAt = 50L
+        )
     ),
 )

@@ -8,7 +8,8 @@ val middlewareModule = module {
     single<TodoListMiddleware> {
         TodoListMiddleware(
             todosRepository = get(),
-            localPreferences = get()
+            localPreferences = get(),
+            dateTimeUtils = get()
         )
     }
     single<AddTodoMiddleware> {

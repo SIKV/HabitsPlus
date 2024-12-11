@@ -44,7 +44,7 @@ internal class AddTodoMiddleware(
             status = TodoStatus.Todo,
             title = state.title.trim(),
             description = state.description?.trim(),
-            dueDateMs = 0L // TODO: Set.
+            dueDate = 0L // TODO: Set.
         )
     }
 }

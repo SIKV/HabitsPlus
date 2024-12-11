@@ -6,6 +6,7 @@ import com.github.sikv.habitsplus.data.preferences.LocalPreferences
 import com.github.sikv.habitsplus.data.repository.TodosRepository
 import com.github.sikv.habitsplus.store.AppState
 import com.github.sikv.habitsplus.store.Dispatcher
+import com.github.sikv.habitsplus.util.DateTimeUtils
 import com.github.sikv.habitsplus.util.testTodos
 import kotlinx.coroutines.test.runTest
 import org.kodein.mock.Mocker
@@ -31,9 +32,13 @@ class TodoListMiddlewareTest {
         mocker.every { mockLocalPreferences.getTodoListOrderBy() } returns TodoOrderBy.ADDED_AT_ASC
         mocker.every { mockLocalPreferences.getTodoListShowCompleted() } returns true
 
+        val dateTimeUtils = mocker.mock<DateTimeUtils>()
+        mocker.every { dateTimeUtils.currentTimeMillis() } returns 0L
+
         val middleware = TodoListMiddleware(
             todosRepository = mockTodosRepository,
-            localPreferences = mockLocalPreferences
+            localPreferences = mockLocalPreferences,
+            dateTimeUtils = dateTimeUtils
         )
 
         val appState = AppState.emptyState

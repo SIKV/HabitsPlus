@@ -7,14 +7,15 @@ import com.github.sikv.habitsplus.store.Action
 import com.github.sikv.habitsplus.store.AppMiddleware
 import com.github.sikv.habitsplus.store.AppState
 import com.github.sikv.habitsplus.store.Dispatcher
-import com.github.sikv.habitsplus.util.TimeUtils
+import com.github.sikv.habitsplus.util.DateTimeUtils
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
 import kotlinx.coroutines.withContext
 
 internal class TodoListMiddleware(
     private val todosRepository: TodosRepository,
-    private val localPreferences: LocalPreferences
+    private val localPreferences: LocalPreferences,
+    private val dateTimeUtils: DateTimeUtils
 ) : AppMiddleware {
 
     override suspend fun invoke(state: AppState, action: Action, dispatcher: Dispatcher) {
@@ -44,7 +45,7 @@ internal class TodoListMiddleware(
 
     private fun handleToggleStatusAction(state: TodoListState, action: TodoListAction.ToggleStatus, dispatcher: Dispatcher) {
         val updatedStatus = when (action.todo.status) {
-            TodoStatus.Todo -> TodoStatus.Done(doneAtMs = TimeUtils.currentTimeMillis())
+            TodoStatus.Todo -> TodoStatus.Done(doneAtMs = dateTimeUtils.currentTimeMillis())
             is TodoStatus.Done -> TodoStatus.Todo
         }
 

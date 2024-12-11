@@ -1,12 +1,12 @@
 package com.github.sikv.habitsplus.data.repository.impl
 
-import com.github.sikv.habitsplus.data.repository.TodosRepository
-import com.github.sikv.habitsplus.data.source.TodosLocalDataSource
 import com.github.sikv.habitsplus.data.mapping.doneAtMsOrNull
 import com.github.sikv.habitsplus.data.mapping.toLong
 import com.github.sikv.habitsplus.data.model.TodoModel
 import com.github.sikv.habitsplus.data.model.TodoOrderBy
 import com.github.sikv.habitsplus.data.model.TodoStatus
+import com.github.sikv.habitsplus.data.repository.TodosRepository
+import com.github.sikv.habitsplus.data.source.TodosLocalDataSource
 import com.github.sikv.habitsplus.util.DateTimeUtils
 
 internal class TodosRepositoryImpl(
@@ -19,7 +19,7 @@ internal class TodosRepositoryImpl(
             status = todo.status.toLong(),
             title = todo.title,
             description = todo.description,
-            dueDateMs = todo.dueDateMs,
+            dueDateMs = todo.dueDate,
             addedAtMs = dateTimeUtils.currentTimeMillis()
         )
     }
@@ -30,7 +30,7 @@ internal class TodosRepositoryImpl(
             status = todo.status.toLong(),
             title = todo.title,
             description = todo.description,
-            dueDateMs = todo.dueDateMs,
+            dueDateMs = todo.dueDate,
             doneAtMs = todo.status.doneAtMsOrNull(),
             editedAtMs = dateTimeUtils.currentTimeMillis()
         )
@@ -51,10 +51,10 @@ internal class TodosRepositoryImpl(
                 when (orderBy) {
                     TodoOrderBy.TITLE_ASC -> a.title.compareTo(b.title)
                     TodoOrderBy.TITLE_DESC -> b.title.compareTo(a.title)
-                    TodoOrderBy.DUE_DATE_ASC -> a.dueDateMs?.compareTo(b.dueDateMs ?: 0) ?: 0
-                    TodoOrderBy.DUE_DATE_DESC -> b.dueDateMs?.compareTo(a.dueDateMs ?: 0) ?: 0
-                    TodoOrderBy.ADDED_AT_ASC -> a.addedAtMs.compareTo(b.addedAtMs)
-                    TodoOrderBy.ADDED_AT_DESC -> b.addedAtMs.compareTo(a.addedAtMs)
+                    TodoOrderBy.DUE_DATE_ASC -> a.dueDate?.compareTo(b.dueDate ?: 0) ?: 0
+                    TodoOrderBy.DUE_DATE_DESC -> b.dueDate?.compareTo(a.dueDate ?: 0) ?: 0
+                    TodoOrderBy.ADDED_AT_ASC -> a.metadata.addedAt.compareTo(b.metadata.addedAt)
+                    TodoOrderBy.ADDED_AT_DESC -> b.metadata.addedAt.compareTo(a.metadata.addedAt)
                 }
             }
     }

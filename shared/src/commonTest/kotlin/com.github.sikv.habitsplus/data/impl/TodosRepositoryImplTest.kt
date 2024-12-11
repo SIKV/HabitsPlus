@@ -38,7 +38,7 @@ class TodosRepositoryImplTest {
             status = TodoStatus.Todo,
             title = "Test todo",
             description = "Some description",
-            dueDateMs = 90L
+            dueDate = 90L
         )
 
         // WHEN
@@ -50,7 +50,7 @@ class TodosRepositoryImplTest {
                 status = todo.status.toLong(),
                 title = todo.title,
                 description = todo.description,
-                dueDateMs = todo.dueDateMs,
+                dueDateMs = todo.dueDate,
                 addedAtMs = mockDateTimeUtils.testTimeMillis
             )
         }
@@ -78,7 +78,7 @@ class TodosRepositoryImplTest {
             status = TodoStatus.Done(doneAtMs = 1L),
             title = "Test update todo",
             description = "Update",
-            dueDateMs = 40L
+            dueDate = 40L
         )
 
         // WHEN
@@ -91,7 +91,7 @@ class TodosRepositoryImplTest {
                 status = todo.status.toLong(),
                 title = todo.title,
                 description = todo.description,
-                dueDateMs = todo.dueDateMs,
+                dueDateMs = todo.dueDate,
                 doneAtMs = 1L,
                 editedAtMs = mockDateTimeUtils.testTimeMillis
             )

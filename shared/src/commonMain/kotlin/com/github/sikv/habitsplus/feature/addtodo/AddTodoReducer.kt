@@ -11,7 +11,7 @@ val addTodoReducer: Reducer<AddTodoState, AddTodoAction> = { state, action ->
             description = action.description
         )
         is AddTodoAction.UpdateDueDate -> state.copy(
-            dueDateMs = action.dueDateMs
+            dueDate = action.dueDate
         )
         is AddTodoAction.UpdateDueTime -> state.copy(
             dueTimeHour = action.dueTimeHour,
@@ -20,7 +20,7 @@ val addTodoReducer: Reducer<AddTodoState, AddTodoAction> = { state, action ->
         is AddTodoAction.Update -> state.copy(
             title = action.title,
             description = action.description,
-            dueDateMs = action.dueDateMs,
+            dueDate = action.dueDate,
             dueTimeHour = action.dueTimeHour,
             dueTimeMinute = action.dueTimeMinute
         )
