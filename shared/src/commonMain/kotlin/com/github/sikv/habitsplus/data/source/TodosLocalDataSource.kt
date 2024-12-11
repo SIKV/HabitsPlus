@@ -1,6 +1,6 @@
 package com.github.sikv.habitsplus.data.source
 
-import com.github.sikv.habitsplus.data.model.Todo
+import com.github.sikv.habitsplus.data.model.TodoModel
 
 internal interface TodosLocalDataSource {
     fun insertTodo(
@@ -21,5 +21,5 @@ internal interface TodosLocalDataSource {
         editedAtMs: Long?
     ) : Boolean
 
-    fun selectAllTodos(): List<Todo>
+    fun selectAllTodos(): List<TodoModel>
 }

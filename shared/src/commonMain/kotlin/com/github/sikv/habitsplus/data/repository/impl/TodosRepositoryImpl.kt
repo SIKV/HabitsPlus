@@ -4,7 +4,7 @@ import com.github.sikv.habitsplus.data.repository.TodosRepository
 import com.github.sikv.habitsplus.data.source.TodosLocalDataSource
 import com.github.sikv.habitsplus.data.mapping.doneAtMsOrNull
 import com.github.sikv.habitsplus.data.mapping.toLong
-import com.github.sikv.habitsplus.data.model.Todo
+import com.github.sikv.habitsplus.data.model.TodoModel
 import com.github.sikv.habitsplus.data.model.TodoOrderBy
 import com.github.sikv.habitsplus.data.model.TodoStatus
 import com.github.sikv.habitsplus.util.DateTimeUtils
@@ -14,7 +14,7 @@ internal class TodosRepositoryImpl(
     private val dateTimeUtils: DateTimeUtils
 ) : TodosRepository {
 
-    override fun addTodo(todo: Todo) {
+    override fun addTodo(todo: TodoModel) {
         todosLocalDataSource.insertTodo(
             status = todo.status.toLong(),
             title = todo.title,
@@ -24,7 +24,7 @@ internal class TodosRepositoryImpl(
         )
     }
 
-    override fun updateTodo(todo: Todo): Boolean {
+    override fun updateTodo(todo: TodoModel): Boolean {
         return todosLocalDataSource.updateTodo(
             id = todo.id,
             status = todo.status.toLong(),
@@ -36,7 +36,7 @@ internal class TodosRepositoryImpl(
         )
     }
 
-    override fun getAllTodos(orderBy: TodoOrderBy, showCompleted: Boolean): List<Todo> {
+    override fun getAllTodos(orderBy: TodoOrderBy, showCompleted: Boolean): List<TodoModel> {
         return todosLocalDataSource.selectAllTodos()
             .filter { todo ->
                 // Show all items if [showCompleted] is true.

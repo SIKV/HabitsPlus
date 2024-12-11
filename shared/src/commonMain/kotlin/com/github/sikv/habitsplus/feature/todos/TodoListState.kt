@@ -1,12 +1,12 @@
 package com.github.sikv.habitsplus.feature.todos
 
-import com.github.sikv.habitsplus.data.model.Todo
+import com.github.sikv.habitsplus.data.model.TodoModel
 import com.github.sikv.habitsplus.data.model.TodoOrderBy
 import com.github.sikv.habitsplus.store.StoreState
 
 data class TodoListState(
     val isLoading: Boolean,
-    val todos: List<Todo>,
+    val todos: List<TodoModel>,
     val orderByOptions: List<TodoOrderBy>,
     val orderBy: TodoOrderBy,
     val showCompleted: Boolean

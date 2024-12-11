@@ -1,6 +1,6 @@
 package com.github.sikv.habitsplus.feature.todos
 
-import com.github.sikv.habitsplus.data.model.Todo
+import com.github.sikv.habitsplus.data.model.TodoModel
 import com.github.sikv.habitsplus.data.model.TodoOrderBy
 import com.github.sikv.habitsplus.store.Action
 
@@ -13,14 +13,14 @@ sealed class TodoListAction : Action {
     ) : TodoListAction()
 
     data class UpdateList(
-        val todos: List<Todo>,
+        val todos: List<TodoModel>,
         val orderByOptions: List<TodoOrderBy>? = null,
         val orderBy: TodoOrderBy? = null,
         val showCompleted: Boolean? = null,
     ) : TodoListAction()
 
     data class ToggleStatus(
-        val todo: Todo
+        val todo: TodoModel
     ) : TodoListAction()
 
     data class UpdateOrderBy(

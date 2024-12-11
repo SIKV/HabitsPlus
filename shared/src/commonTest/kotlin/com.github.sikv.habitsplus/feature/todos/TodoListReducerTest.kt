@@ -1,6 +1,6 @@
 package com.github.sikv.habitsplus.feature.todos
 
-import com.github.sikv.habitsplus.data.model.Todo
+import com.github.sikv.habitsplus.data.model.TodoModel
 import com.github.sikv.habitsplus.data.model.TodoStatus
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -21,7 +21,7 @@ class TodoListReducerTest {
     @Test
     fun reducer_updatesState_whenUpdateListAction() {
         val todos = listOf(
-            Todo(
+            TodoModel(
                 id = 100,
                 status = TodoStatus.Todo,
                 title = "100",
@@ -30,7 +30,7 @@ class TodoListReducerTest {
                 addedAtMs = 1L,
                 editedAtMs = null
             ),
-            Todo(
+            TodoModel(
                 id = 200,
                 status = TodoStatus.Todo,
                 title = "200",

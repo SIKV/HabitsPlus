@@ -1,6 +1,6 @@
 package com.github.sikv.habitsplus.data.mapping
 
-import com.github.sikv.habitsplus.data.model.Todo
+import com.github.sikv.habitsplus.data.model.TodoModel
 import com.github.sikv.habitsplus.data.model.TodoStatus
 
 private const val STATUS_TODO = 1L
@@ -37,8 +37,8 @@ internal fun mapTodo(
     doneAtMs: Long?,
     addedAtMs: Long,
     editedAtMs: Long?
-): Todo {
-    return Todo(
+): TodoModel {
+    return TodoModel(
         id = id,
         status = mapTodoStatus(status, doneAtMs),
         title = title,

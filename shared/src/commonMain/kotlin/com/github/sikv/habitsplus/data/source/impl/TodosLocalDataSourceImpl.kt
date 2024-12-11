@@ -1,7 +1,7 @@
 package com.github.sikv.habitsplus.data.source.impl
 
 import com.github.sikv.habitsplus.data.mapping.mapTodo
-import com.github.sikv.habitsplus.data.model.Todo
+import com.github.sikv.habitsplus.data.model.TodoModel
 import com.github.sikv.habitsplus.data.source.TodosLocalDataSource
 import com.github.sikv.habitsplus.database.TodosDatabaseManager
 
@@ -45,7 +45,7 @@ internal class TodosLocalDataSourceImpl(
         }
     }
 
-    override fun selectAllTodos(): List<Todo> {
+    override fun selectAllTodos(): List<TodoModel> {
         return database.dbQuery
             .selectAllTodos(::mapTodo)
             .executeAsList()

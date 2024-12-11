@@ -1,7 +1,7 @@
 package com.github.sikv.habitsplus.feature.addtodo
 
 import com.github.sikv.habitsplus.data.repository.TodosRepository
-import com.github.sikv.habitsplus.data.model.Todo
+import com.github.sikv.habitsplus.data.model.TodoModel
 import com.github.sikv.habitsplus.data.model.TodoStatus
 import com.github.sikv.habitsplus.store.Action
 import com.github.sikv.habitsplus.store.AppMiddleware
@@ -39,8 +39,8 @@ internal class AddTodoMiddleware(
         }
     }
 
-    private fun createTodoFromState(state: AddTodoState): Todo {
-        return Todo(
+    private fun createTodoFromState(state: AddTodoState): TodoModel {
+        return TodoModel(
             status = TodoStatus.Todo,
             title = state.title.trim(),
             description = state.description?.trim(),

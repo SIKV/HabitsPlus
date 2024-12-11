@@ -1,6 +1,6 @@
 package com.github.sikv.habitsplus.feature.todos
 
-import com.github.sikv.habitsplus.data.model.Todo
+import com.github.sikv.habitsplus.data.model.TodoModel
 import com.github.sikv.habitsplus.data.model.TodoOrderBy
 import com.github.sikv.habitsplus.data.preferences.LocalPreferences
 import com.github.sikv.habitsplus.data.repository.TodosRepository
@@ -43,7 +43,7 @@ class TodoListMiddlewareTest {
         var updateLoadingActionIsLoading = false
 
         var updateListActionReceived = false
-        var updateListActionTodos: List<Todo> = listOf()
+        var updateListActionTodos: List<TodoModel> = listOf()
 
         val dispatcher: Dispatcher = { action ->
             if (action is TodoListAction.UpdateLoading) {

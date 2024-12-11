@@ -1,7 +1,7 @@
 package com.github.sikv.habitsplus.data.impl
 
 import com.github.sikv.habitsplus.data.mapping.toLong
-import com.github.sikv.habitsplus.data.model.Todo
+import com.github.sikv.habitsplus.data.model.TodoModel
 import com.github.sikv.habitsplus.data.model.TodoOrderBy
 import com.github.sikv.habitsplus.data.model.TodoStatus
 import com.github.sikv.habitsplus.data.repository.impl.TodosRepositoryImpl
@@ -34,7 +34,7 @@ class TodosRepositoryImplTest {
             dateTimeUtils = mockDateTimeUtils
         )
 
-        val todo = Todo(
+        val todo = TodoModel(
             status = TodoStatus.Todo,
             title = "Test todo",
             description = "Some description",
@@ -73,7 +73,7 @@ class TodosRepositoryImplTest {
             dateTimeUtils = mockDateTimeUtils
         )
 
-        val todo = Todo(
+        val todo = TodoModel(
             id = 100,
             status = TodoStatus.Done(doneAtMs = 1L),
             title = "Test update todo",

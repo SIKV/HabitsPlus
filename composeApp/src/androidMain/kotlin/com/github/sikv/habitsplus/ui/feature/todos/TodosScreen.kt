@@ -24,7 +24,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.github.sikv.habitsplus.R
-import com.github.sikv.habitsplus.data.model.Todo
+import com.github.sikv.habitsplus.data.model.TodoModel
 import com.github.sikv.habitsplus.feature.todos.TodoListAction
 import com.github.sikv.habitsplus.feature.todos.TodoListState
 import com.github.sikv.habitsplus.store.AppStore
@@ -89,7 +89,7 @@ fun TodosScreen(
 }
 
 @Composable
-private fun TodoItem(todo: Todo) {
+private fun TodoItem(todo: TodoModel) {
     ListItem(
         headlineContent = {
             Text(todo.title)
