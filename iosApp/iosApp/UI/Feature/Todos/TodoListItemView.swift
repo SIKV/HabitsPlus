@@ -3,7 +3,7 @@ import Shared
 
 struct TodoListItemView: View {
     
-    let todo: Todo
+    let todo: TodoModel
     let onToggleStatus: () -> Void
     
     var body: some View {

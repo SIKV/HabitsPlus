@@ -37,7 +37,7 @@ struct AddTodoView: ConnectedView {
                 dispatch(AddTodoAction.Update(
                     title: title,
                     description: description,
-                    dueDateMs: includeDueDate ? dateMs : nil,
+                    dueDate: includeDueDate ? dateMs : nil,
                     dueTimeHour: includeDueDate ? hour : nil,
                     dueTimeMinute: includeDueDate ? minute : nil
                 ))
