@@ -13,7 +13,7 @@ Create and track habits, todos, and your activity.
 - [Material 3](https://m3.material.io) - Design system (Android app only).
 - [Coroutines](https://kotlinlang.org/docs/coroutines-overview.html) - Asynchronous programming.
 - [SQLDelight](https://github.com/sqldelight/sqldelight) - Database.
-- [Koin](https://developer.android.com/compose) - Dependency injection.
+- [Koin](https://github.com/InsertKoinIO/koin) - Dependency injection.
 - [MocKMP](https://github.com/kosi-libs/MocKMP) - Mocks & Fakes for tests.
 
 ## Architecture
