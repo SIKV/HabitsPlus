@@ -65,7 +65,12 @@ android {
 sqldelight {
     databases {
         create("TodosDatabase") {
-            packageName.set("com.github.sikv.habitsplus.database")
+            srcDirs("src/commonMain/sqldelight/todos")
+            packageName.set("com.github.sikv.habitsplus.database.todos")
+        }
+        create("ActivitiesDatabase") {
+            srcDirs("src/commonMain/sqldelight/activities")
+            packageName.set("com.github.sikv.habitsplus.database.activities")
         }
     }
 }

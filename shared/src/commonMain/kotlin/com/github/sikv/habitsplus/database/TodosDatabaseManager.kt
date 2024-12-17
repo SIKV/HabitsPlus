@@ -1,5 +1,7 @@
 package com.github.sikv.habitsplus.database
 
+import com.github.sikv.habitsplus.database.todos.TodosDatabase
+
 class TodosDatabaseManager(
     databaseDriverFactory: DatabaseDriverFactory
 ) {

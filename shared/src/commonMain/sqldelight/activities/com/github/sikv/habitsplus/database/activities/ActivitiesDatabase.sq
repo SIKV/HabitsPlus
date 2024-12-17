@@ -1,0 +1,24 @@
+CREATE TABLE ActivityEntity(
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    description TEXT NOT NULL,
+    images TEXT,
+    date_ms INTEGER NOT NULL,
+    added_at_ms INTEGER NOT NULL,
+    edited_at_ms INTEGER
+);
+
+insertActivity:
+INSERT INTO ActivityEntity(description, images, date_ms, added_at_ms)
+VALUES (?,?,?,?);
+
+updateActivity:
+UPDATE ActivityEntity
+SET description=:description,
+    images=:images,
+    date_ms=:date_ms,
+    edited_at_ms=:edited_at_ms
+WHERE id=:id;
+
+selectAllActivities:
+SELECT ActivityEntity.*
+FROM ActivityEntity;
