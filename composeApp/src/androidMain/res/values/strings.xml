@@ -9,6 +9,7 @@
     <!-- Common -->
     <string name="action_ok">OK</string>
     <string name="action_cancel">Cancel</string>
+    <string name="action_save">Save</string>
 
     <string name="label_required_field">Required field</string>
 
@@ -16,6 +17,8 @@
     <string name="menu_button_content_desc">Menu</string>
     <string name="sort_button_content_desc">Sort</string>
     <string name="clear_button_content_desc">Clear</string>
+
+    <string name="date_s_today">%s (Today)</string>
 
     <!-- Todos -->
     <string name="todos_screen_title">Todos</string>
@@ -30,6 +33,18 @@
     <string name="add_todo_select_date_content_desc">Select date</string>
     <string name="add_todo_due_time_label">Due time</string>
     <string name="add_todo_select_time_content_desc">Select time</string>
-    <string name="add_todo_save_button">Save</string>
     <string name="add_todo_error_empty_title">Title cannot be empty.</string>
+
+    <!-- Activity -->
+    <string name="activity_screen_title">Activity</string>
+    <string name="activity_add_activity_button">Add Activity</string>
+    <string name="activity_add_activity_button_content_desc">Add Activity</string>
+
+    <!-- Add Activity -->
+    <string name="add_activity_screen_title">Add Activity</string>
+    <string name="add_activity_date_label">Date</string>
+    <string name="add_activity_description_label">Description</string>
+    <string name="add_activity_error">Error when adding a new activity.</string>
+    <string name="add_activity_error_empty_description">Description cannot be empty.</string>
+
 </resources>

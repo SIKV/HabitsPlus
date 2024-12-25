@@ -5,6 +5,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.github.sikv.habitsplus.ui.ActivityRoute
+import com.github.sikv.habitsplus.ui.feature.activity.add.AddActivityRoute
+import com.github.sikv.habitsplus.ui.feature.activity.add.AddActivityScreen
 
 @Composable
 fun ActivityNavHost() {
@@ -15,7 +17,18 @@ fun ActivityNavHost() {
         startDestination = ActivityRoute
     ) {
         composable<ActivityRoute> {
-            ActivityScreen()
+            ActivityScreen(
+                onNavigateToAddActivity = {
+                    navController.navigate(AddActivityRoute)
+                }
+            )
+        }
+        composable<AddActivityRoute> {
+            AddActivityScreen(
+                onNavigateBack = {
+                    navController.popBackStack()
+                }
+            )
         }
     }
 }

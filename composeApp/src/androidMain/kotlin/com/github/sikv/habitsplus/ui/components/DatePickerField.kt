@@ -1,4 +1,4 @@
-package com.github.sikv.habitsplus.ui.feature.addtodo
+package com.github.sikv.habitsplus.ui.components
 
 import androidx.compose.foundation.gestures.awaitEachGesture
 import androidx.compose.foundation.gestures.awaitFirstDown
@@ -28,7 +28,9 @@ import com.github.sikv.habitsplus.ui.theme.spacing
 
 @Composable
 fun DatePickerField(
+    label: String,
     date: String,
+    showClearButton: Boolean,
     onDateSelect: (date: Long?) -> Unit
 ) {
     var showModal by remember { mutableStateOf(false) }
@@ -39,7 +41,7 @@ fun DatePickerField(
         OutlinedTextField(
             value = date,
             onValueChange = { },
-            label = { Text(stringResource(R.string.add_todo_due_date_label)) },
+            label = { Text(label) },
             trailingIcon = {
                 Icon(
                     Icons.Default.DateRange,
@@ -63,7 +65,7 @@ fun DatePickerField(
                     }
                 }
         )
-        if (date.isNotBlank()) {
+        if (showClearButton && date.isNotBlank()) {
             ClearFieldButton(
                 onClick = {
                     onDateSelect(null)

@@ -42,7 +42,7 @@ fun TodosScreen(
 ) {
     val state by store.observeState()
         .mapLatest { it.todoListState }
-        .collectAsStateWithLifecycle(TodoListState.emptyState)
+        .collectAsStateWithLifecycle(TodoListState())
 
     // Note: not recommended approach.
     LaunchedEffect(Unit) {

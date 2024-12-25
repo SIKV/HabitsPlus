@@ -26,10 +26,11 @@ import com.github.sikv.habitsplus.DefaultConfig
 import com.github.sikv.habitsplus.R
 import com.github.sikv.habitsplus.feature.addtodo.AddTodoAction
 import com.github.sikv.habitsplus.feature.addtodo.AddTodoError
-import com.github.sikv.habitsplus.feature.addtodo.AddTodoHandleResultEffect
 import com.github.sikv.habitsplus.feature.addtodo.AddTodoResult
+import com.github.sikv.habitsplus.feature.addtodo.AddTodoResultEffect
 import com.github.sikv.habitsplus.feature.addtodo.AddTodoState
 import com.github.sikv.habitsplus.store.AppStore
+import com.github.sikv.habitsplus.ui.components.DatePickerField
 import com.github.sikv.habitsplus.ui.components.Padding
 import com.github.sikv.habitsplus.ui.components.TopAppBar
 import com.github.sikv.habitsplus.ui.theme.spacing
@@ -49,10 +50,10 @@ fun AddTodoScreen(
 
     val state by store.observeState()
         .mapLatest { it.addTodoState }
-        .collectAsStateWithLifecycle(AddTodoState.emptyState)
+        .collectAsStateWithLifecycle(AddTodoState())
 
     val addTodoResultEffect by store.observeSideEffect()
-        .filterIsInstance<AddTodoHandleResultEffect>()
+        .filterIsInstance<AddTodoResultEffect>()
         .collectAsStateWithLifecycle(null)
 
     val formattedDate = remember(state) { convertStateToDate(state) }
@@ -86,7 +87,7 @@ fun AddTodoScreen(
                         },
                         modifier = Modifier.padding(horizontal = MaterialTheme.spacing.medium)
                     ) {
-                        Text(stringResource(R.string.add_todo_save_button))
+                        Text(stringResource(R.string.action_save))
                     }
                 }
             )
@@ -145,7 +146,9 @@ fun AddTodoScreen(
             Padding(vertical = MaterialTheme.spacing.small)
 
             DatePickerField(
+                label = stringResource(R.string.add_todo_due_date_label),
                 date = formattedDate,
+                showClearButton = true,
                 onDateSelect = { date ->
                     store.dispatch(AddTodoAction.UpdateDueDate(date))
                 }
