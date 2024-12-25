@@ -20,7 +20,7 @@ internal class TodosRepositoryImpl(
             title = todo.title,
             description = todo.description,
             dueDateMs = todo.dueDate,
-            addedAtMs = dateTimeUtils.currentTimeMillis()
+            addedAtMs = dateTimeUtils.currentTimestamp()
         )
     }
 
@@ -32,7 +32,7 @@ internal class TodosRepositoryImpl(
             description = todo.description,
             dueDateMs = todo.dueDate,
             doneAtMs = todo.status.doneAtMsOrNull(),
-            editedAtMs = dateTimeUtils.currentTimeMillis()
+            editedAtMs = dateTimeUtils.currentTimestamp()
         )
     }
 

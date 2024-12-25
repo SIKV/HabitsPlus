@@ -40,21 +40,24 @@ class Store<S: StoreState>(
     }
 
     fun dispatch(action: Action) {
-        if (action is EmitSideEffectAction) {
-            launch {
-                sideEffect.emit(action.effect)
-            }
-        } else {
-            val currentState = state.value
-            val newState = reducer(currentState, action)
-
-            if (newState != currentState) {
-                state.value = newState
-            }
-
-            middlewares.forEach { middleware ->
+        when (action) {
+            is EmitSideEffectAction -> {
                 launch {
-                    middleware.invoke(state.value, action, ::dispatch)
+                    sideEffect.emit(action.effect)
+                }
+            }
+            else -> {
+                val currentState = state.value
+                val newState = reducer(currentState, action)
+
+                if (newState != currentState) {
+                    state.value = newState
+                }
+
+                middlewares.forEach { middleware ->
+                    launch {
+                        middleware.invoke(state.value, action, ::dispatch)
+                    }
                 }
             }
         }

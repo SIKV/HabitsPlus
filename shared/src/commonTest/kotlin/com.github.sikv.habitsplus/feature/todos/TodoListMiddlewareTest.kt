@@ -33,7 +33,7 @@ class TodoListMiddlewareTest {
         mocker.every { mockLocalPreferences.getTodoListShowCompleted() } returns true
 
         val dateTimeUtils = mocker.mock<DateTimeUtils>()
-        mocker.every { dateTimeUtils.currentTimeMillis() } returns 0L
+        mocker.every { dateTimeUtils.currentTimestamp() } returns 0L
 
         val middleware = TodoListMiddleware(
             todosRepository = mockTodosRepository,

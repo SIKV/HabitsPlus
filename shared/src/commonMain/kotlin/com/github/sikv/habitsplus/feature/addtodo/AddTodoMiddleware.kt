@@ -1,40 +1,42 @@
 package com.github.sikv.habitsplus.feature.addtodo
 
-import com.github.sikv.habitsplus.data.repository.TodosRepository
 import com.github.sikv.habitsplus.data.model.TodoModel
 import com.github.sikv.habitsplus.data.model.TodoStatus
+import com.github.sikv.habitsplus.data.repository.TodosRepository
 import com.github.sikv.habitsplus.store.Action
 import com.github.sikv.habitsplus.store.AppMiddleware
 import com.github.sikv.habitsplus.store.AppState
 import com.github.sikv.habitsplus.store.Dispatcher
 import com.github.sikv.habitsplus.store.EmitSideEffectAction
+import com.github.sikv.habitsplus.util.ModelValidator
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
 import kotlinx.coroutines.withContext
 
 internal class AddTodoMiddleware(
-    private val todosRepository: TodosRepository
+    private val todosRepository: TodosRepository,
+    private val validator: ModelValidator<TodoModel, AddTodoError?>
 ) : AppMiddleware {
 
     override suspend fun invoke(state: AppState, action: Action, dispatcher: Dispatcher) {
         withContext(Dispatchers.IO) {
             when (action) {
-                AddTodoAction.Save -> handleAddAction(state.addTodoState, dispatcher)
+                AddTodoAction.Save -> handleSaveAction(state.addTodoState, dispatcher)
             }
         }
     }
 
-    private fun handleAddAction(state: AddTodoState, dispatcher: Dispatcher) {
+    private fun handleSaveAction(state: AddTodoState, dispatcher: Dispatcher) {
         val newTodo = createTodoFromState(state)
-        val addTodoError = TodoValidator.checkErrors(newTodo)
+        val validationError = validator.checkErrors(newTodo)
 
-        if (addTodoError == null) {
+        if (validationError == null) {
             todosRepository.addTodo(newTodo)
-            val effect = AddTodoHandleResultEffect(AddTodoResult.Success)
+
+            val effect = AddTodoResultEffect(AddTodoResult.Success)
             dispatcher(EmitSideEffectAction(effect))
         } else {
-            val result = AddTodoResult.Failure(addTodoError)
-            val effect = AddTodoHandleResultEffect(result)
+            val effect = AddTodoResultEffect(AddTodoResult.Failure(validationError))
             dispatcher(EmitSideEffectAction(effect))
         }
     }

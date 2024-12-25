@@ -1,6 +1,8 @@
 package com.github.sikv.habitsplus.util
 
+import com.github.sikv.habitsplus.data.model.Timestamp
+
 interface DateTimeUtils {
 
-    fun currentTimeMillis(): Long
+    fun currentTimestamp(): Timestamp
 }

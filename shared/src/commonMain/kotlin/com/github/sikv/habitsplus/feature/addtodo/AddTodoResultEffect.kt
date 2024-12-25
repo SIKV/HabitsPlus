@@ -1,7 +1,5 @@
 package com.github.sikv.habitsplus.feature.addtodo
 
-import com.github.sikv.habitsplus.store.Effect
+import com.github.sikv.habitsplus.store.ResultEffect
 
-data class AddTodoHandleResultEffect(
-    val result: AddTodoResult
-) : Effect
+typealias AddTodoResultEffect = ResultEffect<AddTodoResult>

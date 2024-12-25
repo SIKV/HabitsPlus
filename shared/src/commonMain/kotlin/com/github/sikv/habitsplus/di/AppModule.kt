@@ -1,5 +1,6 @@
 package com.github.sikv.habitsplus.di
 
+import com.github.sikv.habitsplus.feature.activity.add.AddActivityMiddleware
 import com.github.sikv.habitsplus.feature.addtodo.AddTodoMiddleware
 import com.github.sikv.habitsplus.feature.todos.TodoListMiddleware
 import com.github.sikv.habitsplus.store.AppState
@@ -14,13 +15,15 @@ val appModule = module {
     single<AppStore> {
         val todoListMiddleware: TodoListMiddleware = get()
         val addTodoMiddleware: AddTodoMiddleware = get()
+        val addActivityMiddleware: AddActivityMiddleware = get()
 
         Store(
-            initialState = AppState.emptyState,
+            initialState = AppState(),
             reducer = appReducer,
             middlewares = listOf(
                 todoListMiddleware,
-                addTodoMiddleware
+                addTodoMiddleware,
+                addActivityMiddleware
             )
         )
     }

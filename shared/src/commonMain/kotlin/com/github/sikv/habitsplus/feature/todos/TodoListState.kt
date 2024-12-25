@@ -5,20 +5,9 @@ import com.github.sikv.habitsplus.data.model.TodoOrderBy
 import com.github.sikv.habitsplus.store.StoreState
 
 data class TodoListState(
-    val isLoading: Boolean,
-    val todos: List<TodoModel>,
-    val orderByOptions: List<TodoOrderBy>,
-    val orderBy: TodoOrderBy,
-    val showCompleted: Boolean
-): StoreState {
-
-    companion object {
-        val emptyState = TodoListState(
-            isLoading = false,
-            todos = emptyList(),
-            orderByOptions = emptyList(),
-            orderBy = TodoOrderBy.ADDED_AT_DESC,
-            showCompleted = false
-        )
-    }
-}
+    val isLoading: Boolean = false,
+    val todos: List<TodoModel> = emptyList(),
+    val orderByOptions: List<TodoOrderBy> = emptyList(),
+    val orderBy: TodoOrderBy = TodoOrderBy.ADDED_AT_DESC,
+    val showCompleted: Boolean = false
+): StoreState

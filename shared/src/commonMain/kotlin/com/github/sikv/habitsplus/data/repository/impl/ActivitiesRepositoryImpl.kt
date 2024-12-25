@@ -16,7 +16,7 @@ internal class ActivitiesRepositoryImpl(
             description = activity.description,
             images = activity.images.joinToString(IMAGES_DELIMITER),
             dateMs = activity.date,
-            addedAtMs = dateTimeUtils.currentTimeMillis()
+            addedAtMs = dateTimeUtils.currentTimestamp()
         )
     }
 
@@ -26,7 +26,7 @@ internal class ActivitiesRepositoryImpl(
             description = activity.description,
             images = activity.images.joinToString(IMAGES_DELIMITER),
             dateMs = activity.date,
-            editedAtMs = dateTimeUtils.currentTimeMillis()
+            editedAtMs = dateTimeUtils.currentTimestamp()
         )
     }
 

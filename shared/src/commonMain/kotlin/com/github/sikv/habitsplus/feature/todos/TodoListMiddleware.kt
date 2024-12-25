@@ -45,7 +45,7 @@ internal class TodoListMiddleware(
 
     private fun handleToggleStatusAction(state: TodoListState, action: TodoListAction.ToggleStatus, dispatcher: Dispatcher) {
         val updatedStatus = when (action.todo.status) {
-            TodoStatus.Todo -> TodoStatus.Done(doneAtMs = dateTimeUtils.currentTimeMillis())
+            TodoStatus.Todo -> TodoStatus.Done(doneAtMs = dateTimeUtils.currentTimestamp())
             is TodoStatus.Done -> TodoStatus.Todo
         }
 
