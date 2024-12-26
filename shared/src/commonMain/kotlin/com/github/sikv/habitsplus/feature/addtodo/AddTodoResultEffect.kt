@@ -2,4 +2,6 @@ package com.github.sikv.habitsplus.feature.addtodo
 
 import com.github.sikv.habitsplus.store.ResultEffect
 
-typealias AddTodoResultEffect = ResultEffect<AddTodoResult>
+data class AddTodoResultEffect(
+    override val result: AddTodoResult
+) : ResultEffect<AddTodoResult>(result)
