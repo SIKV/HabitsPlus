@@ -8,4 +8,9 @@ data class AppState(
     val todoListState: TodoListState = TodoListState(),
     val addTodoState: AddTodoState = AddTodoState(),
     val addActivityState: AddActivityState = AddActivityState()
-): StoreState
+): StoreState {
+
+    companion object {
+        val emptyState = AppState()
+    }
+}

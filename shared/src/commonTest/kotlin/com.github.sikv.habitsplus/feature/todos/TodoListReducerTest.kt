@@ -10,7 +10,7 @@ class TodoListReducerTest {
 
     @Test
     fun reducer_updatesState_whenUpdateLoadingAction() {
-        val state = TodoListState.emptyState
+        val state = TodoListState()
         val action = TodoListAction.UpdateLoading(isLoading = true)
 
         val newState = todoListReducer(state, action)
@@ -46,7 +46,7 @@ class TodoListReducerTest {
             ),
         )
 
-        val state = TodoListState.emptyState
+        val state = TodoListState()
         val action = TodoListAction.UpdateList(todos = todos)
 
         val newState = todoListReducer(state, action)
