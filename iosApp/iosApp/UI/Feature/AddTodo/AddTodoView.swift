@@ -95,7 +95,7 @@ struct AddTodoView: ConnectedView {
             }
         }
         .onReceive(store.$sideEffect, perform: { effect in
-            if let effect = effect as? AddTodoHandleResultEffect {
+            if let effect = effect as? AddTodoResultEffect {
                 handleResult(result: effect.result)
             }
         })

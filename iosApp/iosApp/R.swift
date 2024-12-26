@@ -29,6 +29,7 @@ class R {
     enum str : String {
         // Top level routes
         case topLevelRouteTodos = "TopLevelRouteTodos"
+        case topLevelRouteActivity = "TopLevelRouteActivity"
         
         // Common
         case titleErrorAlert = "TitleErrorAlert"
@@ -46,15 +47,19 @@ class R {
         case actionMenu = "ActionMenu"
         case actionSortBy = "ActionSortBy"
         
-        // Todos View
+        // TodosView
         case todosActionShowCompleted = "TodosActionShowCompleted"
         case todosActionHideCompleted = "TodosActionHideCompleted"
         
-        // AddTodo View
+        // AddTodoView
         case addTodoNavigationTitle = "AddTodoNavigationTitle"
         case addTodoTitle = "AddTodoTitle"
         case addTodoDescription = "AddTodoDescription"
         case addTodoDueDate = "AddTodoDueDate"
+        
+        // AddActivityView
+        case addActivityNavigationTitle = "AddActivityNavigationTitle"
+        case addActivityDescription = "AddActivityDescription"
         
         func localized() -> LocalizedStringKey {
             return LocalizedStringKey(self.rawValue)

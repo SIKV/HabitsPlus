@@ -45,8 +45,27 @@
         }
       }
     },
-    "Activity" : {
-
+    "AddActivityDescription" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Description"
+          }
+        }
+      }
+    },
+    "AddActivityNavigationTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add Activity"
+          }
+        }
+      }
     },
     "AddTodoDescription" : {
       "extractionState" : "manual",
@@ -97,6 +116,9 @@
     },
     "Habits" : {
 
+    },
+    "Key" : {
+      "extractionState" : "manual"
     },
     "More" : {
 
