@@ -1,10 +1,9 @@
-package com.github.sikv.habitsplus.data.impl
+package com.github.sikv.habitsplus.data.repository.impl
 
 import com.github.sikv.habitsplus.data.mapping.toLong
 import com.github.sikv.habitsplus.data.model.TodoModel
 import com.github.sikv.habitsplus.data.model.TodoOrderBy
 import com.github.sikv.habitsplus.data.model.TodoStatus
-import com.github.sikv.habitsplus.data.repository.impl.TodosRepositoryImpl
 import com.github.sikv.habitsplus.data.source.TodosLocalDataSource
 import com.github.sikv.habitsplus.util.MockDateTimeUtils
 import com.github.sikv.habitsplus.util.testTodos
