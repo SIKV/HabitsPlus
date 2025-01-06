@@ -1,4 +1,4 @@
-package com.github.sikv.habitsplus.feature.todos
+package com.github.sikv.habitsplus.feature.todo.list
 
 import com.github.sikv.habitsplus.data.model.TodoStatus
 import com.github.sikv.habitsplus.data.preferences.LocalPreferences
@@ -89,11 +89,13 @@ internal class TodoListMiddleware(
 
         val todos = todosRepository.getAllTodos(orderBy, showCompleted)
 
-        dispatcher(TodoListAction.UpdateList(
-            todos = todos,
-            orderByOptions = orderByOptions,
-            orderBy = orderBy,
-            showCompleted = showCompleted
-        ))
+        dispatcher(
+            TodoListAction.UpdateList(
+                todos = todos,
+                orderByOptions = orderByOptions,
+                orderBy = orderBy,
+                showCompleted = showCompleted
+            )
+        )
     }
 }

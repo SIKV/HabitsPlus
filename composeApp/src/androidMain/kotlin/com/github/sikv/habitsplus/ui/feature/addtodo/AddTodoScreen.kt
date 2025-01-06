@@ -24,11 +24,11 @@ import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.github.sikv.habitsplus.DefaultConfig
 import com.github.sikv.habitsplus.R
-import com.github.sikv.habitsplus.feature.addtodo.AddTodoAction
-import com.github.sikv.habitsplus.feature.addtodo.AddTodoError
-import com.github.sikv.habitsplus.feature.addtodo.AddTodoResult
-import com.github.sikv.habitsplus.feature.addtodo.AddTodoResultEffect
-import com.github.sikv.habitsplus.feature.addtodo.AddTodoState
+import com.github.sikv.habitsplus.feature.todo.add.AddTodoAction
+import com.github.sikv.habitsplus.feature.todo.add.AddTodoError
+import com.github.sikv.habitsplus.feature.todo.add.AddTodoResult
+import com.github.sikv.habitsplus.feature.todo.add.AddTodoResultEffect
+import com.github.sikv.habitsplus.feature.todo.add.AddTodoState
 import com.github.sikv.habitsplus.store.AppStore
 import com.github.sikv.habitsplus.ui.components.DatePickerField
 import com.github.sikv.habitsplus.ui.components.Padding
@@ -105,7 +105,8 @@ fun AddTodoScreen(
             OutlinedTextField(
                 value = state.title,
                 onValueChange = { value ->
-                    store.dispatch(AddTodoAction.UpdateTitle(
+                    store.dispatch(
+                        AddTodoAction.UpdateTitle(
                         value.take(DefaultConfig.addTodoTitleMaxLength)
                     ))
                 },
@@ -130,7 +131,8 @@ fun AddTodoScreen(
             OutlinedTextField(
                 value = state.description ?: "",
                 onValueChange = { value ->
-                    store.dispatch(AddTodoAction.UpdateDescription(
+                    store.dispatch(
+                        AddTodoAction.UpdateDescription(
                         value.take(DefaultConfig.addTodoDescriptionMaxLength)
                     ))
                 },

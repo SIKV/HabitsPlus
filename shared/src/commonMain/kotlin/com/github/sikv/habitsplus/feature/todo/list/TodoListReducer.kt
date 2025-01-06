@@ -1,4 +1,4 @@
-package com.github.sikv.habitsplus.feature.todos
+package com.github.sikv.habitsplus.feature.todo.list
 
 import com.github.sikv.habitsplus.store.Reducer
 

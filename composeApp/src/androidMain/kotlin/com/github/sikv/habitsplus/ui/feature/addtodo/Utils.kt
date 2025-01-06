@@ -1,6 +1,6 @@
 package com.github.sikv.habitsplus.ui.feature.addtodo
 
-import com.github.sikv.habitsplus.feature.addtodo.AddTodoState
+import com.github.sikv.habitsplus.feature.todo.add.AddTodoState
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date

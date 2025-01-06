@@ -1,4 +1,4 @@
-package com.github.sikv.habitsplus.feature.addtodo
+package com.github.sikv.habitsplus.feature.todo.add
 
 sealed class AddTodoResult {
 

@@ -1,4 +1,4 @@
-package com.github.sikv.habitsplus.feature.addtodo
+package com.github.sikv.habitsplus.feature.todo.add
 
 import com.github.sikv.habitsplus.data.model.Timestamp
 import com.github.sikv.habitsplus.store.Action

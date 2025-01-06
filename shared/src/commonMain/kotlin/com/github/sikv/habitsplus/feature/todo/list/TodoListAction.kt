@@ -1,4 +1,4 @@
-package com.github.sikv.habitsplus.feature.todos
+package com.github.sikv.habitsplus.feature.todo.list
 
 import com.github.sikv.habitsplus.data.model.TodoModel
 import com.github.sikv.habitsplus.data.model.TodoOrderBy

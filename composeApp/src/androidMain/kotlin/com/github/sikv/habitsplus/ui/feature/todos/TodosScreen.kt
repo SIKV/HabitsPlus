@@ -25,8 +25,8 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.github.sikv.habitsplus.R
 import com.github.sikv.habitsplus.data.model.TodoModel
-import com.github.sikv.habitsplus.feature.todos.TodoListAction
-import com.github.sikv.habitsplus.feature.todos.TodoListState
+import com.github.sikv.habitsplus.feature.todo.list.TodoListAction
+import com.github.sikv.habitsplus.feature.todo.list.TodoListState
 import com.github.sikv.habitsplus.store.AppStore
 import com.github.sikv.habitsplus.ui.components.TopAppBarMenuButton
 import com.github.sikv.habitsplus.ui.components.TopAppBarSortButton

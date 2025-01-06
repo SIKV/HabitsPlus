@@ -1,4 +1,4 @@
-package com.github.sikv.habitsplus.feature.addtodo
+package com.github.sikv.habitsplus.feature.todo.add
 
 import com.github.sikv.habitsplus.data.model.TodoModel
 import com.github.sikv.habitsplus.util.ModelValidator
