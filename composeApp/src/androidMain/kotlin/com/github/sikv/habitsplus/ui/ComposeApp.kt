@@ -16,41 +16,76 @@ import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
+import androidx.navigation.compose.navigation
 import androidx.navigation.compose.rememberNavController
-import com.github.sikv.habitsplus.ui.feature.activity.ActivityNavHost
-import com.github.sikv.habitsplus.ui.feature.habits.HabitsNavHost
-import com.github.sikv.habitsplus.ui.feature.more.MoreNavHost
-import com.github.sikv.habitsplus.ui.feature.todos.TodosNavHost
+import com.github.sikv.habitsplus.ui.feature.activity.add.AddActivityRoute
+import com.github.sikv.habitsplus.ui.feature.activity.add.addActivityDestination
+import com.github.sikv.habitsplus.ui.feature.activity.list.ActivityRoute
+import com.github.sikv.habitsplus.ui.feature.activity.list.activityDestination
+import com.github.sikv.habitsplus.ui.feature.addtodo.AddTodoRoute
+import com.github.sikv.habitsplus.ui.feature.addtodo.addTodoDestination
+import com.github.sikv.habitsplus.ui.feature.common.ScaffoldMenuItem
+import com.github.sikv.habitsplus.ui.feature.habits.HabitsRoute
+import com.github.sikv.habitsplus.ui.feature.habits.habitsDestination
+import com.github.sikv.habitsplus.ui.feature.more.MoreRoute
+import com.github.sikv.habitsplus.ui.feature.more.moreDestination
+import com.github.sikv.habitsplus.ui.feature.todos.TodosRoute
+import com.github.sikv.habitsplus.ui.feature.todos.todosDestination
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
 @Preview
 fun ComposeApp() {
-    val rootNavController = rememberNavController()
+    val navController = rememberNavController()
+
+    val onMenuItemClick: (ScaffoldMenuItem) -> Unit = { menuItem ->
+        when (menuItem) {
+            ScaffoldMenuItem.ADD_HABIT -> {
+                // TODO: Implement.
+            }
+            ScaffoldMenuItem.ADD_TODO -> navController.navigate(AddTodoRoute)
+            ScaffoldMenuItem.ADD_ACTIVITY -> navController.navigate(AddActivityRoute)
+        }
+    }
 
     Scaffold(
-       bottomBar = { Navigation(rootNavController) },
+       bottomBar = { Navigation(navController) },
     ) { innerPadding ->
         NavHost(
-            navController = rootNavController,
-            startDestination = HabitsRoute,
+            navController = navController,
+            startDestination = HabitsRootRoute,
             modifier = Modifier
                 .padding(innerPadding)
                 .consumeWindowInsets(innerPadding)
         ) {
-            composable<HabitsRoute> {
-                HabitsNavHost()
+            navigation<HabitsRootRoute>(startDestination = HabitsRoute) {
+                habitsDestination(
+                    onMenuItemClick = onMenuItemClick
+                )
             }
-            composable<TodosRoute> {
-                TodosNavHost()
+            navigation<TodosRootRoute>(startDestination = TodosRoute) {
+                todosDestination(
+                    onMenuItemClick = onMenuItemClick
+                )
+                addTodoDestination(
+                    onNavigateBack = {
+                        navController.popBackStack()
+                    }
+                )
             }
-            composable<ActivityRoute> {
-                ActivityNavHost()
+            navigation<ActivityRootRoute>(startDestination = ActivityRoute) {
+                activityDestination(
+                    onMenuItemClick = onMenuItemClick
+                )
+                addActivityDestination(
+                    onNavigateBack = {
+                        navController.popBackStack()
+                    }
+                )
             }
-            composable<MoreRoute> {
-                MoreNavHost()
+            navigation<MoreRootRoute>(startDestination = MoreRoute) {
+                moreDestination()
             }
         }
     }
@@ -64,8 +99,8 @@ private fun Navigation(navController: NavController) {
 
         topLevelRoutes.forEach { topLevelRoute ->
             NavigationBarItem(
-                icon = { Icon(topLevelRoute.icon, contentDescription = stringResource(topLevelRoute.name)) },
-                label = { Text(stringResource(topLevelRoute.name)) },
+                icon = { Icon(topLevelRoute.icon, contentDescription = stringResource(topLevelRoute.title)) },
+                label = { Text(stringResource(topLevelRoute.title)) },
                 selected = currentDestination?.hierarchy?.any { it.hasRoute(topLevelRoute.route::class) } == true,
                 onClick = {
                     navController.navigate(topLevelRoute.route) {

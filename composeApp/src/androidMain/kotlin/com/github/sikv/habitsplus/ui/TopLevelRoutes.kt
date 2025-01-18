@@ -11,26 +11,42 @@ import com.github.sikv.habitsplus.R
 import kotlinx.serialization.Serializable
 
 @Serializable
-data object HabitsRoute
+data object HabitsRootRoute
 
 @Serializable
-data object TodosRoute
+data object TodosRootRoute
 
 @Serializable
-data object ActivityRoute
+data object ActivityRootRoute
 
 @Serializable
-data object MoreRoute
+data object MoreRootRoute
 
-data class TopLevelRoute<T : Any>(
-    @StringRes val name: Int,
-    val route: T,
+enum class TopLevelRoute(
+    @StringRes val title: Int,
+    val route: Any,
     val icon: ImageVector
-)
+) {
+    HABITS(
+        title = R.string.top_level_route_habits,
+        route = HabitsRootRoute,
+        icon = Icons.Default.ThumbUp
+    ),
+    TODOS(
+        title = R.string.top_level_route_todos,
+        route = TodosRootRoute,
+        icon = Icons.Default.Done
+    ),
+    ACTIVITY(
+        title = R.string.top_level_route_activity,
+        route = ActivityRootRoute,
+        icon = Icons.Default.Star
+    ),
+    MORE(
+        title = R.string.top_level_route_more,
+        route = MoreRootRoute,
+        icon = Icons.Default.Menu
+    )
+}
 
-val topLevelRoutes = listOf(
-    TopLevelRoute(R.string.top_level_route_habits, HabitsRoute, Icons.Default.ThumbUp),
-    TopLevelRoute(R.string.top_level_route_todos, TodosRoute, Icons.Default.Done),
-    TopLevelRoute(R.string.top_level_route_activity, ActivityRoute, Icons.Default.Star),
-    TopLevelRoute(R.string.top_level_route_more, MoreRoute, Icons.Default.Menu)
-)
+val topLevelRoutes = TopLevelRoute.entries

@@ -20,10 +20,16 @@
 
     <string name="date_s_today">%s (Today)</string>
 
+    <!-- Scaffold Menu Items -->
+    <string name="menu_item_add_habit">Habit</string>
+    <string name="menu_item_add_todo">Todo</string>
+    <string name="menu_item_add_activity">Activity</string>
+
+    <!-- Habits -->
+    <string name="habits_screen_title">Habits</string>
+
     <!-- Todos -->
     <string name="todos_screen_title">Todos</string>
-    <string name="todos_screen_add_button">Add Todo</string>
-    <string name="todos_screen_add_button_content_desc">Add Todo</string>
 
     <!-- AddTodo -->
     <string name="add_todo_screen_title">Add Todo</string>
@@ -37,8 +43,6 @@
 
     <!-- Activity -->
     <string name="activity_screen_title">Activity</string>
-    <string name="activity_add_activity_button">Add Activity</string>
-    <string name="activity_add_activity_button_content_desc">Add Activity</string>
 
     <!-- Add Activity -->
     <string name="add_activity_screen_title">Add Activity</string>

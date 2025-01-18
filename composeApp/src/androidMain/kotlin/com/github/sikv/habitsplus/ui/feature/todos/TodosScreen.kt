@@ -1,19 +1,13 @@
 package com.github.sikv.habitsplus.ui.feature.todos
 
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.ExtendedFloatingActionButton
 import androidx.compose.material3.HorizontalDivider
-import androidx.compose.material3.Icon
 import androidx.compose.material3.ListItem
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
@@ -30,6 +24,9 @@ import com.github.sikv.habitsplus.feature.todo.list.TodoListState
 import com.github.sikv.habitsplus.store.AppStore
 import com.github.sikv.habitsplus.ui.components.TopAppBarMenuButton
 import com.github.sikv.habitsplus.ui.components.TopAppBarSortButton
+import com.github.sikv.habitsplus.ui.feature.common.ScaffoldMenu
+import com.github.sikv.habitsplus.ui.feature.common.ScaffoldMenuItem
+import com.github.sikv.habitsplus.ui.feature.common.scaffoldMenuItems
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.mapLatest
 import org.koin.compose.koinInject
@@ -37,7 +34,7 @@ import org.koin.compose.koinInject
 @OptIn(ExperimentalCoroutinesApi::class, ExperimentalMaterial3Api::class)
 @Composable
 fun TodosScreen(
-    onNavigateToAddTodo: () -> Unit,
+    onMenuItemClick: (ScaffoldMenuItem) -> Unit,
     store: AppStore = koinInject()
 ) {
     val state by store.observeState()
@@ -49,7 +46,7 @@ fun TodosScreen(
         store.dispatch(TodoListAction.FetchAll)
     }
 
-    Scaffold(
+    ScaffoldMenu(
         topBar = {
             TopAppBar(
                 title = { Text(stringResource(R.string.todos_screen_title)) },
@@ -67,18 +64,13 @@ fun TodosScreen(
                 }
             )
         },
-        floatingActionButton = {
-            ExtendedFloatingActionButton(
-                onClick = onNavigateToAddTodo,
-                icon = { Icon(Icons.Default.Add, stringResource(R.string.todos_screen_add_button_content_desc)) },
-                text = { Text(stringResource(R.string.todos_screen_add_button)) }
-            )
-        }
-    ) { innerPadding ->
+        menuItems = scaffoldMenuItems,
+        onMenuItemClick = onMenuItemClick
+    ) {
         if (state.isLoading) {
             CircularProgressIndicator()
         } else {
-            LazyColumn(modifier = Modifier.padding(innerPadding)) {
+            LazyColumn {
                 items(state.todos) { todo ->
                     TodoItem(todo)
                     HorizontalDivider()
