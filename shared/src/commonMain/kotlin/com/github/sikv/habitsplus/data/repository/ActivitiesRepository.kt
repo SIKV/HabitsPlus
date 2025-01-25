@@ -6,7 +6,5 @@ internal interface ActivitiesRepository {
 
     fun addActivity(activity: ActivityModel): Boolean
     fun updateActivity(activity: ActivityModel): Boolean
-
-    // TODO: Add pagination?
-    fun getActivities(): List<ActivityModel>
+    fun getActivities(year: Int): List<ActivityModel>
 }

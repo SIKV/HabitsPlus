@@ -3,7 +3,7 @@ package com.github.sikv.habitsplus.data.repository.impl
 import com.github.sikv.habitsplus.data.mapping.IMAGES_DELIMITER
 import com.github.sikv.habitsplus.data.model.ActivityModel
 import com.github.sikv.habitsplus.data.source.ActivitiesLocalDataSource
-import com.github.sikv.habitsplus.util.MockDateTimeUtils
+import com.github.sikv.habitsplus.util.FakeDateTimeUtils
 import com.github.sikv.habitsplus.util.testActivities
 import org.kodein.mock.Mocker
 import org.kodein.mock.UsesMocks
@@ -24,7 +24,7 @@ class ActivitiesRepositoryImplTest {
             localDataSource.insertActivity(isAny(), isAny(), isAny(), isAny())
         } returns true
 
-        val mockDateTimeUtils = MockDateTimeUtils()
+        val mockDateTimeUtils = FakeDateTimeUtils()
 
         val repo = ActivitiesRepositoryImpl(
             activitiesLocalDataSource = localDataSource,
@@ -61,7 +61,7 @@ class ActivitiesRepositoryImplTest {
             localDataSource.updateActivity(isAny(), isAny(), isAny(), isAny(), isAny())
         } returns true
 
-        val mockDateTimeUtils = MockDateTimeUtils()
+        val mockDateTimeUtils = FakeDateTimeUtils()
 
         val repo = ActivitiesRepositoryImpl(
             activitiesLocalDataSource = localDataSource,
@@ -97,7 +97,7 @@ class ActivitiesRepositoryImplTest {
         val localDataSource = mocker.mock<ActivitiesLocalDataSource>()
         mocker.every { localDataSource.selectAllActivities() } returns testActivities
 
-        val mockDateTimeUtils = MockDateTimeUtils()
+        val mockDateTimeUtils = FakeDateTimeUtils()
 
         val repo = ActivitiesRepositoryImpl(
             activitiesLocalDataSource = localDataSource,
@@ -105,7 +105,7 @@ class ActivitiesRepositoryImplTest {
         )
 
         // WHEN
-        val actualActivities = repo.getActivities()
+        val actualActivities = repo.getActivities(2025) // TODO: FIX
 
         // THEN
         val expectedActivities = testActivities

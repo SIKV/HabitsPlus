@@ -5,7 +5,7 @@ import com.github.sikv.habitsplus.data.model.TodoModel
 import com.github.sikv.habitsplus.data.model.TodoOrderBy
 import com.github.sikv.habitsplus.data.model.TodoStatus
 import com.github.sikv.habitsplus.data.source.TodosLocalDataSource
-import com.github.sikv.habitsplus.util.MockDateTimeUtils
+import com.github.sikv.habitsplus.util.FakeDateTimeUtils
 import com.github.sikv.habitsplus.util.testTodos
 import org.kodein.mock.Mocker
 import org.kodein.mock.UsesMocks
@@ -26,7 +26,7 @@ class TodosRepositoryImplTest {
             mockTodosLocalDataSource.insertTodo(isAny(), isAny(), isAny(), isAny(), isAny())
         } returns Unit
 
-        val mockDateTimeUtils = MockDateTimeUtils()
+        val mockDateTimeUtils = FakeDateTimeUtils()
 
         val repo = TodosRepositoryImpl(
             todosLocalDataSource = mockTodosLocalDataSource,
@@ -65,7 +65,7 @@ class TodosRepositoryImplTest {
             mockTodosLocalDataSource.updateTodo(isAny(), isAny(), isAny(), isAny(), isAny(), isAny(), isAny())
         } returns true
 
-        val mockDateTimeUtils = MockDateTimeUtils()
+        val mockDateTimeUtils = FakeDateTimeUtils()
 
         val repo = TodosRepositoryImpl(
             todosLocalDataSource = mockTodosLocalDataSource,
@@ -105,7 +105,7 @@ class TodosRepositoryImplTest {
         val mockTodosLocalDataSource = mocker.mock<TodosLocalDataSource>()
         mocker.every { mockTodosLocalDataSource.selectAllTodos() } returns testTodos
 
-        val mockDateTimeUtils = MockDateTimeUtils()
+        val mockDateTimeUtils = FakeDateTimeUtils()
 
         val repo = TodosRepositoryImpl(
             todosLocalDataSource = mockTodosLocalDataSource,
@@ -134,7 +134,7 @@ class TodosRepositoryImplTest {
         val mockTodosLocalDataSource = mocker.mock<TodosLocalDataSource>()
         mocker.every { mockTodosLocalDataSource.selectAllTodos() } returns testTodos
 
-        val mockDateTimeUtils = MockDateTimeUtils()
+        val mockDateTimeUtils = FakeDateTimeUtils()
 
         val repo = TodosRepositoryImpl(
             todosLocalDataSource = mockTodosLocalDataSource,

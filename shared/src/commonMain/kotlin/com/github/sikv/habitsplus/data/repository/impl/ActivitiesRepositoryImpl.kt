@@ -30,7 +30,8 @@ internal class ActivitiesRepositoryImpl(
         )
     }
 
-    override fun getActivities(): List<ActivityModel> {
+    override fun getActivities(year: Int): List<ActivityModel> {
+        // TODO: Use year field.
         return activitiesLocalDataSource.selectAllActivities()
     }
 }

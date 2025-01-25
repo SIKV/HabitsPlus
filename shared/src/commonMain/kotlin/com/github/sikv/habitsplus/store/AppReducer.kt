@@ -2,6 +2,8 @@ package com.github.sikv.habitsplus.store
 
 import com.github.sikv.habitsplus.feature.activity.add.AddActivityAction
 import com.github.sikv.habitsplus.feature.activity.add.addActivityReducer
+import com.github.sikv.habitsplus.feature.activity.list.ActivityListAction
+import com.github.sikv.habitsplus.feature.activity.list.activityListReducer
 import com.github.sikv.habitsplus.feature.todo.add.AddTodoAction
 import com.github.sikv.habitsplus.feature.todo.add.addTodoReducer
 import com.github.sikv.habitsplus.feature.todo.list.TodoListAction
@@ -14,6 +16,9 @@ val appReducer: Reducer<AppState, Action> = { state, action ->
         )
         is AddTodoAction -> state.copy(
             addTodoState = addTodoReducer(state.addTodoState, action)
+        )
+        is ActivityListAction -> state.copy(
+            activityListState = activityListReducer(state.activityListState, action)
         )
         is AddActivityAction -> state.copy(
             addActivityState = addActivityReducer(state.addActivityState, action)
