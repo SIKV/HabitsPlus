@@ -18,7 +18,7 @@ Create and track habits, todos, and your activity.
 
 ## Architecture
 
-<img width="70%" alt="arch" src="https://github.com/user-attachments/assets/e3f5fdd1-3171-4d35-b967-a02d92819fcc" />
+<img width="70%" alt="arch" src="https://github.com/user-attachments/assets/161d6815-2057-4590-85ac-4091b8b76bdd" />
 
 ## Screenshots
 
