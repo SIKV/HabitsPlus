@@ -17,4 +17,8 @@ class FakeDateTimeUtils : DateTimeUtils {
     override fun getMonthNumber(timestamp: Timestamp): Int {
         return 0
     }
+
+    override fun getYear(timestamp: Timestamp): Int {
+        return 0
+    }
 }

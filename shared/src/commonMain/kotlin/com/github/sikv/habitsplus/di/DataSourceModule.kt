@@ -14,7 +14,8 @@ val dataSourceModule = module {
     }
     single<ActivitiesLocalDataSource> {
         ActivitiesLocalDataSourceImpl(
-            database = get()
+            database = get(),
+            dateTimeUtils = get()
         )
     }
 }

@@ -27,13 +27,24 @@ internal class ActivityListMiddleware(
 
     private fun handleInitAction(dispatcher: Dispatcher) {
         val currentYear = dateTimeUtils.currentYear()
+
+        val activitiesYears = activitiesRepository.getActivitiesYears().toMutableSet().apply {
+            // Always add the current year.
+            add(currentYear)
+        }
+
+        dispatcher(ActivityListAction.UpdateYearsFilter(yearsFilter = activitiesYears))
         dispatcher(ActivityListAction.FetchAll(year = currentYear))
     }
 
     private fun handleFetchAllAction(action: ActivityListAction.FetchAll, dispatcher: Dispatcher) {
         dispatcher(ActivityListAction.UpdateLoading(isLoading = true))
         val activities = groupByMonth(activitiesRepository.getActivities(action.year))
-        dispatcher(ActivityListAction.UpdateList(activities = activities))
+
+        dispatcher(ActivityListAction.UpdateList(
+            selectedYear = action.year,
+            activities = activities
+        ))
     }
 
     private fun groupByMonth(activities: List<ActivityModel>): List<ActivityGroup> {

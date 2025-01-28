@@ -20,4 +20,9 @@ class DateTimeUtilsImpl : DateTimeUtils {
         val instant = Instant.fromEpochMilliseconds(timestamp)
         return instant.toLocalDateTime(TimeZone.currentSystemDefault()).monthNumber
     }
+
+    override fun getYear(timestamp: Timestamp): Int {
+        val instant = Instant.fromEpochMilliseconds(timestamp)
+        return instant.toLocalDateTime(TimeZone.currentSystemDefault()).year
+    }
 }

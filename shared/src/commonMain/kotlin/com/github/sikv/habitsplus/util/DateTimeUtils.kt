@@ -7,4 +7,5 @@ interface DateTimeUtils {
     fun currentTimestamp(): Timestamp
     fun currentYear(): Int
     fun getMonthNumber(timestamp: Timestamp): Int
+    fun getYear(timestamp: Timestamp): Int
 }

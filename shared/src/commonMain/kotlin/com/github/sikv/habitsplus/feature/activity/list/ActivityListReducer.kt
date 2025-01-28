@@ -9,7 +9,11 @@ val activityListReducer: Reducer<ActivityListState, ActivityListAction> = { stat
         )
         is ActivityListAction.UpdateList -> state.copy(
             isLoading = false,
+            selectedYear = action.selectedYear,
             activities = action.activities
+        )
+        is ActivityListAction.UpdateYearsFilter -> state.copy(
+            yearsFilter = action.yearsFilter
         )
         else -> state
     }

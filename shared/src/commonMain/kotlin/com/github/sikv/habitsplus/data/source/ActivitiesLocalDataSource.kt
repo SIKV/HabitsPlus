@@ -18,5 +18,7 @@ internal interface ActivitiesLocalDataSource {
         editedAtMs: Long?
     ) : Boolean
 
-    fun selectAllActivities(): List<ActivityModel>
+    fun selectActivities(year: Int): List<ActivityModel>
+
+    fun selectActivitiesYears(): Set<Int>
 }

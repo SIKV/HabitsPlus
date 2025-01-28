@@ -5,6 +5,7 @@ import com.github.sikv.habitsplus.data.model.ActivityModel
 import com.github.sikv.habitsplus.data.source.ActivitiesLocalDataSource
 import com.github.sikv.habitsplus.util.FakeDateTimeUtils
 import com.github.sikv.habitsplus.util.testActivities
+import com.github.sikv.habitsplus.util.testActivitiesYears
 import org.kodein.mock.Mocker
 import org.kodein.mock.UsesMocks
 import org.kodein.mock.generated.mock
@@ -94,21 +95,40 @@ class ActivitiesRepositoryImplTest {
         // GIVEN
         val mocker = Mocker()
 
-        val localDataSource = mocker.mock<ActivitiesLocalDataSource>()
-        mocker.every { localDataSource.selectAllActivities() } returns testActivities
+        val year = 2025
 
-        val mockDateTimeUtils = FakeDateTimeUtils()
+        val localDataSource = mocker.mock<ActivitiesLocalDataSource>()
+        mocker.every { localDataSource.selectActivities(year) } returns testActivities
 
         val repo = ActivitiesRepositoryImpl(
             activitiesLocalDataSource = localDataSource,
-            dateTimeUtils = mockDateTimeUtils
+            dateTimeUtils = FakeDateTimeUtils()
         )
 
         // WHEN
-        val actualActivities = repo.getActivities(2025) // TODO: FIX
+        val actualActivities = repo.getActivities(year)
 
         // THEN
-        val expectedActivities = testActivities
-        assertEquals(expectedActivities, actualActivities)
+        assertEquals(testActivities, actualActivities)
+    }
+
+    @Test
+    fun getActivitiesYears_returnsData() {
+        // GIVEN
+        val mocker = Mocker()
+
+        val localDataSource = mocker.mock<ActivitiesLocalDataSource>()
+        mocker.every { localDataSource.selectActivitiesYears() } returns testActivitiesYears
+
+        val repo = ActivitiesRepositoryImpl(
+            activitiesLocalDataSource = localDataSource,
+            dateTimeUtils = FakeDateTimeUtils()
+        )
+
+        // WHEN
+        val actualActivitiesYears = repo.getActivitiesYears()
+
+        // THEN
+        assertEquals(testActivitiesYears, actualActivitiesYears)
     }
 }

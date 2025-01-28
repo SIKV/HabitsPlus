@@ -15,6 +15,11 @@ sealed class ActivityListAction : Action {
     ) : ActivityListAction()
 
     data class UpdateList(
+        val selectedYear: Int,
         val activities: List<ActivityGroup>,
+    ) : ActivityListAction()
+
+    data class UpdateYearsFilter(
+        val yearsFilter: Set<Int>,
     ) : ActivityListAction()
 }

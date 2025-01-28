@@ -2,8 +2,6 @@ package com.github.sikv.habitsplus.util
 
 import com.github.sikv.habitsplus.data.model.ActivityModel
 import com.github.sikv.habitsplus.data.model.Metadata
-import com.github.sikv.habitsplus.data.model.TodoModel
-import com.github.sikv.habitsplus.data.model.TodoStatus
 
 val testActivities = listOf(
     ActivityModel(
@@ -27,3 +25,5 @@ val testActivities = listOf(
         )
     ),
 )
+
+val testActivitiesYears = setOf(2023, 2024, 2025)

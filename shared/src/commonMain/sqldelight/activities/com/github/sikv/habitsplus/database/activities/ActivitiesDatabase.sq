@@ -22,3 +22,7 @@ WHERE id=:id;
 selectAllActivities:
 SELECT ActivityEntity.*
 FROM ActivityEntity;
+
+selectAllActivitiesYears:
+SELECT date_ms
+FROM ActivityEntity;

@@ -2,6 +2,7 @@ package com.github.sikv.habitsplus.data.mapping
 
 import com.github.sikv.habitsplus.data.model.ActivityModel
 import com.github.sikv.habitsplus.data.model.Metadata
+import com.github.sikv.habitsplus.util.DateTimeUtils
 
 internal const val IMAGES_DELIMITER = ","
 
@@ -23,4 +24,11 @@ internal fun mapActivity(
             editedAt = editedAtMs
         )
     )
+}
+
+internal fun mapActivityYear(
+    dateTimeUtils: DateTimeUtils,
+    dateMs: Long
+): Int {
+    return dateTimeUtils.getYear(dateMs)
 }

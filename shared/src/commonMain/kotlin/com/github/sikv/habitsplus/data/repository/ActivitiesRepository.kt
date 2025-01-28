@@ -7,4 +7,5 @@ internal interface ActivitiesRepository {
     fun addActivity(activity: ActivityModel): Boolean
     fun updateActivity(activity: ActivityModel): Boolean
     fun getActivities(year: Int): List<ActivityModel>
+    fun getActivitiesYears(): Set<Int>
 }

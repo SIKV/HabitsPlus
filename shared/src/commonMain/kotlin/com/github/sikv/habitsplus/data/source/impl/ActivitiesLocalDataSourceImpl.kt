@@ -1,12 +1,15 @@
 package com.github.sikv.habitsplus.data.source.impl
 
 import com.github.sikv.habitsplus.data.mapping.mapActivity
+import com.github.sikv.habitsplus.data.mapping.mapActivityYear
 import com.github.sikv.habitsplus.data.model.ActivityModel
 import com.github.sikv.habitsplus.data.source.ActivitiesLocalDataSource
 import com.github.sikv.habitsplus.database.ActivitiesDatabaseManager
+import com.github.sikv.habitsplus.util.DateTimeUtils
 
 class ActivitiesLocalDataSourceImpl(
-    private val database: ActivitiesDatabaseManager
+    private val database: ActivitiesDatabaseManager,
+    private val dateTimeUtils: DateTimeUtils
 ) : ActivitiesLocalDataSource {
 
     override fun insertActivity(
@@ -49,9 +52,21 @@ class ActivitiesLocalDataSourceImpl(
         }
     }
 
-    override fun selectAllActivities(): List<ActivityModel> {
+    override fun selectActivities(year: Int): List<ActivityModel> {
+        // TODO: Add year filer to the query.
         return database.dbQuery
             .selectAllActivities(::mapActivity)
             .executeAsList()
+    }
+
+    override fun selectActivitiesYears(): Set<Int> {
+        return database.dbQuery
+            .selectAllActivitiesYears()
+            .executeAsList()
+            .map { dateMs ->
+                dateTimeUtils.currentTimestamp()
+                mapActivityYear(dateTimeUtils, dateMs)
+            }
+            .toSet()
     }
 }
