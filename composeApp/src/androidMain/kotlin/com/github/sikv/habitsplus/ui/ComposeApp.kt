@@ -8,6 +8,7 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -32,6 +33,10 @@ import com.github.sikv.habitsplus.ui.feature.more.MoreRoute
 import com.github.sikv.habitsplus.ui.feature.more.moreDestination
 import com.github.sikv.habitsplus.ui.feature.todos.TodosRoute
 import com.github.sikv.habitsplus.ui.feature.todos.todosDestination
+import com.github.sikv.habitsplus.ui.theme.LocalSpacing
+import com.github.sikv.habitsplus.ui.theme.Spacing
+import com.github.sikv.habitsplus.util.DateTimeFormatter
+import com.github.sikv.habitsplus.util.LocalDateTimeFormatter
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
@@ -49,43 +54,48 @@ fun ComposeApp() {
         }
     }
 
-    Scaffold(
-       bottomBar = { Navigation(navController) },
-    ) { innerPadding ->
-        NavHost(
-            navController = navController,
-            startDestination = HabitsRootRoute,
-            modifier = Modifier
-                .padding(innerPadding)
-                .consumeWindowInsets(innerPadding)
-        ) {
-            navigation<HabitsRootRoute>(startDestination = HabitsRoute) {
-                habitsDestination(
-                    onMenuItemClick = onMenuItemClick
-                )
-            }
-            navigation<TodosRootRoute>(startDestination = TodosRoute) {
-                todosDestination(
-                    onMenuItemClick = onMenuItemClick
-                )
-                addTodoDestination(
-                    onNavigateBack = {
-                        navController.popBackStack()
-                    }
-                )
-            }
-            navigation<ActivityRootRoute>(startDestination = ActivityRoute) {
-                activityDestination(
-                    onMenuItemClick = onMenuItemClick
-                )
-                addActivityDestination(
-                    onNavigateBack = {
-                        navController.popBackStack()
-                    }
-                )
-            }
-            navigation<MoreRootRoute>(startDestination = MoreRoute) {
-                moreDestination()
+    CompositionLocalProvider(
+        LocalSpacing provides Spacing(),
+        LocalDateTimeFormatter provides DateTimeFormatter()
+    ) {
+        Scaffold(
+            bottomBar = { Navigation(navController) },
+        ) { innerPadding ->
+            NavHost(
+                navController = navController,
+                startDestination = HabitsRootRoute,
+                modifier = Modifier
+                    .padding(innerPadding)
+                    .consumeWindowInsets(innerPadding)
+            ) {
+                navigation<HabitsRootRoute>(startDestination = HabitsRoute) {
+                    habitsDestination(
+                        onMenuItemClick = onMenuItemClick
+                    )
+                }
+                navigation<TodosRootRoute>(startDestination = TodosRoute) {
+                    todosDestination(
+                        onMenuItemClick = onMenuItemClick
+                    )
+                    addTodoDestination(
+                        onNavigateBack = {
+                            navController.popBackStack()
+                        }
+                    )
+                }
+                navigation<ActivityRootRoute>(startDestination = ActivityRoute) {
+                    activityDestination(
+                        onMenuItemClick = onMenuItemClick
+                    )
+                    addActivityDestination(
+                        onNavigateBack = {
+                            navController.popBackStack()
+                        }
+                    )
+                }
+                navigation<MoreRootRoute>(startDestination = MoreRoute) {
+                    moreDestination()
+                }
             }
         }
     }

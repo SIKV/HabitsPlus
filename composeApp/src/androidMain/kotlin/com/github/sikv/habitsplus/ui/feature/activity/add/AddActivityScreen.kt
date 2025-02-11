@@ -34,7 +34,8 @@ import com.github.sikv.habitsplus.ui.components.DatePickerField
 import com.github.sikv.habitsplus.ui.components.Padding
 import com.github.sikv.habitsplus.ui.components.TopAppBar
 import com.github.sikv.habitsplus.ui.theme.spacing
-import com.github.sikv.habitsplus.util.formatDate
+import com.github.sikv.habitsplus.util.DateTimeFormatter
+import com.github.sikv.habitsplus.util.LocalDateTimeFormatter
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.filterIsInstance
 import kotlinx.coroutines.flow.mapLatest
@@ -59,7 +60,6 @@ fun AddActivityScreen(
 
     var descriptionHasError by remember(state) { mutableStateOf(false) }
 
-
     LaunchedEffect(Unit) {
         store.dispatch(AddActivityAction.Init)
     }
@@ -79,7 +79,10 @@ fun AddActivityScreen(
         }
     }
 
-    val formattedDate = remember(state) { formatDate(context, state.date) }
+    val dateTimeProvider = LocalDateTimeFormatter.current
+    val formattedDate = remember(state) {
+        dateTimeProvider.format(context, state.date, DateTimeFormatter.Pattern.MONTH_DAY_YEAR)
+    }
 
     Scaffold(
         topBar = {
