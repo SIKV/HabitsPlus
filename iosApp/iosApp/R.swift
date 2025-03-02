@@ -8,6 +8,7 @@ class R {
         static let extraSmall = 4.0
         static let small = 8.0
         static let medium = 16.0
+        static let big = 24.0
         static let large = 32.0
     }
     

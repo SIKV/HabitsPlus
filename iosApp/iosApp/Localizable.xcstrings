@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%@" : {
+
+    },
     "ActionDone" : {
       "extractionState" : "manual",
       "localizations" : {
