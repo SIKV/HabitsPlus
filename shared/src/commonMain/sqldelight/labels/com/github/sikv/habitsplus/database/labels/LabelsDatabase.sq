@@ -1,0 +1,19 @@
+CREATE TABLE LabelEntity(
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
+    color TEXT NOT NULL
+);
+
+insertLabel:
+INSERT INTO LabelEntity(title, color)
+VALUES (?,?);
+
+updateLabel:
+UPDATE LabelEntity
+SET title=:title,
+    color=:color
+WHERE id=:id;
+
+selectAllLabels:
+SELECT LabelEntity.*
+FROM LabelEntity;

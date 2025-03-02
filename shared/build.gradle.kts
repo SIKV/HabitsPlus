@@ -73,6 +73,10 @@ sqldelight {
             srcDirs("src/commonMain/sqldelight/activities")
             packageName.set("com.github.sikv.habitsplus.database.activities")
         }
+        create("LabelsDatabase") {
+            srcDirs("src/commonMain/sqldelight/labels")
+            packageName.set("com.github.sikv.habitsplus.database.labels")
+        }
     }
 }
 

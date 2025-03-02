@@ -4,6 +4,7 @@ import android.content.Context
 import app.cash.sqldelight.db.SqlDriver
 import app.cash.sqldelight.driver.android.AndroidSqliteDriver
 import com.github.sikv.habitsplus.database.activities.ActivitiesDatabase
+import com.github.sikv.habitsplus.database.labels.LabelsDatabase
 import com.github.sikv.habitsplus.database.todos.TodosDatabase
 
 internal class AndroidDatabaseDriverFactory(
@@ -16,5 +17,9 @@ internal class AndroidDatabaseDriverFactory(
 
     override fun createActivitiesDriver(): SqlDriver {
         return AndroidSqliteDriver(ActivitiesDatabase.Schema, context, "activities.db")
+    }
+
+    override fun createLabelsDriver(): SqlDriver {
+        return AndroidSqliteDriver(LabelsDatabase.Schema, context, "labels.db")
     }
 }
