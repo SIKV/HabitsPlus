@@ -2,7 +2,7 @@ package com.github.sikv.habitsplus.data.source
 
 import com.github.sikv.habitsplus.data.model.LabelModel
 
-internal interface LabelsLocalDataSource {
+internal interface LabelsDataSource {
     fun insertLabel(
         title: String,
         color: String

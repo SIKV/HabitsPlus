@@ -2,7 +2,7 @@ package com.github.sikv.habitsplus.data.repository.impl
 
 import com.github.sikv.habitsplus.data.mapping.IMAGES_DELIMITER
 import com.github.sikv.habitsplus.data.model.ActivityModel
-import com.github.sikv.habitsplus.data.source.ActivitiesLocalDataSource
+import com.github.sikv.habitsplus.data.source.ActivitiesDataSource
 import com.github.sikv.habitsplus.util.FakeDateTimeUtils
 import com.github.sikv.habitsplus.util.testActivities
 import com.github.sikv.habitsplus.util.testActivitiesYears
@@ -12,7 +12,7 @@ import org.kodein.mock.generated.mock
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-@UsesMocks(ActivitiesLocalDataSource::class)
+@UsesMocks(ActivitiesDataSource::class)
 class ActivitiesRepositoryImplTest {
 
     @Test
@@ -20,7 +20,7 @@ class ActivitiesRepositoryImplTest {
         // GIVEN
         val mocker = Mocker()
 
-        val localDataSource = mocker.mock<ActivitiesLocalDataSource>()
+        val localDataSource = mocker.mock<ActivitiesDataSource>()
         mocker.every {
             localDataSource.insertActivity(isAny(), isAny(), isAny(), isAny())
         } returns true
@@ -57,7 +57,7 @@ class ActivitiesRepositoryImplTest {
         // GIVEN
         val mocker = Mocker()
 
-        val localDataSource = mocker.mock<ActivitiesLocalDataSource>()
+        val localDataSource = mocker.mock<ActivitiesDataSource>()
         mocker.every {
             localDataSource.updateActivity(isAny(), isAny(), isAny(), isAny(), isAny())
         } returns true
@@ -97,7 +97,7 @@ class ActivitiesRepositoryImplTest {
 
         val year = 2025
 
-        val localDataSource = mocker.mock<ActivitiesLocalDataSource>()
+        val localDataSource = mocker.mock<ActivitiesDataSource>()
         mocker.every { localDataSource.selectActivities(year) } returns testActivities
 
         val repo = ActivitiesRepositoryImpl(
@@ -117,7 +117,7 @@ class ActivitiesRepositoryImplTest {
         // GIVEN
         val mocker = Mocker()
 
-        val localDataSource = mocker.mock<ActivitiesLocalDataSource>()
+        val localDataSource = mocker.mock<ActivitiesDataSource>()
         mocker.every { localDataSource.selectActivitiesYears() } returns testActivitiesYears
 
         val repo = ActivitiesRepositoryImpl(

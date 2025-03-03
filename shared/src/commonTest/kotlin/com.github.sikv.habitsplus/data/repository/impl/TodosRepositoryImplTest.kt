@@ -4,7 +4,7 @@ import com.github.sikv.habitsplus.data.mapping.toLong
 import com.github.sikv.habitsplus.data.model.TodoModel
 import com.github.sikv.habitsplus.data.model.TodoOrderBy
 import com.github.sikv.habitsplus.data.model.TodoStatus
-import com.github.sikv.habitsplus.data.source.TodosLocalDataSource
+import com.github.sikv.habitsplus.data.source.TodosDataSource
 import com.github.sikv.habitsplus.util.FakeDateTimeUtils
 import com.github.sikv.habitsplus.util.testTodos
 import org.kodein.mock.Mocker
@@ -13,7 +13,7 @@ import org.kodein.mock.generated.mock
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-@UsesMocks(TodosLocalDataSource::class)
+@UsesMocks(TodosDataSource::class)
 class TodosRepositoryImplTest {
 
     @Test
@@ -21,7 +21,7 @@ class TodosRepositoryImplTest {
         // GIVEN
         val mocker = Mocker()
 
-        val mockTodosLocalDataSource = mocker.mock<TodosLocalDataSource>()
+        val mockTodosLocalDataSource = mocker.mock<TodosDataSource>()
         mocker.every {
             mockTodosLocalDataSource.insertTodo(isAny(), isAny(), isAny(), isAny(), isAny())
         } returns Unit
@@ -60,7 +60,7 @@ class TodosRepositoryImplTest {
         // GIVEN
         val mocker = Mocker()
 
-        val mockTodosLocalDataSource = mocker.mock<TodosLocalDataSource>()
+        val mockTodosLocalDataSource = mocker.mock<TodosDataSource>()
         mocker.every {
             mockTodosLocalDataSource.updateTodo(isAny(), isAny(), isAny(), isAny(), isAny(), isAny(), isAny())
         } returns true
@@ -102,7 +102,7 @@ class TodosRepositoryImplTest {
         // GIVEN
         val mocker = Mocker()
 
-        val mockTodosLocalDataSource = mocker.mock<TodosLocalDataSource>()
+        val mockTodosLocalDataSource = mocker.mock<TodosDataSource>()
         mocker.every { mockTodosLocalDataSource.selectAllTodos() } returns testTodos
 
         val mockDateTimeUtils = FakeDateTimeUtils()
@@ -131,7 +131,7 @@ class TodosRepositoryImplTest {
         // GIVEN
         val mocker = Mocker()
 
-        val mockTodosLocalDataSource = mocker.mock<TodosLocalDataSource>()
+        val mockTodosLocalDataSource = mocker.mock<TodosDataSource>()
         mocker.every { mockTodosLocalDataSource.selectAllTodos() } returns testTodos
 
         val mockDateTimeUtils = FakeDateTimeUtils()

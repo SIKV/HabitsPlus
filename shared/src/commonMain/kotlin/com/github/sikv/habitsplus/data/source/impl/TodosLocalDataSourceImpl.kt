@@ -2,12 +2,12 @@ package com.github.sikv.habitsplus.data.source.impl
 
 import com.github.sikv.habitsplus.data.mapping.mapTodo
 import com.github.sikv.habitsplus.data.model.TodoModel
-import com.github.sikv.habitsplus.data.source.TodosLocalDataSource
+import com.github.sikv.habitsplus.data.source.TodosDataSource
 import com.github.sikv.habitsplus.database.TodosDatabaseManager
 
 internal class TodosLocalDataSourceImpl(
     private val database: TodosDatabaseManager
-) : TodosLocalDataSource {
+) : TodosDataSource {
 
     override fun insertTodo(status: Long, title: String, description: String?, dueDateMs: Long?, addedAtMs: Long) {
         database.dbQuery.insertTodo(

@@ -3,16 +3,16 @@ package com.github.sikv.habitsplus.data.repository.impl
 import com.github.sikv.habitsplus.data.mapping.IMAGES_DELIMITER
 import com.github.sikv.habitsplus.data.model.ActivityModel
 import com.github.sikv.habitsplus.data.repository.ActivitiesRepository
-import com.github.sikv.habitsplus.data.source.ActivitiesLocalDataSource
+import com.github.sikv.habitsplus.data.source.ActivitiesDataSource
 import com.github.sikv.habitsplus.util.DateTimeUtils
 
 internal class ActivitiesRepositoryImpl(
-    private val activitiesLocalDataSource: ActivitiesLocalDataSource,
+    private val activitiesDataSource: ActivitiesDataSource,
     private val dateTimeUtils: DateTimeUtils
 ) : ActivitiesRepository {
 
     override fun addActivity(activity: ActivityModel): Boolean {
-        return activitiesLocalDataSource.insertActivity(
+        return activitiesDataSource.insertActivity(
             description = activity.description,
             images = activity.images.joinToString(IMAGES_DELIMITER),
             dateMs = activity.date,
@@ -21,7 +21,7 @@ internal class ActivitiesRepositoryImpl(
     }
 
     override fun updateActivity(activity: ActivityModel): Boolean {
-        return activitiesLocalDataSource.updateActivity(
+        return activitiesDataSource.updateActivity(
             id = activity.id,
             description = activity.description,
             images = activity.images.joinToString(IMAGES_DELIMITER),
@@ -31,10 +31,10 @@ internal class ActivitiesRepositoryImpl(
     }
 
     override fun getActivities(year: Int): List<ActivityModel> {
-        return activitiesLocalDataSource.selectActivities(year)
+        return activitiesDataSource.selectActivities(year)
     }
 
     override fun getActivitiesYears(): Set<Int> {
-        return activitiesLocalDataSource.selectActivitiesYears()
+        return activitiesDataSource.selectActivitiesYears()
     }
 }

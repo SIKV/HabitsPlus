@@ -2,7 +2,7 @@ package com.github.sikv.habitsplus.data.source
 
 import com.github.sikv.habitsplus.data.model.ActivityModel
 
-internal interface ActivitiesLocalDataSource {
+internal interface ActivitiesDataSource {
     fun insertActivity(
         description: String,
         images: String?,

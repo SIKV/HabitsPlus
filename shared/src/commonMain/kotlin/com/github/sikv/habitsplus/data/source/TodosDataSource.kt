@@ -2,7 +2,7 @@ package com.github.sikv.habitsplus.data.source
 
 import com.github.sikv.habitsplus.data.model.TodoModel
 
-internal interface TodosLocalDataSource {
+internal interface TodosDataSource {
     fun insertTodo(
         status: Long,
         title: String,

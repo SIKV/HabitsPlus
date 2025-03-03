@@ -2,21 +2,21 @@ package com.github.sikv.habitsplus.data.repository.impl
 
 import com.github.sikv.habitsplus.data.model.LabelModel
 import com.github.sikv.habitsplus.data.repository.LabelsRepository
-import com.github.sikv.habitsplus.data.source.LabelsLocalDataSource
+import com.github.sikv.habitsplus.data.source.LabelsDataSource
 
 internal class LabelsRepositoryImpl(
-    private val labelsLocalDataSource: LabelsLocalDataSource,
+    private val labelsDataSource: LabelsDataSource,
 ) : LabelsRepository {
 
     override fun addLabel(label: LabelModel): Boolean {
-        return labelsLocalDataSource.insertLabel(
+        return labelsDataSource.insertLabel(
             title = label.title,
             color = label.color
         )
     }
 
     override fun updateLabel(label: LabelModel): Boolean {
-        return labelsLocalDataSource.updateLabel(
+        return labelsDataSource.updateLabel(
             id = label.id,
             title = label.title,
             color = label.color
@@ -24,6 +24,6 @@ internal class LabelsRepositoryImpl(
     }
 
     override fun getAllLabels(): List<LabelModel> {
-        return labelsLocalDataSource.selectAllLabels()
+        return labelsDataSource.selectAllLabels()
     }
 }

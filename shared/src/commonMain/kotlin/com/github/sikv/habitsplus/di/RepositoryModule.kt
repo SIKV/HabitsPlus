@@ -11,19 +11,19 @@ import org.koin.dsl.module
 val repositoryModule = module {
     single<TodosRepository> {
         TodosRepositoryImpl(
-            todosLocalDataSource = get(),
+            todosDataSource = get(),
             dateTimeUtils = get()
         )
     }
     single<ActivitiesRepository> {
         ActivitiesRepositoryImpl(
-            activitiesLocalDataSource = get(),
+            activitiesDataSource = get(),
             dateTimeUtils = get()
         )
     }
     single<LabelsRepository> {
         LabelsRepositoryImpl(
-            labelsLocalDataSource = get()
+            labelsDataSource = get()
         )
     }
 }

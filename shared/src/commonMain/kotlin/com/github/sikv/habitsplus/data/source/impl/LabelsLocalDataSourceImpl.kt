@@ -2,12 +2,12 @@ package com.github.sikv.habitsplus.data.source.impl
 
 import com.github.sikv.habitsplus.data.mapping.mapLabel
 import com.github.sikv.habitsplus.data.model.LabelModel
-import com.github.sikv.habitsplus.data.source.LabelsLocalDataSource
+import com.github.sikv.habitsplus.data.source.LabelsDataSource
 import com.github.sikv.habitsplus.database.LabelsDatabaseManager
 
 internal class LabelsLocalDataSourceImpl(
     private val database: LabelsDatabaseManager,
-) : LabelsLocalDataSource {
+) : LabelsDataSource {
 
     override fun insertLabel(title: String, color: String): Boolean {
         try {

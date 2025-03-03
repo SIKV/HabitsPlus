@@ -6,16 +6,16 @@ import com.github.sikv.habitsplus.data.model.TodoModel
 import com.github.sikv.habitsplus.data.model.TodoOrderBy
 import com.github.sikv.habitsplus.data.model.TodoStatus
 import com.github.sikv.habitsplus.data.repository.TodosRepository
-import com.github.sikv.habitsplus.data.source.TodosLocalDataSource
+import com.github.sikv.habitsplus.data.source.TodosDataSource
 import com.github.sikv.habitsplus.util.DateTimeUtils
 
 internal class TodosRepositoryImpl(
-    private val todosLocalDataSource: TodosLocalDataSource,
+    private val todosDataSource: TodosDataSource,
     private val dateTimeUtils: DateTimeUtils
 ) : TodosRepository {
 
     override fun addTodo(todo: TodoModel) {
-        todosLocalDataSource.insertTodo(
+        todosDataSource.insertTodo(
             status = todo.status.toLong(),
             title = todo.title,
             description = todo.description,
@@ -25,7 +25,7 @@ internal class TodosRepositoryImpl(
     }
 
     override fun updateTodo(todo: TodoModel): Boolean {
-        return todosLocalDataSource.updateTodo(
+        return todosDataSource.updateTodo(
             id = todo.id,
             status = todo.status.toLong(),
             title = todo.title,
@@ -37,7 +37,7 @@ internal class TodosRepositoryImpl(
     }
 
     override fun getAllTodos(orderBy: TodoOrderBy, showCompleted: Boolean): List<TodoModel> {
-        return todosLocalDataSource.selectAllTodos()
+        return todosDataSource.selectAllTodos()
             .filter { todo ->
                 // Show all items if [showCompleted] is true.
                 if (showCompleted) {
