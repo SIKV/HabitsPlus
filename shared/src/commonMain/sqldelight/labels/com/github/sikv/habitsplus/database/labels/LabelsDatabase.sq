@@ -1,17 +1,19 @@
 CREATE TABLE LabelEntity(
     id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     title TEXT NOT NULL,
-    color TEXT NOT NULL
+    light_color TEXT NOT NULL,
+    dark_color TEXT NOT NULL
 );
 
 insertLabel:
-INSERT INTO LabelEntity(title, color)
-VALUES (?,?);
+INSERT INTO LabelEntity(title, light_color, dark_color)
+VALUES (?,?,?);
 
 updateLabel:
 UPDATE LabelEntity
 SET title=:title,
-    color=:color
+    light_color=:light_color,
+    dark_color=:dark_color
 WHERE id=:id;
 
 selectAllLabels:

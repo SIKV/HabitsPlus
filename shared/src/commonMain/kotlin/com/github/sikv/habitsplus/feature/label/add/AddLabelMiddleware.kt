@@ -28,7 +28,7 @@ internal class AddLabelMiddleware(
     private fun handleSaveAction(state: AddLabelState, dispatcher: Dispatcher) {
         val newLabel = LabelModel(
             title = state.title.trim(),
-            color = state.color.trim()
+            color = state.color
         )
 
         val validationError = validator.checkErrors(newLabel)

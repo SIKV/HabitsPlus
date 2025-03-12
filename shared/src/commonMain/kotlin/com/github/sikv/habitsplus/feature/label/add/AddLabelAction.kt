@@ -1,6 +1,7 @@
 package com.github.sikv.habitsplus.feature.label.add
 
 import com.github.sikv.habitsplus.store.Action
+import com.github.sikv.habitsplus.util.ColorVariant
 
 sealed class AddLabelAction : Action {
 
@@ -9,12 +10,12 @@ sealed class AddLabelAction : Action {
     ) : AddLabelAction()
 
     data class UpdateColor(
-        val color: String
+        val color: ColorVariant
     ) : AddLabelAction()
 
     data class Update(
         val title: String,
-        val color: String
+        val color: ColorVariant
     ) : AddLabelAction()
 
     data object Save : AddLabelAction()
