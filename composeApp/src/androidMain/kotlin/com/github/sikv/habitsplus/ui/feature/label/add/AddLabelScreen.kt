@@ -22,7 +22,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.github.sikv.habitsplus.DefaultConfig
 import com.github.sikv.habitsplus.R
 import com.github.sikv.habitsplus.feature.label.add.AddLabelAction
 import com.github.sikv.habitsplus.feature.label.add.AddLabelError
@@ -103,7 +102,7 @@ fun AddLabelScreen(
                 onValueChange = { value ->
                     store.dispatch(
                         AddLabelAction.UpdateTitle(
-                            value.take(DefaultConfig.addLabelTitleMaxLength)
+                            value.take(state.titleMaxLength)
                         ))
                 },
                 label = { Text(stringResource(R.string.add_label_title_label)) },

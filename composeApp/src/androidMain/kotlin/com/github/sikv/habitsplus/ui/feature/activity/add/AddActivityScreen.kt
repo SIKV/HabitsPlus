@@ -22,7 +22,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.github.sikv.habitsplus.DefaultConfig
 import com.github.sikv.habitsplus.R
 import com.github.sikv.habitsplus.feature.activity.add.AddActivityAction
 import com.github.sikv.habitsplus.feature.activity.add.AddActivityError
@@ -126,12 +125,12 @@ fun AddActivityScreen(
                 onValueChange = { value ->
                     store.dispatch(
                         AddActivityAction.UpdateDescription(
-                            value.take(DefaultConfig.addActivityDescriptionMaxLength)
+                            value.take(state.descriptionMaxLength)
                     ))
                 },
                 label = { Text(stringResource(R.string.add_activity_description_label)) },
                 isError = descriptionHasError,
-                minLines = DefaultConfig.addActivityescriptionMinLines,
+                minLines = state.descriptionMinLines,
                 keyboardOptions = KeyboardOptions.Default.copy(
                     capitalization = KeyboardCapitalization.Sentences
                 ),

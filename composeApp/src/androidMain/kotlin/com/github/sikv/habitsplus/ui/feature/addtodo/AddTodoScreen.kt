@@ -22,7 +22,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.github.sikv.habitsplus.DefaultConfig
 import com.github.sikv.habitsplus.R
 import com.github.sikv.habitsplus.feature.todo.add.AddTodoAction
 import com.github.sikv.habitsplus.feature.todo.add.AddTodoError
@@ -107,7 +106,7 @@ fun AddTodoScreen(
                 onValueChange = { value ->
                     store.dispatch(
                         AddTodoAction.UpdateTitle(
-                        value.take(DefaultConfig.addTodoTitleMaxLength)
+                        value.take(state.titleMaxLength)
                     ))
                 },
                 label = { Text(stringResource(R.string.add_todo_title_label)) },
@@ -116,7 +115,7 @@ fun AddTodoScreen(
                         stringResource(R.string.label_required_field),
                     )
                 },
-                maxLines = DefaultConfig.addTodoTitleMaxLines,
+                maxLines = 1,
                 singleLine = true,
                 keyboardOptions = KeyboardOptions.Default.copy(
                     capitalization = KeyboardCapitalization.Sentences
@@ -133,12 +132,11 @@ fun AddTodoScreen(
                 onValueChange = { value ->
                     store.dispatch(
                         AddTodoAction.UpdateDescription(
-                        value.take(DefaultConfig.addTodoDescriptionMaxLength)
+                        value.take(state.descriptionMaxLength)
                     ))
                 },
                 label = { Text(stringResource(R.string.add_todo_description_label)) },
-                minLines = DefaultConfig.addTodoDescriptionMaxLines,
-                maxLines = DefaultConfig.addTodoDescriptionMaxLines,
+                minLines = state.descriptionMinLines,
                 keyboardOptions = KeyboardOptions.Default.copy(
                     capitalization = KeyboardCapitalization.Sentences
                 ),

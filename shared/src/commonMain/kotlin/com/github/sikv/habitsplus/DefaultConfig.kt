@@ -1,17 +1,16 @@
 package com.github.sikv.habitsplus
 
-object DefaultConfig {
+internal object DefaultConfig {
 
-    // Add TodoItem
-    const val addTodoTitleMaxLines = 1
-    const val addTodoTitleMaxLength = 64
-    const val addTodoDescriptionMaxLines = 3
-    const val addTodoDescriptionMaxLength = 250
+    // Add TodoModel
+    const val ADD_TODO_TITLE_MAX_LENGTH = 64
+    const val ADD_TODO_DESCRIPTION_MAX_LENGTH = 250
+    const val ADD_TODO_DESCRIPTION_MIN_LINES = 3
 
     // Add Activity
-    const val addActivityescriptionMinLines = 10
-    const val addActivityDescriptionMaxLength = 750
+    const val ADD_ACTIVITY_DESCRIPTION_MAX_LENGTH = 750
+    const val ADD_ACTIVITY_DESCRIPTION_MIN_LINES = 10
 
     // Add Label
-    const val addLabelTitleMaxLength = 64
+    const val ADD_LABEL_TITLE_MAX_LENGTH = 64
 }
