@@ -28,7 +28,7 @@ class ActivitiesRepositoryImplTest {
         val mockDateTimeUtils = FakeDateTimeUtils()
 
         val repo = ActivitiesRepositoryImpl(
-            activitiesLocalDataSource = localDataSource,
+            activitiesDataSource = localDataSource,
             dateTimeUtils = mockDateTimeUtils
         )
 
@@ -65,7 +65,7 @@ class ActivitiesRepositoryImplTest {
         val mockDateTimeUtils = FakeDateTimeUtils()
 
         val repo = ActivitiesRepositoryImpl(
-            activitiesLocalDataSource = localDataSource,
+            activitiesDataSource = localDataSource,
             dateTimeUtils = mockDateTimeUtils
         )
 
@@ -101,7 +101,7 @@ class ActivitiesRepositoryImplTest {
         mocker.every { localDataSource.selectActivities(year) } returns testActivities
 
         val repo = ActivitiesRepositoryImpl(
-            activitiesLocalDataSource = localDataSource,
+            activitiesDataSource = localDataSource,
             dateTimeUtils = FakeDateTimeUtils()
         )
 
@@ -121,7 +121,7 @@ class ActivitiesRepositoryImplTest {
         mocker.every { localDataSource.selectActivitiesYears() } returns testActivitiesYears
 
         val repo = ActivitiesRepositoryImpl(
-            activitiesLocalDataSource = localDataSource,
+            activitiesDataSource = localDataSource,
             dateTimeUtils = FakeDateTimeUtils()
         )
 

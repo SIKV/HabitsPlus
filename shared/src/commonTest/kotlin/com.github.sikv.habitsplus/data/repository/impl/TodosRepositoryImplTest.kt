@@ -29,7 +29,7 @@ class TodosRepositoryImplTest {
         val mockDateTimeUtils = FakeDateTimeUtils()
 
         val repo = TodosRepositoryImpl(
-            todosLocalDataSource = mockTodosLocalDataSource,
+            todosDataSource = mockTodosLocalDataSource,
             dateTimeUtils = mockDateTimeUtils
         )
 
@@ -68,7 +68,7 @@ class TodosRepositoryImplTest {
         val mockDateTimeUtils = FakeDateTimeUtils()
 
         val repo = TodosRepositoryImpl(
-            todosLocalDataSource = mockTodosLocalDataSource,
+            todosDataSource = mockTodosLocalDataSource,
             dateTimeUtils = mockDateTimeUtils
         )
 
@@ -108,7 +108,7 @@ class TodosRepositoryImplTest {
         val mockDateTimeUtils = FakeDateTimeUtils()
 
         val repo = TodosRepositoryImpl(
-            todosLocalDataSource = mockTodosLocalDataSource,
+            todosDataSource = mockTodosLocalDataSource,
             dateTimeUtils = mockDateTimeUtils
         )
 
@@ -137,7 +137,7 @@ class TodosRepositoryImplTest {
         val mockDateTimeUtils = FakeDateTimeUtils()
 
         val repo = TodosRepositoryImpl(
-            todosLocalDataSource = mockTodosLocalDataSource,
+            todosDataSource = mockTodosLocalDataSource,
             dateTimeUtils = mockDateTimeUtils
         )
 
