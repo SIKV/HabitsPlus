@@ -13,7 +13,9 @@ import com.github.sikv.habitsplus.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MoreScreen() {
+fun MoreScreen(
+    onLabelsItemClick: () -> Unit
+) {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -26,7 +28,7 @@ fun MoreScreen() {
                 .padding(innerPadding)
         ) {
             MoreItem(stringResource(R.string.more_labels_item_title)) {
-                // TODO: Open labels list screen.
+                onLabelsItemClick()
             }
         }
     }

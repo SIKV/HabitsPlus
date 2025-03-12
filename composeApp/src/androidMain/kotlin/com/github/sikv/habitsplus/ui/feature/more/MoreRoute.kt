@@ -7,8 +7,12 @@ import kotlinx.serialization.Serializable
 @Serializable
 data object MoreRoute
 
-fun NavGraphBuilder.moreDestination() {
+fun NavGraphBuilder.moreDestination(
+    onLabelsItemClick: () -> Unit
+) {
     composable<MoreRoute> {
-        MoreScreen()
+        MoreScreen(
+            onLabelsItemClick = onLabelsItemClick
+        )
     }
 }

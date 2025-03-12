@@ -11,4 +11,7 @@ object DefaultConfig {
     // Add Activity
     const val addActivityescriptionMinLines = 10
     const val addActivityDescriptionMaxLength = 750
+
+    // Add Label
+    const val addLabelTitleMaxLength = 64
 }

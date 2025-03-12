@@ -12,6 +12,7 @@
     <string name="action_save">Save</string>
 
     <string name="label_required_field">Required field</string>
+    <string name="label_color">Color</string>
 
     <string name="back_button_content_desc">Go back</string>
     <string name="menu_button_content_desc">Menu</string>
@@ -19,6 +20,8 @@
     <string name="clear_button_content_desc">Clear</string>
 
     <string name="date_s_today">%s (Today)</string>
+
+    <string name="no_items_text">No items yet</string>
 
     <!-- Scaffold Menu Items -->
     <string name="menu_item_add_habit">Habit</string>
@@ -54,4 +57,15 @@
     <!-- More -->
     <string name="more_screen_title">More</string>
     <string name="more_labels_item_title">Labels</string>
+
+    <!-- Label List -->
+    <string name="label_list_screen_title">Labels</string>
+
+    <string name="label_list_add_label_content_desc">Add label</string>
+
+    <!-- Add Label -->
+    <string name="add_label_screen_title">Add Label</string>
+    <string name="add_label_title_label">Title</string>
+    <string name="add_label_error">Error when adding a new label.</string>
+    <string name="add_label_error_empty_title">Title cannot be empty.</string>
 </resources>

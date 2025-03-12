@@ -29,6 +29,10 @@ import com.github.sikv.habitsplus.ui.feature.addtodo.addTodoDestination
 import com.github.sikv.habitsplus.ui.feature.common.ScaffoldMenuItem
 import com.github.sikv.habitsplus.ui.feature.habits.HabitsRoute
 import com.github.sikv.habitsplus.ui.feature.habits.habitsDestination
+import com.github.sikv.habitsplus.ui.feature.label.add.AddLabelRoute
+import com.github.sikv.habitsplus.ui.feature.label.add.addLabelDestination
+import com.github.sikv.habitsplus.ui.feature.label.list.LabelListRoute
+import com.github.sikv.habitsplus.ui.feature.label.list.labelListDestination
 import com.github.sikv.habitsplus.ui.feature.more.MoreRoute
 import com.github.sikv.habitsplus.ui.feature.more.moreDestination
 import com.github.sikv.habitsplus.ui.feature.todos.TodosRoute
@@ -94,7 +98,27 @@ fun ComposeApp() {
                     )
                 }
                 navigation<MoreRootRoute>(startDestination = MoreRoute) {
-                    moreDestination()
+                    moreDestination(
+                        onLabelsItemClick = {
+                            navController.navigate(LabelListRoute)
+                        }
+                    )
+                    labelListDestination(
+                        onBackClick = {
+                            navController.popBackStack()
+                        },
+                        onLabelClick = {
+                            // TODO: Implement.
+                        },
+                        onAddLabelClick = {
+                            navController.navigate(AddLabelRoute)
+                        }
+                    )
+                    addLabelDestination(
+                        onBackClick = {
+                            navController.popBackStack()
+                        }
+                    )
                 }
             }
         }
