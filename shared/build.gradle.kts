@@ -26,11 +26,15 @@ kotlin {
         iosTarget.binaries.framework {
             baseName = "Shared"
             isStatic = true
+            // Accessible by the iOS app
+            export(project(":store"))
         }
     }
     
     sourceSets {
         commonMain.dependencies {
+            api(project(":store"))
+
             api(libs.koin.core)
             implementation(libs.kotlinx.coroutines.core)
             implementation(libs.kotlinx.serialization.json)
