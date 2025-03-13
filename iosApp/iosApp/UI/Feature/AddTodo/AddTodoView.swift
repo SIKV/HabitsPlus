@@ -15,9 +15,6 @@ struct AddTodoView: ConnectedView {
     @State private var showErrorAlert = false
     @State private var errorMessage = ""
     
-    private let addTodoTitleMaxLines = Int(DefaultConfig.shared.addTodoTitleMaxLines)
-    private let addTodoDescriptionMaxLines = Int(DefaultConfig.shared.addTodoDescriptionMaxLines)
-    
     struct Props {
         let state: AddTodoState
         let onSave: (_ title: String, _ description: String, _ includeDueDate: Bool, _ dueDate: Date) -> Void
@@ -55,7 +52,6 @@ struct AddTodoView: ConnectedView {
                     text: $title
                 )
                 .textInputAutocapitalization(.sentences)
-                .lineLimit(addTodoTitleMaxLines...addTodoTitleMaxLines)
                 
                 TextField(
                     R.str.addTodoDescription.localized(),
@@ -63,7 +59,7 @@ struct AddTodoView: ConnectedView {
                     axis:.vertical
                 )
                 .textInputAutocapitalization(.sentences)
-                .lineLimit(addTodoDescriptionMaxLines...addTodoDescriptionMaxLines)
+                .lineLimit(Int(props.state.descriptionMinLines)...Int(props.state.descriptionMinLines))
             }
             Section {
                 Toggle(isOn: $includeDueDate) {

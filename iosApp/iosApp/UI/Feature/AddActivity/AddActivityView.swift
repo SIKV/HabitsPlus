@@ -13,9 +13,6 @@ struct AddActivityView: ConnectedView {
     @State private var showErrorAlert = false
     @State private var errorMessage = ""
     
-    private let descriptionMinLines = Int(DefaultConfig.shared.addActivityescriptionMinLines)
-    private let descriptionMaxLength = Int(DefaultConfig.shared.addActivityDescriptionMaxLength)
-    
     struct Props {
         let state: AddActivityState
         
@@ -63,7 +60,7 @@ struct AddActivityView: ConnectedView {
                         axis:.vertical
                     )
                     .textInputAutocapitalization(.sentences)
-                    .lineLimit(descriptionMinLines...descriptionMinLines) // TODO: Set max length.
+                    .lineLimit(Int(props.state.descriptionMinLines)...Int(props.state.descriptionMinLines)) // TODO: Set max length.
                 }
             }
         }

@@ -13,6 +13,10 @@
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
 		C504988E2CCC1C770053A80A /* AddTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C504988D2CCC1C770053A80A /* AddTodoView.swift */; };
 		C50498902CCC1E760053A80A /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = C504988F2CCC1E760053A80A /* R.swift */; };
+		C509EF732CEE5D0900C5C993 /* TodoListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C509EF722CEE5D0900C5C993 /* TodoListItemView.swift */; };
+		C509EF762CEE5FC500C5C993 /* TodoDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C509EF752CEE5FC500C5C993 /* TodoDetailsView.swift */; };
+		C5197A0A2CF9136B00B348F6 /* TodoOrderBy+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5197A092CF9136B00B348F6 /* TodoOrderBy+Extensions.swift */; };
+		C52834E62D5D467F000F06EE /* ActivityItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52834E52D5D467F000F06EE /* ActivityItemView.swift */; };
 		C55E57282CE8F783006FA4EF /* KotlinExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55E57272CE8F783006FA4EF /* KotlinExtensions.swift */; };
 		C562C8392CBDA5D000ABBD59 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C562C8382CBDA5D000ABBD59 /* MoreView.swift */; };
 		C562C83B2CBDA5E700ABBD59 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C562C83A2CBDA5E700ABBD59 /* ActivityView.swift */; };
@@ -22,6 +26,10 @@
 		C562C8432CBDA98200ABBD59 /* TopLevelRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C562C8422CBDA98200ABBD59 /* TopLevelRoutes.swift */; };
 		C56BE8DC2CC2EE9F006A05B1 /* ObservableStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56BE8DB2CC2EE9F006A05B1 /* ObservableStore.swift */; };
 		C56BE8DE2CC2EF78006A05B1 /* ConnectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56BE8DD2CC2EF78006A05B1 /* ConnectedView.swift */; };
+		C570BA4D2D1DEC6D00167BB2 /* AddActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C570BA4C2D1DEC6D00167BB2 /* AddActivityView.swift */; };
+		C5C57E4F2D60AB56002026C4 /* ActivityDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C57E4E2D60AB56002026C4 /* ActivityDetailsView.swift */; };
+		C5C57E512D60ADC6002026C4 /* YearPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C57E502D60ADC6002026C4 /* YearPickerView.swift */; };
+		C5F7CC422CF5C8950093E4AC /* TodosMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F7CC412CF5C8950093E4AC /* TodosMenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +42,10 @@
 		AB3632DC29227652001CCB65 /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		C504988D2CCC1C770053A80A /* AddTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoView.swift; sourceTree = "<group>"; };
 		C504988F2CCC1E760053A80A /* R.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
+		C509EF722CEE5D0900C5C993 /* TodoListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListItemView.swift; sourceTree = "<group>"; };
+		C509EF752CEE5FC500C5C993 /* TodoDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailsView.swift; sourceTree = "<group>"; };
+		C5197A092CF9136B00B348F6 /* TodoOrderBy+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodoOrderBy+Extensions.swift"; sourceTree = "<group>"; };
+		C52834E52D5D467F000F06EE /* ActivityItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityItemView.swift; sourceTree = "<group>"; };
 		C55E57272CE8F783006FA4EF /* KotlinExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KotlinExtensions.swift; sourceTree = "<group>"; };
 		C562C8382CBDA5D000ABBD59 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
 		C562C83A2CBDA5E700ABBD59 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
@@ -43,6 +55,10 @@
 		C562C8422CBDA98200ABBD59 /* TopLevelRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopLevelRoutes.swift; sourceTree = "<group>"; };
 		C56BE8DB2CC2EE9F006A05B1 /* ObservableStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableStore.swift; sourceTree = "<group>"; };
 		C56BE8DD2CC2EF78006A05B1 /* ConnectedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedView.swift; sourceTree = "<group>"; };
+		C570BA4C2D1DEC6D00167BB2 /* AddActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityView.swift; sourceTree = "<group>"; };
+		C5C57E4E2D60AB56002026C4 /* ActivityDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsView.swift; sourceTree = "<group>"; };
+		C5C57E502D60ADC6002026C4 /* YearPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearPickerView.swift; sourceTree = "<group>"; };
+		C5F7CC412CF5C8950093E4AC /* TodosMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosMenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +138,14 @@
 			path = AddTodo;
 			sourceTree = "<group>";
 		};
+		C509EF742CEE5FAB00C5C993 /* TodoDetails */ = {
+			isa = PBXGroup;
+			children = (
+				C509EF752CEE5FC500C5C993 /* TodoDetailsView.swift */,
+			);
+			path = TodoDetails;
+			sourceTree = "<group>";
+		};
 		C562C8322CBDA4A300ABBD59 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +159,9 @@
 		C562C8332CBDA4C400ABBD59 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				C5C57E4D2D60AB28002026C4 /* ActivityDetails */,
+				C570BA4B2D1DEB9C00167BB2 /* AddActivity */,
+				C509EF742CEE5FAB00C5C993 /* TodoDetails */,
 				C504988C2CCC1C5A0053A80A /* AddTodo */,
 				C562C8372CBDA4EE00ABBD59 /* More */,
 				C562C8362CBDA4E500ABBD59 /* Activity */,
@@ -156,6 +183,9 @@
 			isa = PBXGroup;
 			children = (
 				C562C83C2CBDA60100ABBD59 /* TodosView.swift */,
+				C509EF722CEE5D0900C5C993 /* TodoListItemView.swift */,
+				C5F7CC412CF5C8950093E4AC /* TodosMenuView.swift */,
+				C5197A092CF9136B00B348F6 /* TodoOrderBy+Extensions.swift */,
 			);
 			path = Todos;
 			sourceTree = "<group>";
@@ -164,6 +194,8 @@
 			isa = PBXGroup;
 			children = (
 				C562C83A2CBDA5E700ABBD59 /* ActivityView.swift */,
+				C52834E52D5D467F000F06EE /* ActivityItemView.swift */,
+				C5C57E502D60ADC6002026C4 /* YearPickerView.swift */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -174,6 +206,22 @@
 				C562C8382CBDA5D000ABBD59 /* MoreView.swift */,
 			);
 			path = More;
+			sourceTree = "<group>";
+		};
+		C570BA4B2D1DEB9C00167BB2 /* AddActivity */ = {
+			isa = PBXGroup;
+			children = (
+				C570BA4C2D1DEC6D00167BB2 /* AddActivityView.swift */,
+			);
+			path = AddActivity;
+			sourceTree = "<group>";
+		};
+		C5C57E4D2D60AB28002026C4 /* ActivityDetails */ = {
+			isa = PBXGroup;
+			children = (
+				C5C57E4E2D60AB56002026C4 /* ActivityDetailsView.swift */,
+			);
+			path = ActivityDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,9 +322,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C570BA4D2D1DEC6D00167BB2 /* AddActivityView.swift in Sources */,
 				C562C83D2CBDA60100ABBD59 /* TodosView.swift in Sources */,
+				C509EF732CEE5D0900C5C993 /* TodoListItemView.swift in Sources */,
+				C52834E62D5D467F000F06EE /* ActivityItemView.swift in Sources */,
 				C562C83F2CBDA61300ABBD59 /* HabitsView.swift in Sources */,
+				C5C57E512D60ADC6002026C4 /* YearPickerView.swift in Sources */,
+				C509EF762CEE5FC500C5C993 /* TodoDetailsView.swift in Sources */,
 				C56BE8DC2CC2EE9F006A05B1 /* ObservableStore.swift in Sources */,
+				C5C57E4F2D60AB56002026C4 /* ActivityDetailsView.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				C504988E2CCC1C770053A80A /* AddTodoView.swift in Sources */,
 				C562C83B2CBDA5E700ABBD59 /* ActivityView.swift in Sources */,
@@ -284,8 +338,10 @@
 				C55E57282CE8F783006FA4EF /* KotlinExtensions.swift in Sources */,
 				C562C8392CBDA5D000ABBD59 /* MoreView.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
+				C5F7CC422CF5C8950093E4AC /* TodosMenuView.swift in Sources */,
 				C50498902CCC1E760053A80A /* R.swift in Sources */,
 				C56BE8DE2CC2EF78006A05B1 /* ConnectedView.swift in Sources */,
+				C5197A0A2CF9136B00B348F6 /* TodoOrderBy+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
