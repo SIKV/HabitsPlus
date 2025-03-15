@@ -7,8 +7,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import com.github.sikv.habitsplus.util.ColorPalette
-import com.github.sikv.habitsplus.util.ColorVariant
+import com.github.sikv.habitsplus.data.label.ColorPalette
+import com.github.sikv.habitsplus.data.label.ColorVariant
 
 @Composable
 fun ColorItemPicker(

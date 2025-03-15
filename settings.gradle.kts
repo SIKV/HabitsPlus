@@ -31,3 +31,5 @@ dependencyResolutionManagement {
 include(":composeApp")
 include(":shared")
 include(":store")
+include(":data:common")
+include(":data:label")

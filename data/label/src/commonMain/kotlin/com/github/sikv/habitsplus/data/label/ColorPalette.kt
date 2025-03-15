@@ -1,4 +1,4 @@
-package com.github.sikv.habitsplus.util
+package com.github.sikv.habitsplus.data.label
 
 object ColorPalette {
 

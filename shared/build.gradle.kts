@@ -28,13 +28,14 @@ kotlin {
             isStatic = true
             // Accessible by the iOS app
             export(project(":store"))
+            export(project(":data:label"))
         }
     }
     
     sourceSets {
         commonMain.dependencies {
             api(project(":store"))
-
+            api(project(":data:label"))
             api(libs.koin.core)
             implementation(libs.kotlinx.coroutines.core)
             implementation(libs.kotlinx.serialization.json)
@@ -76,10 +77,6 @@ sqldelight {
         create("ActivitiesDatabase") {
             srcDirs("src/commonMain/sqldelight/activities")
             packageName.set("com.github.sikv.habitsplus.database.activities")
-        }
-        create("LabelsDatabase") {
-            srcDirs("src/commonMain/sqldelight/labels")
-            packageName.set("com.github.sikv.habitsplus.database.labels")
         }
     }
 }

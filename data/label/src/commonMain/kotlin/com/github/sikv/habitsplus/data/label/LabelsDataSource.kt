@@ -1,9 +1,6 @@
-package com.github.sikv.habitsplus.data.source
+package com.github.sikv.habitsplus.data.label
 
-import com.github.sikv.habitsplus.data.model.LabelModel
-import com.github.sikv.habitsplus.util.ColorVariant
-
-internal interface LabelsDataSource {
+interface LabelsDataSource {
     fun insertLabel(
         title: String,
         color: ColorVariant

@@ -14,7 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import com.github.sikv.habitsplus.R
 import com.github.sikv.habitsplus.ui.theme.spacing
-import com.github.sikv.habitsplus.util.ColorVariant
+import com.github.sikv.habitsplus.data.label.ColorVariant
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable

@@ -1,10 +1,10 @@
-package com.github.sikv.habitsplus.data.repository.impl
+package com.github.sikv.habitsplus.data.label.impl
 
-import com.github.sikv.habitsplus.data.model.LabelModel
-import com.github.sikv.habitsplus.data.repository.LabelsRepository
-import com.github.sikv.habitsplus.data.source.LabelsDataSource
+import com.github.sikv.habitsplus.data.label.LabelModel
+import com.github.sikv.habitsplus.data.label.LabelsRepository
+import com.github.sikv.habitsplus.data.label.LabelsDataSource
 
-internal class LabelsRepositoryImpl(
+class LabelsRepositoryImpl(
     private val labelsDataSource: LabelsDataSource,
 ) : LabelsRepository {
 

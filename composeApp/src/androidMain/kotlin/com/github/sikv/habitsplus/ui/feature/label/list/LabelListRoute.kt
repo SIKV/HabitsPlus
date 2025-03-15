@@ -2,7 +2,7 @@ package com.github.sikv.habitsplus.ui.feature.label.list
 
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
-import com.github.sikv.habitsplus.data.model.LabelModel
+import com.github.sikv.habitsplus.data.label.LabelModel
 import kotlinx.serialization.Serializable
 
 @Serializable

@@ -1,6 +1,6 @@
-package com.github.sikv.habitsplus.data.model
+package com.github.sikv.habitsplus.data.label
 
-import com.github.sikv.habitsplus.util.ColorVariant
+import com.github.sikv.habitsplus.data.common.AUTOINCREMENT_ID
 
 data class LabelModel(
     val id: Long = AUTOINCREMENT_ID,

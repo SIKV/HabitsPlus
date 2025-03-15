@@ -17,7 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.github.sikv.habitsplus.R
-import com.github.sikv.habitsplus.data.model.LabelModel
+import com.github.sikv.habitsplus.data.label.LabelModel
 import com.github.sikv.habitsplus.feature.label.list.LabelListAction
 import com.github.sikv.habitsplus.feature.label.list.LabelListState
 import com.github.sikv.habitsplus.store.AppStore

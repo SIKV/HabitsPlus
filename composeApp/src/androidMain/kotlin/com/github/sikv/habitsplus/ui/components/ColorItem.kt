@@ -13,7 +13,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.core.graphics.toColorInt
-import com.github.sikv.habitsplus.util.ColorVariant
+import com.github.sikv.habitsplus.data.label.ColorVariant
 
 enum class ColorItemSize(val dp: Dp) {
     NORMAL(24.dp),

@@ -1,4 +1,4 @@
-package com.github.sikv.habitsplus.util
+package com.github.sikv.habitsplus.data.label
 
 data class ColorVariant(
     val light: String, // HEX

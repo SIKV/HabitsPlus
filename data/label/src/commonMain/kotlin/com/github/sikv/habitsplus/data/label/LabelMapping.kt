@@ -1,7 +1,4 @@
-package com.github.sikv.habitsplus.data.mapping
-
-import com.github.sikv.habitsplus.data.model.LabelModel
-import com.github.sikv.habitsplus.util.ColorVariant
+package com.github.sikv.habitsplus.data.label
 
 internal fun mapLabel(
     id: Long,

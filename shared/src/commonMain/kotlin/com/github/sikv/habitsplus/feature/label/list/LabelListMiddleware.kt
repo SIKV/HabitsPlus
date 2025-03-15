@@ -1,6 +1,6 @@
 package com.github.sikv.habitsplus.feature.label.list
 
-import com.github.sikv.habitsplus.data.repository.LabelsRepository
+import com.github.sikv.habitsplus.data.label.LabelsRepository
 import com.github.sikv.habitsplus.store.Action
 import com.github.sikv.habitsplus.store.AppMiddleware
 import com.github.sikv.habitsplus.store.AppState

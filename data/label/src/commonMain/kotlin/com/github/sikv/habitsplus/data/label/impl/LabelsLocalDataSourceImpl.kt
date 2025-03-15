@@ -1,12 +1,12 @@
-package com.github.sikv.habitsplus.data.source.impl
+package com.github.sikv.habitsplus.data.label.impl
 
-import com.github.sikv.habitsplus.data.mapping.mapLabel
-import com.github.sikv.habitsplus.data.model.LabelModel
-import com.github.sikv.habitsplus.data.source.LabelsDataSource
-import com.github.sikv.habitsplus.database.LabelsDatabaseManager
-import com.github.sikv.habitsplus.util.ColorVariant
+import com.github.sikv.habitsplus.data.label.mapLabel
+import com.github.sikv.habitsplus.data.label.LabelModel
+import com.github.sikv.habitsplus.data.label.LabelsDataSource
+import com.github.sikv.habitsplus.data.label.LabelsDatabaseManager
+import com.github.sikv.habitsplus.data.label.ColorVariant
 
-internal class LabelsLocalDataSourceImpl(
+class LabelsLocalDataSourceImpl(
     private val database: LabelsDatabaseManager,
 ) : LabelsDataSource {
 

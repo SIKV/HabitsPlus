@@ -1,7 +1,7 @@
 package com.github.sikv.habitsplus.feature.label.add
 
 import com.github.sikv.habitsplus.store.Action
-import com.github.sikv.habitsplus.util.ColorVariant
+import com.github.sikv.habitsplus.data.label.ColorVariant
 
 sealed class AddLabelAction : Action {
 
