@@ -14,6 +14,8 @@ import com.github.sikv.habitsplus.feature.todo.list.TodoListAction
 import com.github.sikv.habitsplus.feature.todo.list.todoListReducer
 
 val appReducer: Reducer<AppState, Action> = { state, action ->
+    check(state is AppStateImpl)
+
     when (action) {
         is TodoListAction -> state.copy(
             todoListState = todoListReducer(state.todoListState, action)

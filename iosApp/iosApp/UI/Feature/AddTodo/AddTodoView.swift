@@ -20,7 +20,7 @@ struct AddTodoView: ConnectedView {
         let onSave: (_ title: String, _ description: String, _ includeDueDate: Bool, _ dueDate: Date) -> Void
     }
     
-    func map(state: AppState, dispatch: @escaping DispatchFunction) -> Props {
+    func map(state: AppStateImpl, dispatch: @escaping DispatchFunction) -> Props {
         return Props(
             state: state.addTodoState,
             onSave: { title, description, includeDueDate, dueDate in

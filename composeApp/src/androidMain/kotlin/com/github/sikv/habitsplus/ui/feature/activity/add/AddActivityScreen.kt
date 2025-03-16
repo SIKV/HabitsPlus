@@ -29,18 +29,16 @@ import com.github.sikv.habitsplus.feature.activity.add.AddActivityResult
 import com.github.sikv.habitsplus.feature.activity.add.AddActivityResultEffect
 import com.github.sikv.habitsplus.feature.activity.add.AddActivityState
 import com.github.sikv.habitsplus.store.AppStore
+import com.github.sikv.habitsplus.store.observeFeatureState
 import com.github.sikv.habitsplus.ui.components.DatePickerField
 import com.github.sikv.habitsplus.ui.components.Padding
 import com.github.sikv.habitsplus.ui.components.TopAppBar
 import com.github.sikv.habitsplus.ui.theme.spacing
 import com.github.sikv.habitsplus.util.DateTimeFormatter
 import com.github.sikv.habitsplus.util.LocalDateTimeFormatter
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.filterIsInstance
-import kotlinx.coroutines.flow.mapLatest
 import org.koin.compose.koinInject
 
-@OptIn(ExperimentalCoroutinesApi::class)
 @Composable
 fun AddActivityScreen(
     onNavigateBack: () -> Unit,
@@ -49,8 +47,7 @@ fun AddActivityScreen(
     val context = LocalContext.current
     val snackbarHostState = remember { SnackbarHostState() }
 
-    val state by store.observeState()
-        .mapLatest { it.addActivityState }
+    val state by store.observeFeatureState<AddActivityState>()
         .collectAsStateWithLifecycle(AddActivityState())
 
     val resultEffect by store.observeSideEffect()

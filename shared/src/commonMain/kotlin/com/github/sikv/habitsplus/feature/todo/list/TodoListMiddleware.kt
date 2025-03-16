@@ -20,10 +20,11 @@ internal class TodoListMiddleware(
 
     override suspend fun invoke(state: AppState, action: Action, dispatcher: Dispatcher) {
         withContext(Dispatchers.IO) {
+            val todoListState = state.todoListState() as TodoListState
             when (action) {
                 is TodoListAction.FetchAll -> handleFetchAllAction(dispatcher)
                 is TodoListAction.ToggleStatus -> handleToggleStatusAction(
-                    state.todoListState,
+                    todoListState,
                     action,
                     dispatcher
                 )

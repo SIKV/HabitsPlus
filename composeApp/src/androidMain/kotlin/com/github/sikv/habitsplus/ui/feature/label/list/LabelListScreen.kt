@@ -21,13 +21,11 @@ import com.github.sikv.habitsplus.data.label.LabelModel
 import com.github.sikv.habitsplus.feature.label.list.LabelListAction
 import com.github.sikv.habitsplus.feature.label.list.LabelListState
 import com.github.sikv.habitsplus.store.AppStore
+import com.github.sikv.habitsplus.store.observeFeatureState
 import com.github.sikv.habitsplus.ui.components.NoItems
 import com.github.sikv.habitsplus.ui.components.TopAppBar
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.flow.mapLatest
 import org.koin.compose.koinInject
 
-@OptIn(ExperimentalCoroutinesApi::class)
 @Composable
 fun LabelListScreen(
     onBackClick: () -> Unit,
@@ -35,10 +33,7 @@ fun LabelListScreen(
     onAddLabelClick: () -> Unit,
     store: AppStore = koinInject()
 ) {
-    val state by store.observeState()
-        .mapLatest {
-            it.labelListState
-        }
+    val state by store.observeFeatureState<LabelListState>()
         .collectAsStateWithLifecycle(LabelListState())
 
     LaunchedEffect(Unit) {

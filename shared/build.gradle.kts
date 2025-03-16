@@ -29,6 +29,7 @@ kotlin {
             // Accessible by the iOS app
             export(project(":store"))
             export(project(":data:label"))
+            export(project(":feature:addLabel"))
         }
     }
     
@@ -36,7 +37,11 @@ kotlin {
         commonMain.dependencies {
             api(project(":store"))
             api(project(":data:label"))
+            api(project(":feature:common"))
+            api(project(":feature:addLabel"))
+
             api(libs.koin.core)
+
             implementation(libs.kotlinx.coroutines.core)
             implementation(libs.kotlinx.serialization.json)
             implementation(libs.kotlinx.datetime)

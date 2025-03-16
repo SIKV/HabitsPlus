@@ -6,7 +6,7 @@ import com.github.sikv.habitsplus.feature.label.add.AddLabelMiddleware
 import com.github.sikv.habitsplus.feature.label.list.LabelListMiddleware
 import com.github.sikv.habitsplus.feature.todo.add.AddTodoMiddleware
 import com.github.sikv.habitsplus.feature.todo.list.TodoListMiddleware
-import com.github.sikv.habitsplus.store.AppState
+import com.github.sikv.habitsplus.store.AppStateImpl
 import com.github.sikv.habitsplus.store.AppStore
 import com.github.sikv.habitsplus.store.Store
 import com.github.sikv.habitsplus.store.appReducer
@@ -26,7 +26,7 @@ val appModule = module {
         val addLabelMiddleware: AddLabelMiddleware = get()
 
         Store(
-            initialState = AppState(),
+            initialState = AppStateImpl(),
             reducer = appReducer,
             middlewares = listOf(
                 todoListMiddleware,

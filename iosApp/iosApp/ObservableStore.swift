@@ -6,7 +6,7 @@ import Shared
 
 class ObservableStore: ObservableObject {
     
-    @Published public var state: AppState = AppState.companion.emptyState
+    @Published public var state: AppStateImpl = AppStateImpl.companion.emptyState
     @Published public var sideEffect: Effect?
     
     let store: Store<AppState>
@@ -18,7 +18,7 @@ class ObservableStore: ObservableObject {
         self.store = store
         
         stateWatcher = self.store.watchState().watch { [weak self] state in
-            self?.state = state
+            self?.state = state as! AppStateImpl
         }
         
         sideEffectWatcher = self.store.watchSideEffect().watch { [weak self] effect in

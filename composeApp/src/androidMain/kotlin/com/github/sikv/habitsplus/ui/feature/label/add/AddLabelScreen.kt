@@ -29,15 +29,13 @@ import com.github.sikv.habitsplus.feature.label.add.AddLabelResult
 import com.github.sikv.habitsplus.feature.label.add.AddLabelResultEffect
 import com.github.sikv.habitsplus.feature.label.add.AddLabelState
 import com.github.sikv.habitsplus.store.AppStore
+import com.github.sikv.habitsplus.store.observeFeatureState
 import com.github.sikv.habitsplus.ui.components.ColorItemPicker
 import com.github.sikv.habitsplus.ui.components.TopAppBar
 import com.github.sikv.habitsplus.ui.theme.spacing
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.filterIsInstance
-import kotlinx.coroutines.flow.mapLatest
 import org.koin.compose.koinInject
 
-@OptIn(ExperimentalCoroutinesApi::class)
 @Composable
 fun AddLabelScreen(
     onBackClick: () -> Unit,
@@ -46,8 +44,7 @@ fun AddLabelScreen(
     val context = LocalContext.current
     val snackbarHostState = remember { SnackbarHostState() }
 
-    val state by store.observeState()
-        .mapLatest { it.addLabelState }
+    val state by store.observeFeatureState<AddLabelState>()
         .collectAsStateWithLifecycle(AddLabelState())
 
     val resultEffect by store.observeSideEffect()

@@ -20,8 +20,9 @@ internal class AddTodoMiddleware(
 
     override suspend fun invoke(state: AppState, action: Action, dispatcher: Dispatcher) {
         withContext(Dispatchers.IO) {
+            val addTodoState = state.addTodoState() as AddTodoState
             when (action) {
-                AddTodoAction.Save -> handleSaveAction(state.addTodoState, dispatcher)
+                AddTodoAction.Save -> handleSaveAction(addTodoState, dispatcher)
             }
         }
     }

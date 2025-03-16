@@ -20,7 +20,7 @@ struct AddActivityView: ConnectedView {
         let onSave: (_ description: String, _ date: Date) -> Void
     }
     
-    func map(state: AppState, dispatch: @escaping DispatchFunction) -> Props {
+    func map(state: AppStateImpl, dispatch: @escaping DispatchFunction) -> Props {
         return Props(
             state: state.addActivityState,
             onInit: {

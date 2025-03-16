@@ -22,23 +22,21 @@ import com.github.sikv.habitsplus.data.model.TodoModel
 import com.github.sikv.habitsplus.feature.todo.list.TodoListAction
 import com.github.sikv.habitsplus.feature.todo.list.TodoListState
 import com.github.sikv.habitsplus.store.AppStore
+import com.github.sikv.habitsplus.store.observeFeatureState
 import com.github.sikv.habitsplus.ui.components.TopAppBarMenuButton
 import com.github.sikv.habitsplus.ui.components.TopAppBarSortButton
 import com.github.sikv.habitsplus.ui.feature.common.ScaffoldMenu
 import com.github.sikv.habitsplus.ui.feature.common.ScaffoldMenuItem
 import com.github.sikv.habitsplus.ui.feature.common.scaffoldMenuItems
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.flow.mapLatest
 import org.koin.compose.koinInject
 
-@OptIn(ExperimentalCoroutinesApi::class, ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TodosScreen(
     onMenuItemClick: (ScaffoldMenuItem) -> Unit,
     store: AppStore = koinInject()
 ) {
-    val state by store.observeState()
-        .mapLatest { it.todoListState }
+    val state by store.observeFeatureState<TodoListState>()
         .collectAsStateWithLifecycle(TodoListState())
 
     // Note: not recommended approach.

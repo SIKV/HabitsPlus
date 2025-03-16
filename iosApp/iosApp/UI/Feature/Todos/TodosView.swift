@@ -11,7 +11,7 @@ struct TodosView: ConnectedView {
         let onUpdateShowCompleted: (Bool) -> Void
     }
     
-    func map(state: AppState, dispatch: @escaping DispatchFunction) -> Props {
+    func map(state: AppStateImpl, dispatch: @escaping DispatchFunction) -> Props {
         return Props(
             state: state.todoListState,
             onFetchAll: {

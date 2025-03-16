@@ -1,9 +1,9 @@
 package com.github.sikv.habitsplus.feature.label.add
 
-import com.github.sikv.habitsplus.DefaultConfig
-import com.github.sikv.habitsplus.store.StoreState
 import com.github.sikv.habitsplus.data.label.ColorPalette
 import com.github.sikv.habitsplus.data.label.ColorVariant
+import com.github.sikv.habitsplus.feature.common.DefaultConfig
+import com.github.sikv.habitsplus.store.StoreState
 
 data class AddLabelState(
     val title: String = "",

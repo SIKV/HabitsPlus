@@ -19,7 +19,7 @@ struct ActivityView: ConnectedView {
         GridItem(.flexible()),
     ]
     
-    func map(state: AppState, dispatch: @escaping DispatchFunction) -> Props {
+    func map(state: AppStateImpl, dispatch: @escaping DispatchFunction) -> Props {
         return Props(
             state: state.activityListState,
             yearsFilter: state.activityListState.yearsFilter.map { year in

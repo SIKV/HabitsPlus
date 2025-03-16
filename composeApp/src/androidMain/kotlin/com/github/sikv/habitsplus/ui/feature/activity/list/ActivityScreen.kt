@@ -41,24 +41,22 @@ import com.github.sikv.habitsplus.data.model.ActivityModel
 import com.github.sikv.habitsplus.feature.activity.list.ActivityListAction
 import com.github.sikv.habitsplus.feature.activity.list.ActivityListState
 import com.github.sikv.habitsplus.store.AppStore
+import com.github.sikv.habitsplus.store.observeFeatureState
 import com.github.sikv.habitsplus.ui.feature.common.ScaffoldMenu
 import com.github.sikv.habitsplus.ui.feature.common.ScaffoldMenuItem
 import com.github.sikv.habitsplus.ui.feature.common.scaffoldMenuItems
 import com.github.sikv.habitsplus.ui.theme.spacing
 import com.github.sikv.habitsplus.util.DateTimeFormatter
 import com.github.sikv.habitsplus.util.LocalDateTimeFormatter
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.flow.mapLatest
 import org.koin.compose.koinInject
 
-@OptIn(ExperimentalMaterial3Api::class, ExperimentalCoroutinesApi::class)
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ActivityScreen(
     onMenuItemClick: (ScaffoldMenuItem) -> Unit,
     store: AppStore = koinInject()
 ) {
-    val state by store.observeState()
-        .mapLatest { it.activityListState }
+    val state by store.observeFeatureState<ActivityListState>()
         .collectAsStateWithLifecycle(ActivityListState())
 
     LaunchedEffect(Unit) {

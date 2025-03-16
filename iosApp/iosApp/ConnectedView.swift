@@ -9,12 +9,12 @@ public protocol ConnectedView: View {
     associatedtype Props
     associatedtype V: View
     
-    func map(state: AppState, dispatch: @escaping DispatchFunction) -> Props
+    func map(state: AppStateImpl, dispatch: @escaping DispatchFunction) -> Props
     func body(props: Props) -> V
 }
 
 public extension ConnectedView {
-    func render(state: AppState, dispatch: @escaping DispatchFunction) -> V {
+    func render(state: AppStateImpl, dispatch: @escaping DispatchFunction) -> V {
         let props = map(state: state, dispatch: dispatch)
         return body(props: props)
     }
@@ -26,7 +26,7 @@ public extension ConnectedView {
 
 public struct StoreConnector<V: View>: View {
     @EnvironmentObject var store: ObservableStore
-    let content: (AppState, @escaping DispatchFunction) -> V
+    let content: (AppStateImpl, @escaping DispatchFunction) -> V
     
     public var body: V {
         return content(store.state, store.dispatch)

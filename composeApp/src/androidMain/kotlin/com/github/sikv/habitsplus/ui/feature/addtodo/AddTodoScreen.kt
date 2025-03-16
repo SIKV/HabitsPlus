@@ -29,16 +29,14 @@ import com.github.sikv.habitsplus.feature.todo.add.AddTodoResult
 import com.github.sikv.habitsplus.feature.todo.add.AddTodoResultEffect
 import com.github.sikv.habitsplus.feature.todo.add.AddTodoState
 import com.github.sikv.habitsplus.store.AppStore
+import com.github.sikv.habitsplus.store.observeFeatureState
 import com.github.sikv.habitsplus.ui.components.DatePickerField
 import com.github.sikv.habitsplus.ui.components.Padding
 import com.github.sikv.habitsplus.ui.components.TopAppBar
 import com.github.sikv.habitsplus.ui.theme.spacing
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.filterIsInstance
-import kotlinx.coroutines.flow.mapLatest
 import org.koin.compose.koinInject
 
-@OptIn(ExperimentalCoroutinesApi::class)
 @Composable
 fun AddTodoScreen(
     onNavigateBack: () -> Unit,
@@ -47,8 +45,7 @@ fun AddTodoScreen(
     val context = LocalContext.current
     val snackbarHostState = remember { SnackbarHostState() }
 
-    val state by store.observeState()
-        .mapLatest { it.addTodoState }
+    val state by store.observeFeatureState<AddTodoState>()
         .collectAsStateWithLifecycle(AddTodoState())
 
     val addTodoResultEffect by store.observeSideEffect()

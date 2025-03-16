@@ -8,20 +8,6 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
-interface StoreState
-
-interface Action
-
-typealias Dispatcher = (action: Action) -> Unit
-
-typealias Reducer<S, A> = (state: S, action: A) -> S
-
-interface Middleware<S> {
-    suspend fun invoke(state: S, action: Action, dispatcher: Dispatcher)
-}
-
-interface Effect
-
 class Store<S: StoreState>(
     private val initialState: S,
     private val reducer: Reducer<S, Action>,

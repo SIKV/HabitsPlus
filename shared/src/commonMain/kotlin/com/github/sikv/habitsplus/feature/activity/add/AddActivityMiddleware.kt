@@ -21,9 +21,10 @@ internal class AddActivityMiddleware(
 
     override suspend fun invoke(state: AppState, action: Action, dispatcher: Dispatcher) {
         withContext(Dispatchers.IO) {
+            val addActivityState = state.addActivityState() as AddActivityState
             when (action) {
                 AddActivityAction.Init -> handleInitAction(dispatcher)
-                AddActivityAction.Save -> handleSaveAction(state.addActivityState, dispatcher)
+                AddActivityAction.Save -> handleSaveAction(addActivityState, dispatcher)
             }
         }
     }
