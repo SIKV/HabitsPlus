@@ -1,11 +1,11 @@
 package com.github.sikv.habitsplus.data.source.impl
 
+import com.github.sikv.habitsplus.data.common.DateTimeUtils
 import com.github.sikv.habitsplus.data.mapping.mapActivity
 import com.github.sikv.habitsplus.data.mapping.mapActivityYear
 import com.github.sikv.habitsplus.data.model.ActivityModel
 import com.github.sikv.habitsplus.data.source.ActivitiesDataSource
 import com.github.sikv.habitsplus.database.ActivitiesDatabaseManager
-import com.github.sikv.habitsplus.util.DateTimeUtils
 
 class ActivitiesLocalDataSourceImpl(
     private val database: ActivitiesDatabaseManager,

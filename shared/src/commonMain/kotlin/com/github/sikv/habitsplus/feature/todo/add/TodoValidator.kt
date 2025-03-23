@@ -1,6 +1,6 @@
 package com.github.sikv.habitsplus.feature.todo.add
 
-import com.github.sikv.habitsplus.data.model.TodoModel
+import com.github.sikv.habitsplus.data.todo.model.TodoModel
 import com.github.sikv.habitsplus.util.ModelValidator
 
 internal class TodoValidator : ModelValidator<TodoModel, AddTodoError?> {

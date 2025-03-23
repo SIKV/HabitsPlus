@@ -2,16 +2,17 @@ package com.github.sikv.habitsplus.di
 
 import com.github.sikv.habitsplus.data.label.AndroidLabelsDatabaseDriverFactory
 import com.github.sikv.habitsplus.data.label.LabelsDatabaseManager
+import com.github.sikv.habitsplus.data.todo.AndroidTodosDatabaseDriverFactory
+import com.github.sikv.habitsplus.data.todo.TodosDatabaseManager
 import com.github.sikv.habitsplus.database.ActivitiesDatabaseManager
 import com.github.sikv.habitsplus.database.AndroidDatabaseDriverFactory
-import com.github.sikv.habitsplus.database.TodosDatabaseManager
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
 val databaseModule = module {
     single<TodosDatabaseManager> {
         TodosDatabaseManager(
-            databaseDriverFactory = AndroidDatabaseDriverFactory(androidContext())
+            databaseDriverFactory = AndroidTodosDatabaseDriverFactory(androidContext())
         )
     }
     single<ActivitiesDatabaseManager> {

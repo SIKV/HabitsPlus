@@ -1,8 +1,8 @@
 package com.github.sikv.habitsplus.util
 
-import com.github.sikv.habitsplus.data.model.Metadata
-import com.github.sikv.habitsplus.data.model.TodoModel
-import com.github.sikv.habitsplus.data.model.TodoStatus
+import com.github.sikv.habitsplus.data.common.model.Metadata
+import com.github.sikv.habitsplus.data.todo.model.TodoModel
+import com.github.sikv.habitsplus.data.todo.model.TodoStatus
 
 val testTodos = listOf(
     TodoModel(

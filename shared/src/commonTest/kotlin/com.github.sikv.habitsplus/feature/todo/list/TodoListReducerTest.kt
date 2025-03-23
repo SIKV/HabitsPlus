@@ -1,8 +1,8 @@
 package com.github.sikv.habitsplus.feature.todo.list
 
-import com.github.sikv.habitsplus.data.model.Metadata
-import com.github.sikv.habitsplus.data.model.TodoModel
-import com.github.sikv.habitsplus.data.model.TodoStatus
+import com.github.sikv.habitsplus.data.common.model.Metadata
+import com.github.sikv.habitsplus.data.todo.model.TodoModel
+import com.github.sikv.habitsplus.data.todo.model.TodoStatus
 import kotlin.test.Test
 import kotlin.test.assertEquals
 

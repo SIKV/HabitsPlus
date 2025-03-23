@@ -1,10 +1,10 @@
 package com.github.sikv.habitsplus.feature.activity.list
 
+import com.github.sikv.habitsplus.data.common.DateTimeUtils
+import com.github.sikv.habitsplus.data.common.DateTimeUtilsImpl
 import com.github.sikv.habitsplus.data.repository.ActivitiesRepository
-import com.github.sikv.habitsplus.store.AppState
+import com.github.sikv.habitsplus.store.AppStateImpl
 import com.github.sikv.habitsplus.store.Dispatcher
-import com.github.sikv.habitsplus.util.DateTimeUtils
-import com.github.sikv.habitsplus.util.DateTimeUtilsImpl
 import com.github.sikv.habitsplus.util.testActivities
 import kotlinx.coroutines.test.runTest
 import org.kodein.mock.Mocker
@@ -31,7 +31,7 @@ class ActivityListMiddlewareTest {
             dateTimeUtils = dateTimeUtils
         )
 
-        val appState = AppState.emptyState
+        val appState = AppStateImpl.emptyState
         val initAction = ActivityListAction.Init
 
         val dispatcher: Dispatcher = { action ->
@@ -63,7 +63,7 @@ class ActivityListMiddlewareTest {
             dateTimeUtils = dateTimeUtils
         )
 
-        val appState = AppState.emptyState
+        val appState = AppStateImpl.emptyState
         val fetchAllAction = ActivityListAction.FetchAll(2025)
 
         var updateLoadingCalled = false

@@ -1,6 +1,6 @@
 package com.github.sikv.habitsplus.data.preferences
 
-import com.github.sikv.habitsplus.data.model.TodoOrderBy
+import com.github.sikv.habitsplus.data.todo.model.TodoOrderBy
 
 internal interface LocalPreferences {
 

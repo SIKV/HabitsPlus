@@ -26,7 +26,9 @@ kotlin {
     }
     
     sourceSets {
-        commonMain.dependencies {}
+        commonMain.dependencies {
+            implementation(libs.kotlinx.datetime)
+        }
         androidMain.dependencies {}
         iosMain.dependencies {}
         commonTest.dependencies {}

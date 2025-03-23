@@ -1,12 +1,12 @@
 package com.github.sikv.habitsplus.feature.activity.list
 
+import com.github.sikv.habitsplus.data.common.DateTimeUtils
 import com.github.sikv.habitsplus.data.model.ActivityModel
 import com.github.sikv.habitsplus.data.repository.ActivitiesRepository
 import com.github.sikv.habitsplus.store.Action
 import com.github.sikv.habitsplus.store.AppMiddleware
 import com.github.sikv.habitsplus.store.AppState
 import com.github.sikv.habitsplus.store.Dispatcher
-import com.github.sikv.habitsplus.util.DateTimeUtils
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
 import kotlinx.coroutines.withContext

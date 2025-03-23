@@ -1,5 +1,7 @@
 package com.github.sikv.habitsplus.di
 
+import com.github.sikv.habitsplus.data.common.DateTimeUtils
+import com.github.sikv.habitsplus.data.common.DateTimeUtilsImpl
 import com.github.sikv.habitsplus.feature.activity.add.AddActivityMiddleware
 import com.github.sikv.habitsplus.feature.activity.list.ActivityListMiddleware
 import com.github.sikv.habitsplus.feature.label.add.AddLabelMiddleware
@@ -10,8 +12,6 @@ import com.github.sikv.habitsplus.store.AppStateImpl
 import com.github.sikv.habitsplus.store.AppStore
 import com.github.sikv.habitsplus.store.Store
 import com.github.sikv.habitsplus.store.appReducer
-import com.github.sikv.habitsplus.util.DateTimeUtils
-import com.github.sikv.habitsplus.util.DateTimeUtilsImpl
 import org.koin.dsl.module
 
 val appModule = module {

@@ -1,12 +1,12 @@
 package com.github.sikv.habitsplus.feature.todo.list
 
-import com.github.sikv.habitsplus.data.model.TodoModel
-import com.github.sikv.habitsplus.data.model.TodoOrderBy
+import com.github.sikv.habitsplus.data.common.DateTimeUtils
 import com.github.sikv.habitsplus.data.preferences.LocalPreferences
-import com.github.sikv.habitsplus.data.repository.TodosRepository
-import com.github.sikv.habitsplus.store.AppState
+import com.github.sikv.habitsplus.data.todo.TodosRepository
+import com.github.sikv.habitsplus.data.todo.model.TodoModel
+import com.github.sikv.habitsplus.data.todo.model.TodoOrderBy
+import com.github.sikv.habitsplus.store.AppStateImpl
 import com.github.sikv.habitsplus.store.Dispatcher
-import com.github.sikv.habitsplus.util.DateTimeUtils
 import com.github.sikv.habitsplus.util.testTodos
 import kotlinx.coroutines.test.runTest
 import org.kodein.mock.Mocker
@@ -41,7 +41,7 @@ class TodoListMiddlewareTest {
             dateTimeUtils = dateTimeUtils
         )
 
-        val appState = AppState.emptyState
+        val appState = AppStateImpl.emptyState
         val fetchAllAction = TodoListAction.FetchAll
 
         var updateLoadingActionReceived = false

@@ -29,6 +29,7 @@ kotlin {
             // Accessible by the iOS app
             export(project(":store"))
             export(project(":data:label"))
+            export(project(":data:todo"))
             export(project(":feature:addLabel"))
         }
     }
@@ -36,7 +37,9 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             api(project(":store"))
+            api(project(":data:common"))
             api(project(":data:label"))
+            api(project(":data:todo"))
             api(project(":feature:common"))
             api(project(":feature:addLabel"))
 
@@ -44,7 +47,6 @@ kotlin {
 
             implementation(libs.kotlinx.coroutines.core)
             implementation(libs.kotlinx.serialization.json)
-            implementation(libs.kotlinx.datetime)
             implementation(libs.sqlDelight.runtime)
         }
         androidMain.dependencies {
@@ -75,10 +77,6 @@ android {
 
 sqldelight {
     databases {
-        create("TodosDatabase") {
-            srcDirs("src/commonMain/sqldelight/todos")
-            packageName.set("com.github.sikv.habitsplus.database.todos")
-        }
         create("ActivitiesDatabase") {
             srcDirs("src/commonMain/sqldelight/activities")
             packageName.set("com.github.sikv.habitsplus.database.activities")

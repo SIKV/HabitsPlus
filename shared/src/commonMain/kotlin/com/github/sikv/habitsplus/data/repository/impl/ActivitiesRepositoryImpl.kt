@@ -1,10 +1,10 @@
 package com.github.sikv.habitsplus.data.repository.impl
 
+import com.github.sikv.habitsplus.data.common.DateTimeUtils
 import com.github.sikv.habitsplus.data.mapping.IMAGES_DELIMITER
 import com.github.sikv.habitsplus.data.model.ActivityModel
 import com.github.sikv.habitsplus.data.repository.ActivitiesRepository
 import com.github.sikv.habitsplus.data.source.ActivitiesDataSource
-import com.github.sikv.habitsplus.util.DateTimeUtils
 
 internal class ActivitiesRepositoryImpl(
     private val activitiesDataSource: ActivitiesDataSource,

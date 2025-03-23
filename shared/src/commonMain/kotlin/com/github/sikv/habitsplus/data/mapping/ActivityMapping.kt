@@ -1,8 +1,8 @@
 package com.github.sikv.habitsplus.data.mapping
 
+import com.github.sikv.habitsplus.data.common.DateTimeUtils
 import com.github.sikv.habitsplus.data.model.ActivityModel
 import com.github.sikv.habitsplus.data.model.Metadata
-import com.github.sikv.habitsplus.util.DateTimeUtils
 
 internal const val IMAGES_DELIMITER = ","
 

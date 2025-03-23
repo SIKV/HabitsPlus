@@ -1,13 +1,13 @@
 package com.github.sikv.habitsplus.feature.todo.list
 
-import com.github.sikv.habitsplus.data.model.TodoStatus
+import com.github.sikv.habitsplus.data.common.DateTimeUtils
 import com.github.sikv.habitsplus.data.preferences.LocalPreferences
-import com.github.sikv.habitsplus.data.repository.TodosRepository
+import com.github.sikv.habitsplus.data.todo.TodosRepository
+import com.github.sikv.habitsplus.data.todo.model.TodoStatus
 import com.github.sikv.habitsplus.store.Action
 import com.github.sikv.habitsplus.store.AppMiddleware
 import com.github.sikv.habitsplus.store.AppState
 import com.github.sikv.habitsplus.store.Dispatcher
-import com.github.sikv.habitsplus.util.DateTimeUtils
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
 import kotlinx.coroutines.withContext

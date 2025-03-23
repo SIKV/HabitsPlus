@@ -1,5 +1,6 @@
 package com.github.sikv.habitsplus.util
 
+import com.github.sikv.habitsplus.data.common.DateTimeUtils
 import com.github.sikv.habitsplus.data.model.Timestamp
 
 class FakeDateTimeUtils : DateTimeUtils {
