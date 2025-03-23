@@ -23,6 +23,10 @@ Create and track your habits, todos, and activity.
 
 <img width="70%" alt="arch" src="https://github.com/user-attachments/assets/161d6815-2057-4590-85ac-4091b8b76bdd" />
 
+## Module Structure 
+
+<img width="70%" alt="arch" src="https://github.com/user-attachments/assets/f0c35d8e-a3e9-4f70-a5f7-ad10381dab9f" />
+
 ## Screenshots
 
 Soon...
