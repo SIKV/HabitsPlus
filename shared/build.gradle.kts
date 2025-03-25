@@ -28,9 +28,12 @@ kotlin {
             isStatic = true
             // Accessible by the iOS app
             export(project(":store"))
+            export(project(":data:common"))
             export(project(":data:label"))
             export(project(":data:todo"))
+            export(project(":feature:common"))
             export(project(":feature:addLabel"))
+            export(project(":feature:labelList"))
         }
     }
     
@@ -42,6 +45,7 @@ kotlin {
             api(project(":data:todo"))
             api(project(":feature:common"))
             api(project(":feature:addLabel"))
+            api(project(":feature:labelList"))
 
             api(libs.koin.core)
 

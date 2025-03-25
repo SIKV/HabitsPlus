@@ -9,7 +9,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
 import kotlinx.coroutines.withContext
 
-internal class LabelListMiddleware(
+class LabelListMiddleware(
     private val labelsRepository: LabelsRepository
 ) : AppMiddleware {
 
