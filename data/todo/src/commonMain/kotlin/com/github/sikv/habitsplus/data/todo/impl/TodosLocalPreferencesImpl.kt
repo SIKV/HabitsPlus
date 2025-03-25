@@ -1,10 +1,10 @@
-package com.github.sikv.habitsplus.data.preferences.impl
+package com.github.sikv.habitsplus.data.todo.impl
 
+import com.github.sikv.habitsplus.data.todo.TodosLocalPreferences
 import com.github.sikv.habitsplus.data.todo.model.TodoOrderBy
-import com.github.sikv.habitsplus.data.preferences.LocalPreferences
 
 // TODO: Implement.
-internal class LocalPreferencesImpl : LocalPreferences {
+class TodosLocalPreferencesImpl : TodosLocalPreferences {
 
     private var todoListOrderBy: TodoOrderBy = TodoOrderBy.ADDED_AT_DESC
     private var todoListShowCompleted: Boolean = false

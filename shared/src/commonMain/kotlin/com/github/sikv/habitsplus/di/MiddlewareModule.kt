@@ -15,7 +15,7 @@ val middlewareModule = module {
     single<TodoListMiddleware> {
         TodoListMiddleware(
             todosRepository = get(),
-            localPreferences = get(),
+            todosLocalPreferences = get(),
             dateTimeUtils = get()
         )
     }

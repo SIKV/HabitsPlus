@@ -34,6 +34,7 @@ kotlin {
             export(project(":feature:common"))
             export(project(":feature:addLabel"))
             export(project(":feature:labelList"))
+            export(project(":feature:todoList"))
         }
     }
     
@@ -46,6 +47,7 @@ kotlin {
             api(project(":feature:common"))
             api(project(":feature:addLabel"))
             api(project(":feature:labelList"))
+            api(project(":feature:todoList"))
 
             api(libs.koin.core)
 

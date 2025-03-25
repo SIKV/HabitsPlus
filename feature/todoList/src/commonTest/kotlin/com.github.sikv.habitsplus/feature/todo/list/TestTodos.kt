@@ -1,4 +1,4 @@
-package com.github.sikv.habitsplus.util
+package com.github.sikv.habitsplus.feature.todo.list
 
 import com.github.sikv.habitsplus.data.common.model.Metadata
 import com.github.sikv.habitsplus.data.todo.model.TodoModel

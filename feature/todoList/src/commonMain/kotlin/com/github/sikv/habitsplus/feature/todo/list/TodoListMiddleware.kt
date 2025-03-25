@@ -1,7 +1,7 @@
 package com.github.sikv.habitsplus.feature.todo.list
 
 import com.github.sikv.habitsplus.data.common.DateTimeUtils
-import com.github.sikv.habitsplus.data.preferences.LocalPreferences
+import com.github.sikv.habitsplus.data.todo.TodosLocalPreferences
 import com.github.sikv.habitsplus.data.todo.TodosRepository
 import com.github.sikv.habitsplus.data.todo.model.TodoStatus
 import com.github.sikv.habitsplus.store.Action
@@ -12,9 +12,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
 import kotlinx.coroutines.withContext
 
-internal class TodoListMiddleware(
+class TodoListMiddleware(
     private val todosRepository: TodosRepository,
-    private val localPreferences: LocalPreferences,
+    private val todosLocalPreferences: TodosLocalPreferences,
     private val dateTimeUtils: DateTimeUtils
 ) : AppMiddleware {
 
@@ -72,19 +72,19 @@ internal class TodoListMiddleware(
     }
 
     private fun handleUpdateOrderByAction(action: TodoListAction.UpdateOrderBy, dispatcher: Dispatcher) {
-        localPreferences.setTodoListOrderBy(action.orderBy)
+        todosLocalPreferences.setTodoListOrderBy(action.orderBy)
         updateList(dispatcher)
     }
 
     private fun handleUpdateShowCompletedAction(action: TodoListAction.UpdateShowCompleted, dispatcher: Dispatcher) {
-        localPreferences.setTodoListShowCompleted(action.showCompleted)
+        todosLocalPreferences.setTodoListShowCompleted(action.showCompleted)
         updateList(dispatcher)
     }
 
     private fun updateList(dispatcher: Dispatcher) {
-        val orderByOptions = localPreferences.getTodoListOrderByOptions()
-        val orderBy = localPreferences.getTodoListOrderBy()
-        val showCompleted = localPreferences.getTodoListShowCompleted()
+        val orderByOptions = todosLocalPreferences.getTodoListOrderByOptions()
+        val orderBy = todosLocalPreferences.getTodoListOrderBy()
+        val showCompleted = todosLocalPreferences.getTodoListShowCompleted()
 
         dispatcher(TodoListAction.UpdateLoading(true))
 

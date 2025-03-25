@@ -4,7 +4,7 @@ import com.github.sikv.habitsplus.di.appModule
 import com.github.sikv.habitsplus.di.dataSourceModule
 import com.github.sikv.habitsplus.di.databaseModule
 import com.github.sikv.habitsplus.di.middlewareModule
-import com.github.sikv.habitsplus.di.preferencesModule
+import com.github.sikv.habitsplus.di.localPreferencesModule
 import com.github.sikv.habitsplus.di.repositoryModule
 import com.github.sikv.habitsplus.store.AppStore
 import org.koin.core.component.KoinComponent
@@ -19,7 +19,7 @@ fun initKoin() {
             databaseModule,
             dataSourceModule,
             repositoryModule,
-            preferencesModule
+            localPreferencesModule
         )
     }.koin
 }

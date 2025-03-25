@@ -1,9 +1,8 @@
-package com.github.sikv.habitsplus.data.preferences
+package com.github.sikv.habitsplus.data.todo
 
 import com.github.sikv.habitsplus.data.todo.model.TodoOrderBy
 
-internal interface LocalPreferences {
-
+interface TodosLocalPreferences {
     fun getTodoListOrderByOptions(): List<TodoOrderBy>
     fun getTodoListOrderBy(): TodoOrderBy
     fun setTodoListOrderBy(orderBy: TodoOrderBy)
