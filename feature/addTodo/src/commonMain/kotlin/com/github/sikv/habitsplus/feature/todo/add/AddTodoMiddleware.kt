@@ -3,17 +3,17 @@ package com.github.sikv.habitsplus.feature.todo.add
 import com.github.sikv.habitsplus.data.todo.TodosRepository
 import com.github.sikv.habitsplus.data.todo.model.TodoModel
 import com.github.sikv.habitsplus.data.todo.model.TodoStatus
+import com.github.sikv.habitsplus.feature.common.ModelValidator
 import com.github.sikv.habitsplus.store.Action
 import com.github.sikv.habitsplus.store.AppMiddleware
 import com.github.sikv.habitsplus.store.AppState
 import com.github.sikv.habitsplus.store.Dispatcher
 import com.github.sikv.habitsplus.store.EmitSideEffectAction
-import com.github.sikv.habitsplus.util.ModelValidator
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
 import kotlinx.coroutines.withContext
 
-internal class AddTodoMiddleware(
+class AddTodoMiddleware(
     private val todosRepository: TodosRepository,
     private val validator: ModelValidator<TodoModel, AddTodoError?>
 ) : AppMiddleware {
