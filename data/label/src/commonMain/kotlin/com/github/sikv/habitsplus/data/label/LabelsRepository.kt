@@ -1,7 +1,7 @@
 package com.github.sikv.habitsplus.data.label
 
 interface LabelsRepository {
-    fun addLabel(label: LabelModel): Boolean
-    fun updateLabel(label: LabelModel): Boolean
-    fun getAllLabels(): List<LabelModel>
+    suspend fun addLabel(label: LabelModel): Boolean
+    suspend fun updateLabel(label: LabelModel): Boolean
+    suspend fun getAllLabels(): List<LabelModel>
 }

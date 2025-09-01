@@ -30,6 +30,7 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             implementation(project(":data:common"))
+            implementation(libs.kotlinx.coroutines.core)
             implementation(libs.sqlDelight.runtime)
         }
         androidMain.dependencies {

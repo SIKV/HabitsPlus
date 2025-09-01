@@ -1,16 +1,16 @@
 package com.github.sikv.habitsplus.data.label
 
 interface LabelsDataSource {
-    fun insertLabel(
+    suspend fun insertLabel(
         title: String,
         color: ColorVariant
     ) : Boolean
 
-    fun updateLabel(
+    suspend fun updateLabel(
         id: Long,
         title: String,
         color: ColorVariant
     ) : Boolean
 
-    fun selectAllLabels(): List<LabelModel>
+    suspend fun selectAllLabels(): List<LabelModel>
 }
